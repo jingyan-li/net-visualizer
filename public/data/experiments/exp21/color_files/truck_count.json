@@ -1,0 +1,87 @@
+{
+  "id": "truck_count",
+  "label": "Truck count",
+  "sourceFile": "truck_count.json",
+  "defaultMeasureId": "bias",
+  "defaultPeriodId": "3h",
+  "periodLabels": {
+    "3h": "Total (3h)",
+    "hour_15": "15:00-16:00",
+    "hour_16": "16:00-17:00",
+    "hour_17": "17:00-18:00"
+  },
+  "measures": [
+    {
+      "id": "obs",
+      "label": "Observed",
+      "scaleType": "sequential",
+      "fieldByPeriod": {
+        "3h": "truck_count_obs_3h",
+        "hour_15": "truck_count_obs_hour_15",
+        "hour_16": "truck_count_obs_hour_16",
+        "hour_17": "truck_count_obs_hour_17"
+      },
+      "maskFieldByPeriod": {
+        "3h": "truck_count_obs_valid_3h",
+        "hour_15": "truck_count_obs_valid_hour_15",
+        "hour_16": "truck_count_obs_valid_hour_16",
+        "hour_17": "truck_count_obs_valid_hour_17"
+      }
+    },
+    {
+      "id": "est",
+      "label": "Estimate",
+      "scaleType": "sequential",
+      "fieldByPeriod": {
+        "3h": "truck_count_est_3h",
+        "hour_15": "truck_count_est_hour_15",
+        "hour_16": "truck_count_est_hour_16",
+        "hour_17": "truck_count_est_hour_17"
+      },
+      "maskFieldByPeriod": {
+        "3h": "truck_count_valid_3h",
+        "hour_15": "truck_count_valid_hour_15",
+        "hour_16": "truck_count_valid_hour_16",
+        "hour_17": "truck_count_valid_hour_17"
+      }
+    },
+    {
+      "id": "wape",
+      "label": "WAPE",
+      "scaleType": "sequential",
+      "fieldByPeriod": {
+        "3h": "truck_count_wape_3h",
+        "hour_15": "truck_count_wape_hour_15",
+        "hour_16": "truck_count_wape_hour_16",
+        "hour_17": "truck_count_wape_hour_17"
+      },
+      "maskFieldByPeriod": {
+        "3h": "truck_count_valid_3h",
+        "hour_15": "truck_count_valid_hour_15",
+        "hour_16": "truck_count_valid_hour_16",
+        "hour_17": "truck_count_valid_hour_17"
+      }
+    },
+    {
+      "id": "bias",
+      "label": "Bias",
+      "scaleType": "diverging",
+      "fieldByPeriod": {
+        "3h": "truck_count_bias_3h",
+        "hour_15": "truck_count_bias_hour_15",
+        "hour_16": "truck_count_bias_hour_16",
+        "hour_17": "truck_count_bias_hour_17"
+      },
+      "maskFieldByPeriod": {
+        "3h": "truck_count_valid_3h",
+        "hour_15": "truck_count_valid_hour_15",
+        "hour_16": "truck_count_valid_hour_16",
+        "hour_17": "truck_count_valid_hour_17"
+      }
+    }
+  ],
+  "notes": {
+    "en": "Links without valid observed-versus-estimated comparison are rendered in black for bias/WAPE views.",
+    "zh": "在 bias/WAPE 视图中，没有有效 observed-versus-estimated 对比的链路会显示为黑色。"
+  }
+}
