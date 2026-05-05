@@ -15,6 +15,10 @@ vite.config.d.ts
 inputfile/*
 !inputfile/.gitkeep
 public/data/*
-!public/data/.gitkeep
-!public/data/experiments/
-!public/data/experiments/**
+public/data/experiments/*/paths/link_to_paths.json
+public/data/experiments/*/paths/path_summary.json
+public/data/experiments/*/paths/*.json
+public/data/experiments/*/contributions/
+
+
+
