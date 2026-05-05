@@ -1,0 +1,14 @@
+name: path-link-demo
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - nodejs=20
+  - pip
+  - pandas
+  - geopandas
+  - pyarrow
+  - shapely
+  - fiona
+  - tqdm
+  - orjson

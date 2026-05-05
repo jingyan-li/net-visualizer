@@ -1,0 +1,15 @@
+{
+  "experiment_id": "exp21",
+  "experiment_label": "Exp 21",
+  "network_source": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/gis/links_ver2.shp",
+  "ratio_source_dir": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/results/exp21/ratio_bias_wape_analysis",
+  "coverage_source_csv": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/results/exp21/link_observation_coverage.csv",
+  "path_count": 187878,
+  "link_count": 8521,
+  "color_files": [
+    "car_count",
+    "truck_count",
+    "car_tt",
+    "truck_tt"
+  ]
+}

@@ -1,0 +1,241 @@
+import type { ColorFileDefinition, ColorFileEntry, ExperimentIndexEntry } from "../types";
+
+interface ToolbarProps {
+  experiments: ExperimentIndexEntry[];
+  selectedExperimentId: string;
+  colorFiles: ColorFileEntry[];
+  selectedColorFileId: string;
+  colorFileDefinition: ColorFileDefinition | null;
+  selectedMeasureId: string;
+  selectedPeriodId: string;
+  maxHighlightedPaths: number;
+  maxHighlightedPathsLimit: number;
+  pathCountThreshold: number;
+  pathCountThresholdMax: number;
+  linkWidthScale: number;
+  lineOffsetPixels: number;
+  odPointSize: number;
+  odLabelSize: number;
+  showCoveredLinksOnly: boolean;
+  hideUnobservedLinks: boolean;
+  showOdPoints: boolean;
+  showOdLabels: boolean;
+  onExperimentChange: (value: string) => void;
+  onColorFileChange: (value: string) => void;
+  onMeasureChange: (value: string) => void;
+  onPeriodChange: (value: string) => void;
+  onMaxHighlightedPathsChange: (value: number) => void;
+  onPathCountThresholdChange: (value: number) => void;
+  onLinkWidthScaleChange: (value: number) => void;
+  onLineOffsetPixelsChange: (value: number) => void;
+  onOdPointSizeChange: (value: number) => void;
+  onOdLabelSizeChange: (value: number) => void;
+  onShowCoveredLinksOnlyChange: (value: boolean) => void;
+  onHideUnobservedLinksChange: (value: boolean) => void;
+  onShowOdPointsChange: (value: boolean) => void;
+  onShowOdLabelsChange: (value: boolean) => void;
+  onClearSelection: () => void;
+}
+
+export function Toolbar({
+  experiments,
+  selectedExperimentId,
+  colorFiles,
+  selectedColorFileId,
+  colorFileDefinition,
+  selectedMeasureId,
+  selectedPeriodId,
+  maxHighlightedPaths,
+  maxHighlightedPathsLimit,
+  pathCountThreshold,
+  pathCountThresholdMax,
+  linkWidthScale,
+  lineOffsetPixels,
+  odPointSize,
+  odLabelSize,
+  showCoveredLinksOnly,
+  hideUnobservedLinks,
+  showOdPoints,
+  showOdLabels,
+  onExperimentChange,
+  onColorFileChange,
+  onMeasureChange,
+  onPeriodChange,
+  onMaxHighlightedPathsChange,
+  onPathCountThresholdChange,
+  onLinkWidthScaleChange,
+  onLineOffsetPixelsChange,
+  onOdPointSizeChange,
+  onOdLabelSizeChange,
+  onShowCoveredLinksOnlyChange,
+  onHideUnobservedLinksChange,
+  onShowOdPointsChange,
+  onShowOdLabelsChange,
+  onClearSelection
+}: ToolbarProps) {
+  const measures = colorFileDefinition?.measures ?? [];
+  const periodOptions = colorFileDefinition?.periodLabels ?? {};
+
+  return (
+    <div className="toolbar">
+      <label>
+        <span>Experiment</span>
+        <select value={selectedExperimentId} onChange={(event) => onExperimentChange(event.target.value)}>
+          {experiments.map((experiment) => (
+            <option key={experiment.id} value={experiment.id}>
+              {experiment.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label>
+        <span>Color file</span>
+        <select value={selectedColorFileId} onChange={(event) => onColorFileChange(event.target.value)}>
+          {colorFiles.map((colorFile) => (
+            <option key={colorFile.id} value={colorFile.id}>
+              {colorFile.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label>
+        <span>Metric</span>
+        <select value={selectedMeasureId} onChange={(event) => onMeasureChange(event.target.value)}>
+          {measures.map((measure) => (
+            <option key={measure.id} value={measure.id}>
+              {measure.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label>
+        <span>Period</span>
+        <select value={selectedPeriodId} onChange={(event) => onPeriodChange(event.target.value)}>
+          {Object.entries(periodOptions).map(([periodId, label]) => (
+            <option key={periodId} value={periodId}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label>
+        <span>Displayed paths: {maxHighlightedPaths}</span>
+        <input
+          type="range"
+          min="1"
+          max={String(Math.max(1, maxHighlightedPathsLimit))}
+          step="1"
+          value={maxHighlightedPaths}
+          onChange={(event) => onMaxHighlightedPathsChange(Number(event.target.value))}
+        />
+      </label>
+
+      <label>
+        <span>Link path-count filter: {pathCountThreshold}</span>
+        <div className="number-control">
+          <input
+            type="number"
+            min="0"
+            max={String(Math.max(0, pathCountThresholdMax))}
+            step="1"
+            value={pathCountThreshold}
+            onChange={(event) => onPathCountThresholdChange(Number(event.target.value))}
+          />
+          <span className="number-control-hint">{`max ${pathCountThresholdMax}`}</span>
+        </div>
+      </label>
+
+      <label className="slider-control">
+        <span>Link width: {linkWidthScale.toFixed(1)} px</span>
+        <input
+          type="range"
+          min="1.5"
+          max="10"
+          step="0.5"
+          value={linkWidthScale}
+          onChange={(event) => onLinkWidthScaleChange(Number(event.target.value))}
+        />
+      </label>
+
+      <label className="slider-control">
+        <span>Centerline offset: {lineOffsetPixels.toFixed(1)} px</span>
+        <input
+          type="range"
+          min="0"
+          max="12"
+          step="0.5"
+          value={lineOffsetPixels}
+          onChange={(event) => onLineOffsetPixelsChange(Number(event.target.value))}
+        />
+      </label>
+
+      <label className="slider-control">
+        <span>OD point size: {odPointSize.toFixed(1)} px</span>
+        <input
+          type="range"
+          min="2"
+          max="10"
+          step="0.5"
+          value={odPointSize}
+          onChange={(event) => onOdPointSizeChange(Number(event.target.value))}
+        />
+      </label>
+
+      <label className="slider-control">
+        <span>OD label size: {odLabelSize.toFixed(0)} px</span>
+        <input
+          type="range"
+          min="4"
+          max="20"
+          step="1"
+          value={odLabelSize}
+          onChange={(event) => onOdLabelSizeChange(Number(event.target.value))}
+        />
+      </label>
+
+      <label className="toggle-control">
+        <span>Path-covered links only</span>
+        <input
+          type="checkbox"
+          checked={showCoveredLinksOnly}
+          onChange={(event) => onShowCoveredLinksOnlyChange(event.target.checked)}
+        />
+      </label>
+
+      <label className="toggle-control">
+        <span>Hide unobserved links</span>
+        <input
+          type="checkbox"
+          checked={hideUnobservedLinks}
+          onChange={(event) => onHideUnobservedLinksChange(event.target.checked)}
+        />
+      </label>
+
+      <label className="toggle-control">
+        <span>Show OD points</span>
+        <input
+          type="checkbox"
+          checked={showOdPoints}
+          onChange={(event) => onShowOdPointsChange(event.target.checked)}
+        />
+      </label>
+
+      <label className="toggle-control">
+        <span>Show OD labels</span>
+        <input
+          type="checkbox"
+          checked={showOdLabels}
+          onChange={(event) => onShowOdLabelsChange(event.target.checked)}
+        />
+      </label>
+
+      <button type="button" onClick={onClearSelection}>
+        Clear selection
+      </button>
+    </div>
+  );
+}

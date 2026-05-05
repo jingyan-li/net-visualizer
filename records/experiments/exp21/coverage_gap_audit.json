@@ -1,0 +1,58 @@
+[
+  {
+    "modality": "car_count",
+    "observed_links": 336,
+    "ratio_links": 319,
+    "intersection_links": 319,
+    "observed_only_links": 17,
+    "ratio_only_links": 0,
+    "observed_link_id_min": 10,
+    "observed_link_id_max": 10137,
+    "ratio_link_id_min": 29,
+    "ratio_link_id_max": 10137,
+    "observed_only_link_ids": "10,771,964,1125,1126,1149,1591,1982,2086,2285,2961,3708,3837,5844,6417,6750,6825",
+    "ratio_only_link_ids": ""
+  },
+  {
+    "modality": "truck_count",
+    "observed_links": 336,
+    "ratio_links": 319,
+    "intersection_links": 319,
+    "observed_only_links": 17,
+    "ratio_only_links": 0,
+    "observed_link_id_min": 10,
+    "observed_link_id_max": 10137,
+    "ratio_link_id_min": 29,
+    "ratio_link_id_max": 10137,
+    "observed_only_link_ids": "10,771,964,1125,1126,1149,1591,1982,2086,2285,2961,3708,3837,5844,6417,6750,6825",
+    "ratio_only_link_ids": ""
+  },
+  {
+    "modality": "car_tt",
+    "observed_links": 1771,
+    "ratio_links": 1714,
+    "intersection_links": 1714,
+    "observed_only_links": 57,
+    "ratio_only_links": 0,
+    "observed_link_id_min": 11,
+    "observed_link_id_max": 10165,
+    "ratio_link_id_min": 11,
+    "ratio_link_id_max": 10165,
+    "observed_only_link_ids": "88,90,94,336,629,649,788,887,964,1125,1126,1522,1591,1982,2006,2092,2245,2249,2329,2330,2354,2524,2578,2861,2862,2999,3000,3097,3111,3156,3242,3243,3256,3365,3708,3710,3814,4042,4132,4354,4389,4518,4656,4668,4723,4775,4877,4989,5140,5181,5815,5945,6078,6100,6417,6500,6750",
+    "ratio_only_link_ids": ""
+  },
+  {
+    "modality": "truck_tt",
+    "observed_links": 1791,
+    "ratio_links": 1734,
+    "intersection_links": 1734,
+    "observed_only_links": 57,
+    "ratio_only_links": 0,
+    "observed_link_id_min": 11,
+    "observed_link_id_max": 10165,
+    "ratio_link_id_min": 11,
+    "ratio_link_id_max": 10165,
+    "observed_only_link_ids": "88,90,94,336,629,649,788,887,964,1125,1126,1522,1591,1982,2006,2092,2245,2249,2329,2330,2354,2524,2578,2861,2862,2999,3000,3097,3111,3156,3242,3243,3256,3365,3708,3710,3814,4042,4132,4354,4389,4518,4656,4668,4723,4775,4877,4989,5140,5181,5815,5945,6078,6100,6417,6500,6750",
+    "ratio_only_link_ids": ""
+  }
+]

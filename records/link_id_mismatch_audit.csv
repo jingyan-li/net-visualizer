@@ -1,0 +1,722 @@
+mismatch_type,link_id,in_links_index,in_link_to_paths,path_count,sample_path_ids,street_name_1,street_name_2,street_name_3,note
+missing_in_link_to_paths,9,1,0,0,,,,,r
+missing_in_link_to_paths,10,1,0,0,,GOLDEN MILE HWY,,,r
+missing_in_link_to_paths,22,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,74,1,0,0,,MONONGAHELA AVE,,,r
+missing_in_link_to_paths,88,1,0,0,,PIERSONS RUN RD,,,r
+missing_in_link_to_paths,89,1,0,0,,OLD FRANKSTOWN RD,,,r
+missing_in_link_to_paths,90,1,0,0,,CENTER RD,,,r
+missing_in_link_to_paths,92,1,0,0,,BOYD ST,,,r
+missing_in_link_to_paths,94,1,0,0,,WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,144,1,0,0,,REDGATE/RIVER RD,REDGATE RD,RIVER RD,r
+missing_in_link_to_paths,153,1,0,0,,GREENDALE AVE,,,r
+missing_in_link_to_paths,204,1,0,0,,,,,r
+missing_in_link_to_paths,205,1,0,0,,,,,r
+missing_in_link_to_paths,235,1,0,0,,FOSTER RD,,,r
+missing_in_link_to_paths,241,1,0,0,,,,,r
+missing_in_link_to_paths,251,1,0,0,,CASINO DR,,,r
+missing_in_link_to_paths,252,1,0,0,,CASINO DR,,,r
+missing_in_link_to_paths,275,1,0,0,,,,,r
+missing_in_link_to_paths,292,1,0,0,,BEAVER GRADE RD,,,r
+missing_in_link_to_paths,306,1,0,0,,RAMP RD/TO CHATEAU ST,,,r
+missing_in_link_to_paths,329,1,0,0,,TRI-BORO EXPY,WATKINS AVE,,r
+missing_in_link_to_paths,334,1,0,0,,,,,r
+missing_in_link_to_paths,336,1,0,0,,SALTSBURG RD,,,r
+missing_in_link_to_paths,347,1,0,0,,FOSTER RD,,,r
+missing_in_link_to_paths,385,1,0,0,,,,,r
+missing_in_link_to_paths,418,1,0,0,,MIDDLE RD,,,r
+missing_in_link_to_paths,422,1,0,0,,HOOKSTOWN GRADE RD,,,r
+missing_in_link_to_paths,451,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,452,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,472,1,0,0,,CREIGHTON RUN RD,,,r
+missing_in_link_to_paths,485,1,0,0,,,,,r
+missing_in_link_to_paths,505,1,0,0,,,,,r
+missing_in_link_to_paths,506,1,0,0,,,,,r
+missing_in_link_to_paths,507,1,0,0,,,,,r
+missing_in_link_to_paths,528,1,0,0,,PENNSYLVANIA AVE,,,r
+missing_in_link_to_paths,540,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,548,1,0,0,,FLAUGHERTY RUN/RAMP RD,,,r
+missing_in_link_to_paths,549,1,0,0,,TWELVETH ST,,,r
+missing_in_link_to_paths,571,1,0,0,,CEDAR AVE,,,r
+missing_in_link_to_paths,572,1,0,0,,CANAL ST,,,r
+missing_in_link_to_paths,589,1,0,0,,SR 65 SB TO REEDSDALE ST,REEDSDALE ST,,r
+missing_in_link_to_paths,615,1,0,0,,BATTLE RIDGE RD,,,r
+missing_in_link_to_paths,629,1,0,0,,,,,r
+missing_in_link_to_paths,632,1,0,0,,PILLOW AVE,,,r
+missing_in_link_to_paths,636,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,649,1,0,0,,WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,665,1,0,0,,REEDSDALE ST,,,r
+missing_in_link_to_paths,700,1,0,0,,RACE ST,,,r
+missing_in_link_to_paths,706,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,707,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,721,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,771,1,0,0,,OLD LEECHBURG RD,,,r
+missing_in_link_to_paths,788,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,789,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,805,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,806,1,0,0,,,,,r
+missing_in_link_to_paths,807,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,846,1,0,0,,MONONGAHELA AVE,,,r
+missing_in_link_to_paths,874,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,887,1,0,0,,PIERSONS RUN RD,,,r
+missing_in_link_to_paths,919,1,0,0,,RIDGE AVE,,,r
+missing_in_link_to_paths,927,1,0,0,,,,,r
+missing_in_link_to_paths,928,1,0,0,,TAWNEY RUN RD,,,r
+missing_in_link_to_paths,929,1,0,0,,TAWNEY RUN RD,,,r
+missing_in_link_to_paths,964,1,0,0,,,,,r
+missing_in_link_to_paths,965,1,0,0,,GOLDEN MILE HWY,,,r
+missing_in_link_to_paths,1005,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,1030,1,0,0,,ART ROONEY AVE,,,r
+missing_in_link_to_paths,1035,1,0,0,,COMMONS ST,,,r
+missing_in_link_to_paths,1067,1,0,0,,FLAUGHERTY RUN/RAMP RD,,,r
+missing_in_link_to_paths,1083,1,0,0,,NORTHERN PKWY,,,r
+missing_in_link_to_paths,1092,1,0,0,,GREENDALE AVE,,,r
+missing_in_link_to_paths,1108,1,0,0,,GREENSBURG PKWY,,,r
+missing_in_link_to_paths,1120,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,1122,1,0,0,,LONG HOLLOW RD,DOUGLAS RUN RD,,r
+missing_in_link_to_paths,1125,1,0,0,,PITTSBURGH ST,,,r
+missing_in_link_to_paths,1126,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,1127,1,0,0,,PILLOW AVE,,,r
+missing_in_link_to_paths,1135,1,0,0,,,,,r
+missing_in_link_to_paths,1141,1,0,0,,,,,r
+missing_in_link_to_paths,1149,1,0,0,,OLD LEECHBURG RD,,,r
+missing_in_link_to_paths,1165,1,0,0,,KIRKPATRICK ST,,,r
+missing_in_link_to_paths,1199,1,0,0,,RAMP RD/TO SR 0837 SH,,,r
+missing_in_link_to_paths,1264,1,0,0,,BUSINESS 376,RAMP F RD,,r
+missing_in_link_to_paths,1272,1,0,0,,,,,r
+missing_in_link_to_paths,1273,1,0,0,,,,,r
+missing_in_link_to_paths,1274,1,0,0,,,,,r
+missing_in_link_to_paths,1327,1,0,0,,LONG HOLLOW RD,DOUGLAS RUN RD,,r
+missing_in_link_to_paths,1330,1,0,0,,,,,r
+missing_in_link_to_paths,1339,1,0,0,,JEFFERSON RD,,,r
+missing_in_link_to_paths,1375,1,0,0,,COAL VALLEY RD,,,r
+missing_in_link_to_paths,1450,1,0,0,,BEATTY RD,,,r
+missing_in_link_to_paths,1470,1,0,0,,TAWNEY RUN RD,,,r
+missing_in_link_to_paths,1475,1,0,0,,ARGONNE DR,,,r
+missing_in_link_to_paths,1476,1,0,0,,BROADVIEW BLVD,,,r
+missing_in_link_to_paths,1486,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,1487,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,1490,1,0,0,,BAKERSTOWN RD (ROUTE 908,,,r
+missing_in_link_to_paths,1491,1,0,0,,,,,r
+missing_in_link_to_paths,1522,1,0,0,,RIVER RD,,,r
+missing_in_link_to_paths,1528,1,0,0,,OLD LEECHBURG RD,,,r
+missing_in_link_to_paths,1541,1,0,0,,JEFFERSON RD,,,r
+missing_in_link_to_paths,1543,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,1551,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,1568,1,0,0,,RAMP E RD,,,r
+missing_in_link_to_paths,1591,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,1601,1,0,0,,POTATO GARDEN RUN RD,,,r
+missing_in_link_to_paths,1605,1,0,0,,THORN HILL RD,,,r
+missing_in_link_to_paths,1614,1,0,0,,FREY RD,,,r
+missing_in_link_to_paths,1651,1,0,0,,TRI-BORO EXPY,WATKINS AVE,,r
+missing_in_link_to_paths,1655,1,0,0,,OLD STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,1656,1,0,0,,SR 0022 SH,,,r
+missing_in_link_to_paths,1657,1,0,0,,SANTIAGO RD,,,r
+missing_in_link_to_paths,1668,1,0,0,,BROADLAWN DR,,,r
+missing_in_link_to_paths,1671,1,0,0,,AIRPORT PKWY,,,r
+missing_in_link_to_paths,1680,1,0,0,,BEAVER ST,MEADOW LN,BEAVER RD,r
+missing_in_link_to_paths,1681,1,0,0,,OHIO RIVER BLVD,,,r
+missing_in_link_to_paths,1682,1,0,0,,BEAVER RD,,,r
+missing_in_link_to_paths,1720,1,0,0,,24TH ST,,,r
+missing_in_link_to_paths,1722,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,1745,1,0,0,,LINCOLN WAY,,,r
+missing_in_link_to_paths,1793,1,0,0,,,,,r
+missing_in_link_to_paths,1794,1,0,0,,OLD STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,1834,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,1848,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,1850,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,1855,1,0,0,,,,,r
+missing_in_link_to_paths,1861,1,0,0,,MCCLAREN RD,,,r
+missing_in_link_to_paths,1863,1,0,0,,MCCLAREN RD,,,r
+missing_in_link_to_paths,1878,1,0,0,,REEDSDALE ST,,,r
+missing_in_link_to_paths,1879,1,0,0,,CASINO DR,,,r
+missing_in_link_to_paths,1882,1,0,0,,COAL VALLEY RD,,,r
+missing_in_link_to_paths,1906,1,0,0,,UNITY CENTER RD,,,r
+missing_in_link_to_paths,1907,1,0,0,,UNITY CENTER RD,,,r
+missing_in_link_to_paths,1908,1,0,0,,OLD LEECHBURG RD,,,r
+missing_in_link_to_paths,1958,1,0,0,,SR 65 SB TO REEDSDALE ST,REEDSDALE ST,,r
+missing_in_link_to_paths,1959,1,0,0,,SR 65 SB TO REEDSDALE ST,,,r
+missing_in_link_to_paths,1982,1,0,0,,EAST CARSON ST,,,r
+missing_in_link_to_paths,1984,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,2006,1,0,0,,FORT DUQUESNE BLVD,,,r
+missing_in_link_to_paths,2086,1,0,0,,BELLEFIELD AVE,,,r
+missing_in_link_to_paths,2092,1,0,0,,,,,r
+missing_in_link_to_paths,2093,1,0,0,,SOUTHERN BLWY,,,r
+missing_in_link_to_paths,2108,1,0,0,,POTATO GARDEN RUN RD,,,r
+missing_in_link_to_paths,2109,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,2112,1,0,0,,HULTON RD,,,r
+missing_in_link_to_paths,2117,1,0,0,,MOON CLINTON RD,,,r
+missing_in_link_to_paths,2120,1,0,0,,LIBERTY AVE,,,r
+missing_in_link_to_paths,2143,1,0,0,,BURTNER RD,,,r
+missing_in_link_to_paths,2144,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,2145,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,2148,1,0,0,,BROADLAWN DR,,,r
+missing_in_link_to_paths,2244,1,0,0,,ECKERT ST,MCCLURE AVE,,r
+missing_in_link_to_paths,2245,1,0,0,,SALTSBURG RD,,,r
+missing_in_link_to_paths,2248,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,2249,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,2276,1,0,0,,RAMP 20 RD,,,r
+missing_in_link_to_paths,2277,1,0,0,,BEAVER AVE,,,r
+missing_in_link_to_paths,2285,1,0,0,,GREENSBURG PKWY,,,r
+missing_in_link_to_paths,2301,1,0,0,,29TH ST,,,r
+missing_in_link_to_paths,2329,1,0,0,,ELEVENTH ST,,,r
+missing_in_link_to_paths,2330,1,0,0,,TENTH ST BYP,,,r
+missing_in_link_to_paths,2343,1,0,0,,,,,r
+missing_in_link_to_paths,2344,1,0,0,,BEAVER AVE,,,r
+missing_in_link_to_paths,2347,1,0,0,,SR 0022 SH,,,r
+missing_in_link_to_paths,2349,1,0,0,,SR 0022 SH,,,r
+missing_in_link_to_paths,2352,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,2353,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,2354,1,0,0,,OHIO RIVER BLVD,,,r
+missing_in_link_to_paths,2369,1,0,0,,SR 0910 SH,,,r
+missing_in_link_to_paths,2397,1,0,0,,ALLEGHENY VALLEY EXPY,,,r
+missing_in_link_to_paths,2399,1,0,0,,ALPHA DR,BETA DR,,r
+missing_in_link_to_paths,2400,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,2401,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,2402,1,0,0,,BEATTY RD,,,r
+missing_in_link_to_paths,2427,1,0,0,,HULTON RD,,,r
+missing_in_link_to_paths,2457,1,0,0,,,,,r
+missing_in_link_to_paths,2495,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,2524,1,0,0,,MAINLINE TPKE,,,r
+missing_in_link_to_paths,2533,1,0,0,,,,,r
+missing_in_link_to_paths,2542,1,0,0,,DEWALT DR,NEWPORT DR,,r
+missing_in_link_to_paths,2553,1,0,0,,BEECHWOOD BLVD,,,r
+missing_in_link_to_paths,2568,1,0,0,,RAVINE ST,OCONNELL BLVD,,r
+missing_in_link_to_paths,2577,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,2578,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,2579,1,0,0,,ART ROONEY AVE,,,r
+missing_in_link_to_paths,2595,1,0,0,,KIRKPATRICK ST,,,r
+missing_in_link_to_paths,2610,1,0,0,,WOODRUFF ST,,,r
+missing_in_link_to_paths,2612,1,0,0,,COMMONWEALTH PL,,,r
+missing_in_link_to_paths,2624,1,0,0,,REDGATE/RIVER RD,REDGATE RD,RIVER RD,r
+missing_in_link_to_paths,2657,1,0,0,,MAIN ST,,,r
+missing_in_link_to_paths,2680,1,0,0,,WEST SMITHFIELD ST,,,r
+missing_in_link_to_paths,2707,1,0,0,,MCMURRAY RD,,,r
+missing_in_link_to_paths,2724,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,2768,1,0,0,,,,,r
+missing_in_link_to_paths,2769,1,0,0,,,,,r
+missing_in_link_to_paths,2770,1,0,0,,BUTLER LOGAN RD,,,r
+missing_in_link_to_paths,2771,1,0,0,,,,,r
+missing_in_link_to_paths,2840,1,0,0,,BEAVER RD,,,r
+missing_in_link_to_paths,2861,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,2862,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,2863,1,0,0,,CARGO RD,BUSINESS 376,,r
+missing_in_link_to_paths,2899,1,0,0,,,,,r
+missing_in_link_to_paths,2900,1,0,0,,SOUTHERN BLWY,,,r
+missing_in_link_to_paths,2901,1,0,0,,SOUTHERN BLWY,,,r
+missing_in_link_to_paths,2902,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,2903,1,0,0,,ART ROONEY AVE,,,r
+missing_in_link_to_paths,2904,1,0,0,,ART ROONEY AVE,,,r
+missing_in_link_to_paths,2937,1,0,0,,ECKERT ST,MCCLURE AVE,,r
+missing_in_link_to_paths,2938,1,0,0,,BEAVER AVE,,,r
+missing_in_link_to_paths,2961,1,0,0,,GREENSBURG PKWY,,,r
+missing_in_link_to_paths,2999,1,0,0,,OHIO RIVER BLVD,,,r
+missing_in_link_to_paths,3000,1,0,0,,,,,r
+missing_in_link_to_paths,3001,1,0,0,,OHIO RIVER BLVD,,,r
+missing_in_link_to_paths,3029,1,0,0,,WEST SMITHFIELD ST,,,r
+missing_in_link_to_paths,3049,1,0,0,,,,,r
+missing_in_link_to_paths,3056,1,0,0,,,,,r
+missing_in_link_to_paths,3057,1,0,0,,,,,r
+missing_in_link_to_paths,3058,1,0,0,,RAMP RD/TO RAMP RD 0750,,,r
+missing_in_link_to_paths,3066,1,0,0,,MCKEE RD,,,r
+missing_in_link_to_paths,3093,1,0,0,,29TH ST,,,r
+missing_in_link_to_paths,3095,1,0,0,,TENTH ST,,,r
+missing_in_link_to_paths,3097,1,0,0,,FORT DUQUESNE BLVD,,,r
+missing_in_link_to_paths,3111,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,3120,1,0,0,,,,,r
+missing_in_link_to_paths,3156,1,0,0,,,,,r
+missing_in_link_to_paths,3167,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,3177,1,0,0,,CRAFTON BLVD,,,r
+missing_in_link_to_paths,3199,1,0,0,,WEST ALLEGHENY RD,,,r
+missing_in_link_to_paths,3230,1,0,0,,CREIGHTON RUN RD,,,r
+missing_in_link_to_paths,3231,1,0,0,,,,,r
+missing_in_link_to_paths,3232,1,0,0,,,,,r
+missing_in_link_to_paths,3234,1,0,0,,BEECHWOOD BLVD,,,r
+missing_in_link_to_paths,3242,1,0,0,,SALTSBURG RD,,,r
+missing_in_link_to_paths,3243,1,0,0,,SALTSBURG RD,,,r
+missing_in_link_to_paths,3244,1,0,0,,UNITY CENTER RD,,,r
+missing_in_link_to_paths,3253,1,0,0,,MOON AND CLINTON RD,,,r
+missing_in_link_to_paths,3256,1,0,0,,ALLEGHENY AVE,,,r
+missing_in_link_to_paths,3257,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,3281,1,0,0,,,,,r
+missing_in_link_to_paths,3333,1,0,0,,,,,r
+missing_in_link_to_paths,3334,1,0,0,,BUTLER LOGAN RD,,,r
+missing_in_link_to_paths,3335,1,0,0,,,,,r
+missing_in_link_to_paths,3349,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,3350,1,0,0,,TONY DORSETT DR,,,r
+missing_in_link_to_paths,3351,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,3364,1,0,0,,OLD WILLIAM PENN HWY,,,r
+missing_in_link_to_paths,3365,1,0,0,,NEW WM PENN HWY,,,r
+missing_in_link_to_paths,3382,1,0,0,,,,,r
+missing_in_link_to_paths,3387,1,0,0,,MCCLAREN RD,,,r
+missing_in_link_to_paths,3388,1,0,0,,,,,r
+missing_in_link_to_paths,3389,1,0,0,,,,,r
+missing_in_link_to_paths,3416,1,0,0,,,,,r
+missing_in_link_to_paths,3417,1,0,0,,SR 0910 SH,,,r
+missing_in_link_to_paths,3449,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,3452,1,0,0,,HOOKSTOWN GRADE RD,,,r
+missing_in_link_to_paths,3529,1,0,0,,,,,r
+missing_in_link_to_paths,3530,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,3531,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,3563,1,0,0,,,,,r
+missing_in_link_to_paths,3572,1,0,0,,HORIZON DR,,,r
+missing_in_link_to_paths,3579,1,0,0,,,,,r
+missing_in_link_to_paths,3580,1,0,0,,WEST ALLEGHENY RD,,,r
+missing_in_link_to_paths,3638,1,0,0,,LIBERTY AVE,,,r
+missing_in_link_to_paths,3643,1,0,0,,LEECHBURG RD,,,r
+missing_in_link_to_paths,3682,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,3683,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,3684,1,0,0,,STEUBENVILLE PKWY,,,r
+missing_in_link_to_paths,3699,1,0,0,,WABASH TUNL,,,r
+missing_in_link_to_paths,3708,1,0,0,,PITTSBURGH ST,,,r
+missing_in_link_to_paths,3709,1,0,0,,,,,r
+missing_in_link_to_paths,3710,1,0,0,,PITTSBURGH ST,,,r
+missing_in_link_to_paths,3730,1,0,0,,,,,r
+missing_in_link_to_paths,3759,1,0,0,,,,,r
+missing_in_link_to_paths,3769,1,0,0,,,,,r
+missing_in_link_to_paths,3788,1,0,0,,WARRENDALE BAYNE RD,,,r
+missing_in_link_to_paths,3790,1,0,0,,BEECHWOOD BLVD,,,r
+missing_in_link_to_paths,3814,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,3815,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,3821,1,0,0,,SEVENTH AVE,,,r
+missing_in_link_to_paths,3834,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,3836,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,3837,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,3842,1,0,0,,BURGETTSTOWN RD,,,r
+missing_in_link_to_paths,3857,1,0,0,,WASHINGTON PKWY,,,r
+missing_in_link_to_paths,3861,1,0,0,,ALLEGHENY AVE,,,r
+missing_in_link_to_paths,3863,1,0,0,,REEDSDALE ST,,,r
+missing_in_link_to_paths,3887,1,0,0,,ALLEGHENY AVE,,,r
+missing_in_link_to_paths,3920,1,0,0,,,,,r
+missing_in_link_to_paths,3995,1,0,0,,NOBLESTOWN INT/RP H RD,,,r
+missing_in_link_to_paths,4004,1,0,0,,ELEVENTH ST,,,r
+missing_in_link_to_paths,4005,1,0,0,,,,,r
+missing_in_link_to_paths,4018,1,0,0,,FREY RD,,,r
+missing_in_link_to_paths,4022,1,0,0,,,,,r
+missing_in_link_to_paths,4030,1,0,0,,,,,r
+missing_in_link_to_paths,4042,1,0,0,,,,,r
+missing_in_link_to_paths,4106,1,0,0,,LACOCK ST,,,r
+missing_in_link_to_paths,4116,1,0,0,,MCKEE RD,,,r
+missing_in_link_to_paths,4132,1,0,0,,RIVER RD,,,r
+missing_in_link_to_paths,4188,1,0,0,,,,,r
+missing_in_link_to_paths,4189,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,4190,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,4207,1,0,0,,,,,r
+missing_in_link_to_paths,4217,1,0,0,,24TH ST,,,r
+missing_in_link_to_paths,4218,1,0,0,,24TH ST,,,r
+missing_in_link_to_paths,4237,1,0,0,,RAVINE ST,OCONNELL BLVD,,r
+missing_in_link_to_paths,4247,1,0,0,,BUSINESS 376,EWING INT/RAMP B RD,HOOKSTOWN GRADE RD,r
+missing_in_link_to_paths,4259,1,0,0,,BEAVER GRADE RD,,,r
+missing_in_link_to_paths,4260,1,0,0,,BUSINESS 376,RAMP F RD,,r
+missing_in_link_to_paths,4261,1,0,0,,,,,r
+missing_in_link_to_paths,4277,1,0,0,,GENERAL ROBINSON ST,,,r
+missing_in_link_to_paths,4281,1,0,0,,MCKEE RD,,,r
+missing_in_link_to_paths,4324,1,0,0,,LITTLE DEER CREEK RD,,,r
+missing_in_link_to_paths,4351,1,0,0,,CLINTON RD,,,r
+missing_in_link_to_paths,4352,1,0,0,,THORN HILL RD,,,r
+missing_in_link_to_paths,4353,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,4354,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,4355,1,0,0,,TONY DORSETT DR,,,r
+missing_in_link_to_paths,4361,1,0,0,,,,,r
+missing_in_link_to_paths,4364,1,0,0,,SR 65 SB TO REEDSDALE ST,REEDSDALE ST,,r
+missing_in_link_to_paths,4369,1,0,0,,,,,r
+missing_in_link_to_paths,4370,1,0,0,,SEVENTH AVE,,,r
+missing_in_link_to_paths,4371,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,4376,1,0,0,,FORT PITT BLVD,,,r
+missing_in_link_to_paths,4377,1,0,0,,WASHINGTON BLVD,,,r
+missing_in_link_to_paths,4389,1,0,0,,GRANT ST,,,r
+missing_in_link_to_paths,4395,1,0,0,,RAMP 10 RD,,,r
+missing_in_link_to_paths,4412,1,0,0,,MIDDLE RD,,,r
+missing_in_link_to_paths,4450,1,0,0,,MCCLAREN RD,,,r
+missing_in_link_to_paths,4452,1,0,0,,BUSINESS 376,,,r
+missing_in_link_to_paths,4460,1,0,0,,RAMP L RD,RAMP K RD,,r
+missing_in_link_to_paths,4502,1,0,0,,GREENDALE AVE,,,r
+missing_in_link_to_paths,4509,1,0,0,,FONTELLA ST,,,r
+missing_in_link_to_paths,4510,1,0,0,,RAMP TO REEDSDALE ST,,,r
+missing_in_link_to_paths,4511,1,0,0,,EWING INT/RAMP C RD,RESURRECTION RD,HOOKSTOWN GRADE RD,r
+missing_in_link_to_paths,4515,1,0,0,,UNITY CENTER RD,,,r
+missing_in_link_to_paths,4518,1,0,0,,WEST CARSON ST,,,r
+missing_in_link_to_paths,4520,1,0,0,,WABASH TUNL,,,r
+missing_in_link_to_paths,4556,1,0,0,,FLAUGHRTY RUN INT/RP K RD,,,r
+missing_in_link_to_paths,4557,1,0,0,,FLAUGHRTY RUN INT/RP L RD,,,r
+missing_in_link_to_paths,4656,1,0,0,,SOUTHERN BLWY,,,r
+missing_in_link_to_paths,4664,1,0,0,,,,,r
+missing_in_link_to_paths,4668,1,0,0,,PERRY HWY,,,r
+missing_in_link_to_paths,4670,1,0,0,,MAINLINE TPKE,,,r
+missing_in_link_to_paths,4677,1,0,0,,JOSEPHINE ST,,,r
+missing_in_link_to_paths,4723,1,0,0,,ELEVENTH ST,,,r
+missing_in_link_to_paths,4758,1,0,0,,REEDSDALE ST,,,r
+missing_in_link_to_paths,4774,1,0,0,,RAMP A RD,,,r
+missing_in_link_to_paths,4775,1,0,0,,FORBES AVE,,,r
+missing_in_link_to_paths,4786,1,0,0,,,,,r
+missing_in_link_to_paths,4838,1,0,0,,TENTH ST BYP,,,r
+missing_in_link_to_paths,4868,1,0,0,,MOON-CLINTON RD,,,r
+missing_in_link_to_paths,4871,1,0,0,,ST CLAIR AVE,,,r
+missing_in_link_to_paths,4876,1,0,0,,,,,r
+missing_in_link_to_paths,4877,1,0,0,,PITTSBURGH ST,,,r
+missing_in_link_to_paths,4878,1,0,0,,,,,r
+missing_in_link_to_paths,4879,1,0,0,,SOUTH CAMPUS DR,,,r
+missing_in_link_to_paths,4880,1,0,0,,,,,r
+missing_in_link_to_paths,4886,1,0,0,,STOCKTON AVE,,,r
+missing_in_link_to_paths,4902,1,0,0,,NORTHERN PKWY,,,r
+missing_in_link_to_paths,4903,1,0,0,,,,,r
+missing_in_link_to_paths,4904,1,0,0,,MONROEVILLE RD,,,r
+missing_in_link_to_paths,4905,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,4906,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,4916,1,0,0,,SOUTH 3RD AVE,,,r
+missing_in_link_to_paths,4918,1,0,0,,,,,r
+missing_in_link_to_paths,4944,1,0,0,,,,,r
+missing_in_link_to_paths,4976,1,0,0,,,,,r
+missing_in_link_to_paths,4977,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,4978,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,4979,1,0,0,,,,,r
+missing_in_link_to_paths,4980,1,0,0,,SAXONBURG RD,,,r
+missing_in_link_to_paths,4981,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,4989,1,0,0,,,,,r
+missing_in_link_to_paths,5023,1,0,0,,RAMP 260 RD,,,r
+missing_in_link_to_paths,5024,1,0,0,,BEAVER AVE,,,r
+missing_in_link_to_paths,5060,1,0,0,,SOOSE RD,,,r
+missing_in_link_to_paths,5067,1,0,0,,WASHINGTON PKWY,,,r
+missing_in_link_to_paths,5078,1,0,0,,SOOSE RD,,,r
+missing_in_link_to_paths,5101,1,0,0,,EAST HARDIES RD,,,r
+missing_in_link_to_paths,5108,1,0,0,,LINCOLN WAY,,,r
+missing_in_link_to_paths,5109,1,0,0,,RIVER HILL RD,,,r
+missing_in_link_to_paths,5110,1,0,0,,,,,r
+missing_in_link_to_paths,5127,1,0,0,,BURGETTSTOWN RD,,,r
+missing_in_link_to_paths,5128,1,0,0,,SOUTHERN BLWY,,,r
+missing_in_link_to_paths,5140,1,0,0,,,,,r
+missing_in_link_to_paths,5141,1,0,0,,,,,r
+missing_in_link_to_paths,5152,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,5153,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,5154,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,5155,1,0,0,,,,,r
+missing_in_link_to_paths,5181,1,0,0,,CENTER RD,,,r
+missing_in_link_to_paths,5197,1,0,0,,,,,r
+missing_in_link_to_paths,5198,1,0,0,,SEVENTH AVE,,,r
+missing_in_link_to_paths,5199,1,0,0,,SEVENTH AVE,,,r
+missing_in_link_to_paths,5211,1,0,0,,SAXONBURG RD,,,r
+missing_in_link_to_paths,5231,1,0,0,,BL OF THE ALLIES,,,r
+missing_in_link_to_paths,5247,1,0,0,,TAWNEY RUN RD,,,r
+missing_in_link_to_paths,5248,1,0,0,,PITTSBURGH MILLS BLVD,RAMP D RD,,r
+missing_in_link_to_paths,5249,1,0,0,,,,,r
+missing_in_link_to_paths,5253,1,0,0,,BATTLE RIDGE RD,,,r
+missing_in_link_to_paths,5255,1,0,0,,BOGGS RD,,,r
+missing_in_link_to_paths,5263,1,0,0,,,,,r
+missing_in_link_to_paths,5267,1,0,0,,,,,r
+missing_in_link_to_paths,5268,1,0,0,,SR 0022 SH,,,r
+missing_in_link_to_paths,5269,1,0,0,,,,,r
+missing_in_link_to_paths,5279,1,0,0,,FRANKSTOWN AVE,,,r
+missing_in_link_to_paths,5326,1,0,0,,GREENSBURG PKWY,,,r
+missing_in_link_to_paths,5335,1,0,0,,ALPHA DR,BETA DR,,r
+missing_in_link_to_paths,5347,1,0,0,,DEWALT DR,NEWPORT DR,,r
+missing_in_link_to_paths,5363,1,0,0,,SANTIAGO RD,,,r
+missing_in_link_to_paths,5364,1,0,0,,BOGGS RD,,,r
+missing_in_link_to_paths,5365,1,0,0,,SANTIAGO RD,,,r
+missing_in_link_to_paths,5390,1,0,0,,AIRPORT BLVD,,,r
+missing_in_link_to_paths,5391,1,0,0,,,,,r
+missing_in_link_to_paths,5395,1,0,0,,MOON-CLINTON RD,,,r
+missing_in_link_to_paths,5428,1,0,0,,RAMP F RD/TO SR 0028 SH,,,r
+missing_in_link_to_paths,5429,1,0,0,,RAMP RD/TO RAMP RD 0750,,,r
+missing_in_link_to_paths,5438,1,0,0,,OLD FRANKSTOWN RD,,,r
+missing_in_link_to_paths,5439,1,0,0,,OLD FRANKSTOWN RD,,,r
+missing_in_link_to_paths,5442,1,0,0,,MCMURRAY RD,,,r
+missing_in_link_to_paths,5468,1,0,0,,CASINO DR,,,r
+missing_in_link_to_paths,5502,1,0,0,,BL OF THE ALLIES RD,,,r
+missing_in_link_to_paths,5593,1,0,0,,,,,r
+missing_in_link_to_paths,5648,1,0,0,,JOSEPHINE ST,,,r
+missing_in_link_to_paths,5656,1,0,0,,BEACON RD,,,r
+missing_in_link_to_paths,5671,1,0,0,,,,,r
+missing_in_link_to_paths,5677,1,0,0,,BEECHWOOD BLVD,,,r
+missing_in_link_to_paths,5688,1,0,0,,FORT PITT BLVD,,,r
+missing_in_link_to_paths,5731,1,0,0,,,,,r
+missing_in_link_to_paths,5769,1,0,0,,,,,r
+missing_in_link_to_paths,5782,1,0,0,,,,,r
+missing_in_link_to_paths,5784,1,0,0,,BURTNER RD,,,r
+missing_in_link_to_paths,5795,1,0,0,,BL OF THE ALLIES,OAKLAND INT/RAMP U RD,,r
+missing_in_link_to_paths,5796,1,0,0,,ARGONNE DR,,,r
+missing_in_link_to_paths,5797,1,0,0,,ARGONNE DR,,,r
+missing_in_link_to_paths,5798,1,0,0,,BRODHEAD RD,,,r
+missing_in_link_to_paths,5804,1,0,0,,,,,r
+missing_in_link_to_paths,5815,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,5816,1,0,0,,NORTH SHORE DR,,,r
+missing_in_link_to_paths,5817,1,0,0,,CASINO DR,,,r
+missing_in_link_to_paths,5844,1,0,0,,GOLDEN MILE HWY,,,r
+missing_in_link_to_paths,5845,1,0,0,,OLD FRANKSTOWN RD,,,r
+missing_in_link_to_paths,5846,1,0,0,,GOLDEN MILE HWY,,,r
+missing_in_link_to_paths,5895,1,0,0,,BUTLER LOGAN RD,,,r
+missing_in_link_to_paths,5896,1,0,0,,BUTLER LOGAN RD,,,r
+missing_in_link_to_paths,5921,1,0,0,,BEAVER ST,MEADOW LN,BEAVER RD,r
+missing_in_link_to_paths,5926,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,5930,1,0,0,,,,,r
+missing_in_link_to_paths,5934,1,0,0,,,,,r
+missing_in_link_to_paths,5945,1,0,0,,OAKLAND INT/RAMP V RD,,,r
+missing_in_link_to_paths,5960,1,0,0,,SANTIAGO RD,,,r
+missing_in_link_to_paths,5970,1,0,0,,EAST HARDIES RD,,,r
+missing_in_link_to_paths,6020,1,0,0,,HANKEY FARMS INT/RP T RD,,,r
+missing_in_link_to_paths,6033,1,0,0,,BEACON RD,,,r
+missing_in_link_to_paths,6037,1,0,0,,,,,r
+missing_in_link_to_paths,6044,1,0,0,,,,,r
+missing_in_link_to_paths,6066,1,0,0,,MONROEVILLE RD,,,r
+missing_in_link_to_paths,6078,1,0,0,,,,,r
+missing_in_link_to_paths,6088,1,0,0,,ARGONNE DR,,,r
+missing_in_link_to_paths,6089,1,0,0,,BROADVIEW BLVD,,,r
+missing_in_link_to_paths,6090,1,0,0,,FREEPORT RD,,,r
+missing_in_link_to_paths,6095,1,0,0,,STANWIX ST,,,r
+missing_in_link_to_paths,6100,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,6101,1,0,0,,LINCOLN HWY,,,r
+missing_in_link_to_paths,6102,1,0,0,,CROSSTOWN BL INT/RP B RD,,,r
+missing_in_link_to_paths,6103,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,6121,1,0,0,,WASHINGTON BLVD,,,r
+missing_in_link_to_paths,6148,1,0,0,,ST CLAIR AVE,,,r
+missing_in_link_to_paths,6151,1,0,0,,,,,r
+missing_in_link_to_paths,6155,1,0,0,,BEDFORD AVE,,,r
+missing_in_link_to_paths,6156,1,0,0,,BEDFORD AVE,,,r
+missing_in_link_to_paths,6189,1,0,0,,AIKEN AVE,,,r
+missing_in_link_to_paths,6190,1,0,0,,AIKEN AVE,,,r
+missing_in_link_to_paths,6191,1,0,0,,COLUMBO ST,,,r
+missing_in_link_to_paths,6228,1,0,0,,HAMILTON AVE,,,r
+missing_in_link_to_paths,6239,1,0,0,,AIRBRAKE AVE,,,r
+missing_in_link_to_paths,6245,1,0,0,,LINDEN AVE,,,r
+missing_in_link_to_paths,6252,1,0,0,,BEACON ST,,,r
+missing_in_link_to_paths,6253,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,6257,1,0,0,,GREENWOOD ST,,,r
+missing_in_link_to_paths,6266,1,0,0,,SOUTH TRENTON AVE,,,r
+missing_in_link_to_paths,6315,1,0,0,,JOSEPHINE ST,,,r
+missing_in_link_to_paths,6331,1,0,0,,TAFT AVE,,,r
+missing_in_link_to_paths,6350,1,0,0,,CENTER AVE,,,r
+missing_in_link_to_paths,6368,1,0,0,,CENTER AVE,CORNELL AVE,,r
+missing_in_link_to_paths,6372,1,0,0,,JACKS RUN RD,CONNIE DR,,r
+missing_in_link_to_paths,6378,1,0,0,,MOUNT TROY RD,PITTVIEW AVE,RIALTO ST,r
+missing_in_link_to_paths,6384,1,0,0,,,,,r
+missing_in_link_to_paths,6404,1,0,0,,,,,r
+missing_in_link_to_paths,6416,1,0,0,,OLD FREEPORT RD,,,r
+missing_in_link_to_paths,6417,1,0,0,,,,,r
+missing_in_link_to_paths,6419,1,0,0,,SIXTH AVE,,,r
+missing_in_link_to_paths,6421,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6422,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6423,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6426,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6427,1,0,0,,SEVENTH AVE,,,r
+missing_in_link_to_paths,6428,1,0,0,,PENN ST,,,r
+missing_in_link_to_paths,6442,1,0,0,,RAINBOW ST,,,r
+missing_in_link_to_paths,6476,1,0,0,,MARKET ST,,,r
+missing_in_link_to_paths,6479,1,0,0,,THIRD AVE,,,r
+missing_in_link_to_paths,6499,1,0,0,,THIRD AVE,,,r
+missing_in_link_to_paths,6500,1,0,0,,BL OF THE ALLIES RD,,,r
+missing_in_link_to_paths,6507,1,0,0,,BEDFORD AVE,,,r
+missing_in_link_to_paths,6508,1,0,0,,BEDFORD AVE,,,r
+missing_in_link_to_paths,6535,1,0,0,,AIKEN AVE,,,r
+missing_in_link_to_paths,6536,1,0,0,,AIKEN AVE,,,r
+missing_in_link_to_paths,6537,1,0,0,,COLUMBO ST,,,r
+missing_in_link_to_paths,6542,1,0,0,,SOUTH BEATTY ST,,,r
+missing_in_link_to_paths,6543,1,0,0,,EUCLID AVE,BAUM BLVD,,r
+missing_in_link_to_paths,6569,1,0,0,,HAMILTON AVE,,,r
+missing_in_link_to_paths,6580,1,0,0,,AIRBRAKE AVE,,,r
+missing_in_link_to_paths,6584,1,0,0,,LINDEN AVE,,,r
+missing_in_link_to_paths,6592,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,6603,1,0,0,,SOUTH TRENTON AVE,,,r
+missing_in_link_to_paths,6649,1,0,0,,JOSEPHINE ST,,,r
+missing_in_link_to_paths,6665,1,0,0,,TAFT AVE,,,r
+missing_in_link_to_paths,6684,1,0,0,,CENTER AVE,,,r
+missing_in_link_to_paths,6702,1,0,0,,CENTER AVE,CORNELL AVE,,r
+missing_in_link_to_paths,6706,1,0,0,,JACKS RUN RD,CONNIE DR,,r
+missing_in_link_to_paths,6712,1,0,0,,MOUNT TROY RD,PITTVIEW AVE,RIALTO ST,r
+missing_in_link_to_paths,6718,1,0,0,,,,,r
+missing_in_link_to_paths,6737,1,0,0,,,,,r
+missing_in_link_to_paths,6750,1,0,0,,,,,r
+missing_in_link_to_paths,6752,1,0,0,,SIXTH AVE,,,r
+missing_in_link_to_paths,6754,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6755,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6756,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6759,1,0,0,,TENTH AVE,,,r
+missing_in_link_to_paths,6760,1,0,0,,PENN ST,,,r
+missing_in_link_to_paths,6773,1,0,0,,RAINBOW ST,,,r
+missing_in_link_to_paths,6786,1,0,0,,MARKET ST,,,r
+missing_in_link_to_paths,6793,1,0,0,,WOOD ST,,,r
+missing_in_link_to_paths,6807,1,0,0,,NEVILLE AVENUE RAMP,NEVILLE STREET RAMP,,r
+missing_in_link_to_paths,6809,1,0,0,,EAST BUSWY,,,r
+missing_in_link_to_paths,6810,1,0,0,,,,,r
+missing_in_link_to_paths,6811,1,0,0,,,,,r
+missing_in_link_to_paths,6812,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6813,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6814,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6815,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6816,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6817,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6818,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6819,1,0,0,,WOOD ST,,,r
+missing_in_link_to_paths,6820,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6821,1,0,0,,SMITHFIELD ST,,,r
+missing_in_link_to_paths,6822,1,0,0,,WOOD ST,,,r
+missing_in_link_to_paths,6823,1,0,0,,WOOD ST,,,r
+missing_in_link_to_paths,6824,1,0,0,,SMITHFIELD ST BRG,,,r
+missing_in_link_to_paths,6825,1,0,0,,SMITHFIELD ST BRG,,,r
+missing_in_link_to_paths,6826,1,0,0,,WOOD ST,,,r
+missing_in_link_to_paths,6827,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6828,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6829,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6830,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6831,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6833,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6834,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6835,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6836,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6837,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6838,1,0,0,,FIFTH AVE,,,r
+missing_in_link_to_paths,6839,1,0,0,,NEVILLE AVENUE RAMP,NEVILLE STREET RAMP,,r
+missing_in_link_to_paths,6841,1,0,0,,EAST BUSWY,,,r
+missing_in_link_to_paths,6842,1,0,0,,,,,r
+missing_in_link_to_paths,6843,1,0,0,,,,,r
+missing_in_link_to_paths,8259,1,0,0,,,,,O
+missing_in_link_to_paths,8304,1,0,0,,,,,O
+missing_in_link_to_paths,8368,1,0,0,,,,,O
+missing_in_link_to_paths,8534,1,0,0,,,,,O
+missing_in_link_to_paths,8542,1,0,0,,,,,O
+missing_in_link_to_paths,8551,1,0,0,,,,,O
+missing_in_link_to_paths,8552,1,0,0,,,,,O
+missing_in_link_to_paths,8554,1,0,0,,,,,O
+missing_in_link_to_paths,8556,1,0,0,,,,,O
+missing_in_link_to_paths,8564,1,0,0,,,,,O
+missing_in_link_to_paths,8570,1,0,0,,,,,O
+missing_in_link_to_paths,8573,1,0,0,,,,,O
+missing_in_link_to_paths,8580,1,0,0,,,,,O
+missing_in_link_to_paths,8585,1,0,0,,,,,O
+missing_in_link_to_paths,8586,1,0,0,,,,,O
+missing_in_link_to_paths,8588,1,0,0,,,,,O
+missing_in_link_to_paths,8595,1,0,0,,,,,O
+missing_in_link_to_paths,8596,1,0,0,,,,,O
+missing_in_link_to_paths,8604,1,0,0,,,,,O
+missing_in_link_to_paths,8605,1,0,0,,,,,O
+missing_in_link_to_paths,8606,1,0,0,,,,,O
+missing_in_link_to_paths,8607,1,0,0,,,,,O
+missing_in_link_to_paths,8608,1,0,0,,,,,O
+missing_in_link_to_paths,8609,1,0,0,,,,,O
+missing_in_link_to_paths,8610,1,0,0,,,,,O
+missing_in_link_to_paths,8611,1,0,0,,,,,O
+missing_in_link_to_paths,8612,1,0,0,,,,,O
+missing_in_link_to_paths,8613,1,0,0,,,,,O
+missing_in_link_to_paths,8614,1,0,0,,,,,O
+missing_in_link_to_paths,9040,1,0,0,,,,,D
+missing_in_link_to_paths,9142,1,0,0,,,,,D
+missing_in_link_to_paths,9149,1,0,0,,,,,D
+missing_in_link_to_paths,9194,1,0,0,,,,,D
+missing_in_link_to_paths,9429,1,0,0,,,,,D
+missing_in_link_to_paths,9469,1,0,0,,,,,D
+missing_in_link_to_paths,9472,1,0,0,,,,,D
+missing_in_link_to_paths,9517,1,0,0,,,,,D
+missing_in_link_to_paths,9543,1,0,0,,,,,D
+missing_in_link_to_paths,9555,1,0,0,,,,,D
+missing_in_link_to_paths,9556,1,0,0,,,,,D
+missing_in_link_to_paths,9564,1,0,0,,,,,D
+missing_in_link_to_paths,9572,1,0,0,,,,,D
+missing_in_link_to_paths,9575,1,0,0,,,,,D
+missing_in_link_to_paths,9582,1,0,0,,,,,D
+missing_in_link_to_paths,9584,1,0,0,,,,,D
+missing_in_link_to_paths,9585,1,0,0,,,,,D
+missing_in_link_to_paths,9586,1,0,0,,,,,D
+missing_in_link_to_paths,9591,1,0,0,,,,,D
+missing_in_link_to_paths,9593,1,0,0,,,,,D
+missing_in_link_to_paths,9594,1,0,0,,,,,D
+missing_in_link_to_paths,9605,1,0,0,,,,,D
+missing_in_link_to_paths,9606,1,0,0,,,,,D
+missing_in_link_to_paths,9607,1,0,0,,,,,D
+missing_in_link_to_paths,9608,1,0,0,,,,,D
+missing_in_link_to_paths,9609,1,0,0,,,,,D
+missing_in_link_to_paths,9610,1,0,0,,,,,D
+missing_in_link_to_paths,9611,1,0,0,,,,,D
+missing_in_link_to_paths,9612,1,0,0,,,,,D
+missing_in_link_to_paths,9613,1,0,0,,,,,D
+missing_in_link_to_paths,9614,1,0,0,,,,,D
+missing_in_link_to_paths,9615,1,0,0,,,,,D
+missing_in_link_to_paths,9622,1,0,0,,MULHATTON ST,,,r
+missing_in_link_to_paths,9624,1,0,0,,DARLINGTON RD,,,r
+missing_in_link_to_paths,9625,1,0,0,,BEACON ST,,,r
+missing_in_link_to_paths,9627,1,0,0,,BEACON ST,,,r
+missing_in_link_to_paths,9628,1,0,0,,BEACON ST,,,r
+missing_in_link_to_paths,9636,1,0,0,,DARLINGTON RD,,,r
+missing_in_link_to_paths,9637,1,0,0,,MULHATTON ST,,,r
+missing_in_link_to_paths,9683,1,0,0,,WOODLAWN ST,,,r
+missing_in_link_to_paths,9720,1,0,0,,NOBLESTOWN RD,,,r
+missing_in_link_to_paths,9725,1,0,0,,ONEIDA ST,,,r
+missing_in_link_to_paths,9726,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9727,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9732,1,0,0,,LABELLE ST,,,r
+missing_in_link_to_paths,9733,1,0,0,,LABELLE ST,,,r
+missing_in_link_to_paths,9734,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9735,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9736,1,0,0,,MERRIMAC ST,,,r
+missing_in_link_to_paths,9738,1,0,0,,MERRIMAC ST,,,r
+missing_in_link_to_paths,9740,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9741,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9742,1,0,0,,WOODRUFF ST,,,r
+missing_in_link_to_paths,9743,1,0,0,,WOODRUFF ST,,,r
+missing_in_link_to_paths,9744,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9745,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9746,1,0,0,,SHILOH ST,,,r
+missing_in_link_to_paths,9747,1,0,0,,SHILOH ST,,,r
+missing_in_link_to_paths,9748,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9749,1,0,0,,VIRGINIA AVE,,,r
+missing_in_link_to_paths,9750,1,0,0,,SOUTHERN AVE,,,r
+missing_in_link_to_paths,9751,1,0,0,,SOUTHERN AVE,,,r
+missing_in_link_to_paths,9752,1,0,0,,SOUTHERN AVE,,,r
+missing_in_link_to_paths,9753,1,0,0,,SOUTHERN AVE,,,r
+missing_in_link_to_paths,9760,1,0,0,,SUSSEX AVE,QUEENSBORO AVE,WOODBOURNE AVE,r
+missing_in_link_to_paths,9761,1,0,0,,SUSSEX AVE,QUEENSBORO AVE,WOODBOURNE AVE,r
+missing_in_link_to_paths,9774,1,0,0,,WEST CARSON STREET EXT,,,r
+missing_in_link_to_paths,9775,1,0,0,,WEST CARSON STREET EXT,,,r
+missing_in_link_to_paths,9807,1,0,0,,BIGELOW BLVD,,,r
+missing_in_link_to_paths,9815,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,9816,1,0,0,,SMALLMAN ST,,,r
+missing_in_link_to_paths,9821,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,9822,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,9825,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,9826,1,0,0,,REYNOLDS ST,,,r
+missing_in_link_to_paths,9831,1,0,0,,MOSSFIELD ST,,,r
+missing_in_link_to_paths,9832,1,0,0,,MOSSFIELD ST,,,r
+missing_in_link_to_paths,9836,1,0,0,,DAVIS AVE,,,r
+missing_in_link_to_paths,9848,1,0,0,,SHADELAND AVE,,,r
+missing_in_link_to_paths,9849,1,0,0,,SHADELAND AVE,,,r
+missing_in_link_to_paths,9851,1,0,0,,SHADELAND AVE,,,r
+missing_in_link_to_paths,9852,1,0,0,,SUPERIOR AVE,,,r
+missing_in_link_to_paths,9854,1,0,0,,WOODLAND AVE,,,r
+missing_in_link_to_paths,9882,1,0,0,,SPRING ST,,,r
+missing_in_link_to_paths,9884,1,0,0,,SPRING ST,,,r
+missing_in_link_to_paths,9885,1,0,0,,SPRING ST,,,r
+missing_in_link_to_paths,9909,1,0,0,,BAYARD ST,,,r
+missing_in_link_to_paths,9910,1,0,0,,BAYARD ST,,,r
+missing_in_link_to_paths,9934,1,0,0,,O'HARA ST,,,r
+missing_in_link_to_paths,9935,1,0,0,,O'HARA ST,,,r
+missing_in_link_to_paths,9937,1,0,0,,TERRACE ST,,,r
+missing_in_link_to_paths,9972,1,0,0,,BIGELOW ST,KAERCHER ST,,r
+missing_in_link_to_paths,9973,1,0,0,,BIGELOW ST,KAERCHER ST,,r
+missing_in_link_to_paths,10012,1,0,0,,FULLERTON ST,,,r
+missing_in_link_to_paths,10013,1,0,0,,FULLERTON ST,,,r
+missing_in_link_to_paths,10130,1,0,0,,NORTH AVE,,,r
+missing_in_link_to_paths,10131,1,0,0,,NORTH AVE,,,r
+missing_in_link_to_paths,10134,1,0,0,,SUPERIOR AVE,,,r
+missing_in_link_to_paths,10140,1,0,0,,26TH STREET RAMP,,,r
+missing_in_link_to_paths,10141,1,0,0,,26TH STREET RAMP,,,r
+missing_in_link_to_paths,10142,1,0,0,,BIGELOW BLVD,,,r
+missing_in_link_to_paths,10143,1,0,0,,BIGELOW BLVD,,,r
+missing_in_link_to_paths,10144,1,0,0,,EAST BUSWY,,,r
+missing_in_link_to_paths,10145,1,0,0,,EAST BUSWY,,,r
+missing_in_link_to_paths,10150,1,0,0,,,,,r
+missing_in_link_to_paths,10151,1,0,0,,,,,r
+missing_in_link_to_paths,10156,1,0,0,,EAST CARSON ST,,,r
+missing_in_link_to_paths,10157,1,0,0,,EAST CARSON ST,,,r
+missing_in_link_to_paths,10162,1,0,0,,,,,r
+missing_in_link_to_paths,10163,1,0,0,,,,,r
+missing_in_link_to_paths,10174,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10175,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10176,1,0,0,,ROBERTS ST,,,r
+missing_in_link_to_paths,10177,1,0,0,,ROBERTS ST,,,r
+missing_in_link_to_paths,10178,1,0,0,,ROBERTS ST,,,r
+missing_in_link_to_paths,10179,1,0,0,,ROBERTS ST,,,r
+missing_in_link_to_paths,10180,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10181,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10189,1,0,0,,KIRKPATRICK ST,,,r
+missing_in_link_to_paths,10194,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10195,1,0,0,,WEBSTER AVE,,,r
+missing_in_link_to_paths,10220,1,0,0,,,,,O
+missing_in_link_to_paths,10221,1,0,0,,,,,D
+missing_in_link_to_paths,10225,1,0,0,,BATES ST,,,r

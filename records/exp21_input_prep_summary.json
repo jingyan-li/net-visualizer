@@ -1,0 +1,14 @@
+{
+  "source_network": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/gis/links_ver2.shp",
+  "source_path_table_csv": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/original_output/path_table.csv",
+  "source_path_table_buffer": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/original_output/path_table_buffer",
+  "source_ratio_dir": "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/Pittsburgh_Network/Pittsburgh_DODE/results/exp21/ratio_bias_wape_analysis",
+  "default_metric_mode": "car_tt",
+  "path_count": 187878,
+  "metric_rows": 1903,
+  "files_written": [
+    "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/inputfile/network.gpkg",
+    "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/inputfile/link_metrics.csv",
+    "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/inputfile/path_table.csv"
+  ]
+}
