@@ -1,6 +1,6 @@
 import { GeoJsonLayer } from "@deck.gl/layers";
 import { PathStyleExtension } from "@deck.gl/extensions";
-import { getColorForValue, type FieldStats } from "../data/metrics";
+import { getColorForValue, isOutlierValue, type FieldStats } from "../data/metrics";
 import { getDirectionalLineOffset } from "./linkOffset";
 
 function coerceBoolean(value: unknown): boolean {
@@ -32,6 +32,10 @@ interface CreateLinkLayerOptions {
   lineOffsetPixels: number;
   selectionActive: boolean;
   onClick: (linkId: string) => void;
+}
+
+function hasFeatureData(feature: GeoJSON.Feature, maskField?: string): boolean {
+  return maskField ? coerceBoolean(feature.properties?.[maskField]) : true;
 }
 
 function buildLayer(
@@ -96,11 +100,12 @@ export function createLinkLayer({
   selectionActive,
   onClick
 }: CreateLinkLayerOptions) {
-  const validFeatures = data.features.filter((feature) =>
-    maskField ? coerceBoolean(feature.properties?.[maskField]) : true
-  );
+  const validFeatures = data.features.filter((feature) => hasFeatureData(feature, maskField));
   const invalidFeatures = data.features.filter((feature) =>
     maskField ? !coerceBoolean(feature.properties?.[maskField]) : false
+  );
+  const outlierFeatures = validFeatures.filter((feature) =>
+    isOutlierValue(feature.properties?.[colorBy], stats, hasFeatureData(feature, maskField))
   );
 
   const layers = [];
@@ -119,6 +124,25 @@ export function createLinkLayer({
         onClick,
         "invalid"
       )
+    );
+  }
+
+  if (outlierFeatures.length > 0) {
+    layers.push(
+      new GeoJsonLayer({
+        id: "links-outlier-halo",
+        data: { type: "FeatureCollection", features: outlierFeatures },
+        pickable: false,
+        stroked: true,
+        filled: false,
+        lineWidthUnits: "pixels",
+        lineWidthScale: 1,
+        lineWidthMinPixels: Math.max(6, lineWidthScale + 3),
+        getLineWidth: () => lineWidthScale + 3,
+        extensions: [new PathStyleExtension({ offset: true })],
+        getOffset: (feature: GeoJSON.Feature) => getDirectionalLineOffset(feature, lineOffsetPixels),
+        getLineColor: () => [255, 234, 0, selectionActive ? 170 : 235]
+      })
     );
   }
 

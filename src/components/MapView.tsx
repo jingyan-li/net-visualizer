@@ -30,6 +30,7 @@ interface MapViewProps {
   lineOffsetPixels: number;
   odPointSize: number;
   odLabelSize: number;
+  pathOpacityPercent: number;
   showOdLabels: boolean;
   onSelectLink: (linkId: string) => void;
   onSelectPath: (pathId: string) => void;
@@ -48,6 +49,7 @@ export function MapView({
   lineOffsetPixels,
   odPointSize,
   odLabelSize,
+  pathOpacityPercent,
   showOdLabels,
   odPointsGeojson,
   onSelectLink,
@@ -74,7 +76,9 @@ export function MapView({
     }
 
     if (highlightedPaths.features.length > 0) {
-      result.push(createHighlightedPathLayer(highlightedPaths, selectedPathId, onSelectPath));
+      result.push(
+        createHighlightedPathLayer(highlightedPaths, selectedPathId, pathOpacityPercent, onSelectPath)
+      );
     }
 
     if (odPointsGeojson) {
@@ -92,6 +96,7 @@ export function MapView({
     odPointSize,
     odLabelSize,
     odPointsGeojson,
+    pathOpacityPercent,
     showOdLabels,
     onSelectLink,
     onSelectPath,

@@ -19,6 +19,7 @@ interface AppState {
   lineOffsetPixels: number;
   odPointSize: number;
   odLabelSize: number;
+  pathOpacityPercent: number;
   pathCountThreshold: number | null;
   showCoveredLinksOnly: boolean;
   hideUnobservedLinks: boolean;
@@ -35,6 +36,7 @@ interface AppState {
   setLineOffsetPixels: (value: number) => void;
   setOdPointSize: (value: number) => void;
   setOdLabelSize: (value: number) => void;
+  setPathOpacityPercent: (value: number) => void;
   setPathCountThreshold: (value: number | null) => void;
   setShowCoveredLinksOnly: (value: boolean) => void;
   setHideUnobservedLinks: (value: boolean) => void;
@@ -65,6 +67,7 @@ export const useAppStore = create<AppState>((set) => ({
   lineOffsetPixels: 2.5,
   odPointSize: 3.5,
   odLabelSize: 12,
+  pathOpacityPercent: 10,
   pathCountThreshold: null,
   showCoveredLinksOnly: false,
   hideUnobservedLinks: false,
@@ -98,6 +101,7 @@ export const useAppStore = create<AppState>((set) => ({
   setLineOffsetPixels: (value) => set(() => ({ lineOffsetPixels: value })),
   setOdPointSize: (value) => set(() => ({ odPointSize: value })),
   setOdLabelSize: (value) => set(() => ({ odLabelSize: value })),
+  setPathOpacityPercent: (value) => set(() => ({ pathOpacityPercent: value })),
   setPathCountThreshold: (value) => set(() => ({ pathCountThreshold: value })),
   setShowCoveredLinksOnly: (value) => set(() => ({ showCoveredLinksOnly: value })),
   setHideUnobservedLinks: (value) => set(() => ({ hideUnobservedLinks: value })),

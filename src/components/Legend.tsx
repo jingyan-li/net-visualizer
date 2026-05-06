@@ -32,7 +32,11 @@ export function Legend({ field, stats }: LegendProps) {
         <span>{labels ? labels[1].toFixed(3) : "n/a"}</span>
         <span>{labels ? labels[2].toFixed(3) : "n/a"}</span>
       </div>
-      {stats?.clipped ? <div className="legend-note">Outliers clipped to the top/bottom color band</div> : null}
+      {stats?.clipped ? (
+        <div className="legend-note">
+          {`IQR outliers clipped; map adds yellow highlight${stats.hasLowerOutliers ? " (low)" : ""}${stats.hasUpperOutliers ? stats.hasLowerOutliers ? " and high" : " (high)" : ""}.`}
+        </div>
+      ) : null}
     </div>
   );
 }

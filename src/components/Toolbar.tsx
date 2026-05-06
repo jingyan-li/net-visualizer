@@ -18,6 +18,7 @@ interface ToolbarProps {
   lineOffsetPixels: number;
   odPointSize: number;
   odLabelSize: number;
+  pathOpacityPercent: number;
   showCoveredLinksOnly: boolean;
   hideUnobservedLinks: boolean;
   showOdPoints: boolean;
@@ -33,6 +34,7 @@ interface ToolbarProps {
   onLineOffsetPixelsChange: (value: number) => void;
   onOdPointSizeChange: (value: number) => void;
   onOdLabelSizeChange: (value: number) => void;
+  onPathOpacityPercentChange: (value: number) => void;
   onShowCoveredLinksOnlyChange: (value: boolean) => void;
   onHideUnobservedLinksChange: (value: boolean) => void;
   onShowOdPointsChange: (value: boolean) => void;
@@ -58,6 +60,7 @@ export function Toolbar({
   lineOffsetPixels,
   odPointSize,
   odLabelSize,
+  pathOpacityPercent,
   showCoveredLinksOnly,
   hideUnobservedLinks,
   showOdPoints,
@@ -73,6 +76,7 @@ export function Toolbar({
   onLineOffsetPixelsChange,
   onOdPointSizeChange,
   onOdLabelSizeChange,
+  onPathOpacityPercentChange,
   onShowCoveredLinksOnlyChange,
   onHideUnobservedLinksChange,
   onShowOdPointsChange,
@@ -80,6 +84,7 @@ export function Toolbar({
   onClearSelection
 }: ToolbarProps) {
   const measures = colorFileDefinition?.measures ?? [];
+  const intervalDatalistId = `interval-ticks-${selectedColorFileId || "default"}`;
   const selectedIntervalIndex = Math.max(
     0,
     intervals.findIndex((interval) => interval.key === selectedIntervalKey)
@@ -133,20 +138,20 @@ export function Toolbar({
 
       {selectedPeriodMode === "interval" && intervals.length > 0 ? (
         <label className="slider-control">
-          <span>{`Interval: ${intervals[selectedIntervalIndex]?.label ?? "n/a"}`}</span>
+          <span>{`Interval (${intervals[selectedIntervalIndex]?.kind ?? "n/a"}): ${intervals[selectedIntervalIndex]?.label ?? "n/a"}`}</span>
           <input
             type="range"
             min="0"
             max={String(Math.max(0, intervals.length - 1))}
             step="1"
             value={selectedIntervalIndex}
-            list="interval-ticks"
+            list={intervalDatalistId}
             onChange={(event) => {
               const nextInterval = intervals[Number(event.target.value)];
               onIntervalKeyChange(nextInterval?.key ?? null);
             }}
           />
-          <datalist id="interval-ticks">
+          <datalist id={intervalDatalistId}>
             {intervals.map((interval) => (
               <option key={interval.key} value={interval.index} label={interval.id} />
             ))}
@@ -227,6 +232,21 @@ export function Toolbar({
           value={odLabelSize}
           onChange={(event) => onOdLabelSizeChange(Number(event.target.value))}
         />
+      </label>
+
+      <label>
+        <span>Path opacity: {pathOpacityPercent}%</span>
+        <div className="number-control">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="1"
+            value={pathOpacityPercent}
+            onChange={(event) => onPathOpacityPercentChange(Number(event.target.value))}
+          />
+          <span className="number-control-hint">0-100</span>
+        </div>
       </label>
 
       <label className="toggle-control">

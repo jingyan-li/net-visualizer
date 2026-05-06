@@ -141,6 +141,7 @@ export default function App() {
     lineOffsetPixels,
     odPointSize,
     odLabelSize,
+    pathOpacityPercent,
     pathCountThreshold,
     showCoveredLinksOnly,
     hideUnobservedLinks,
@@ -157,6 +158,7 @@ export default function App() {
     setLineOffsetPixels,
     setOdPointSize,
     setOdLabelSize,
+    setPathOpacityPercent,
     setPathCountThreshold,
     setShowCoveredLinksOnly,
     setHideUnobservedLinks,
@@ -272,9 +274,16 @@ export default function App() {
           return;
         }
         setColorFileDefinition(definition);
-        setSelectedMeasureId(definition.defaultMeasureId ?? definition.measures[0]?.id ?? "");
-        setSelectedPeriodMode(definition.defaultPeriodMode ?? "total");
-        setSelectedIntervalKey(definition.defaultIntervalKey ?? definition.intervals?.[0]?.key ?? null);
+        const nextMeasureId = definition.measures.some((item) => item.id === selectedMeasureId)
+          ? selectedMeasureId
+          : definition.defaultMeasureId ?? definition.measures[0]?.id ?? "";
+        const nextPeriodMode = selectedPeriodMode;
+        const nextIntervalKey = definition.intervals.some((item) => item.key === selectedIntervalKey)
+          ? selectedIntervalKey
+          : definition.intervals[0]?.key ?? null;
+        setSelectedMeasureId(nextMeasureId);
+        setSelectedPeriodMode(nextPeriodMode);
+        setSelectedIntervalKey(nextIntervalKey);
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Failed to load color file.");
@@ -286,7 +295,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [manifest, selectedColorFileId, setError]);
+  }, [manifest, selectedColorFileId, selectedIntervalKey, selectedMeasureId, selectedPeriodMode, setError]);
 
   useEffect(() => {
     if (!colorFileDefinition) {
@@ -344,7 +353,7 @@ export default function App() {
     selectedPeriodMode === "interval"
       ? activeMeasure?.visibilityFieldByInterval?.[activeInterval?.key ?? ""]
       : activeMeasure?.visibilityFieldTotal;
-  const activeHideFilterField = activeVisibilityField ?? activeObservedField;
+  const activeHideFilterField = activeVisibilityField ?? activeMaskField ?? activeObservedField;
   const activeLegendTitle = [
     colorFiles.find((item) => item.id === selectedColorFileId)?.label ?? "",
     activeMeasure?.label ?? "",
@@ -607,6 +616,7 @@ export default function App() {
         lineOffsetPixels={lineOffsetPixels}
         odPointSize={odPointSize}
         odLabelSize={odLabelSize}
+        pathOpacityPercent={pathOpacityPercent}
         showCoveredLinksOnly={showCoveredLinksOnly}
         hideUnobservedLinks={hideUnobservedLinks}
         showOdPoints={showOdPoints}
@@ -622,6 +632,7 @@ export default function App() {
         onLineOffsetPixelsChange={setLineOffsetPixels}
         onOdPointSizeChange={setOdPointSize}
         onOdLabelSizeChange={setOdLabelSize}
+        onPathOpacityPercentChange={setPathOpacityPercent}
         onShowCoveredLinksOnlyChange={setShowCoveredLinksOnly}
         onHideUnobservedLinksChange={setHideUnobservedLinks}
         onShowOdPointsChange={setShowOdPoints}
@@ -644,6 +655,7 @@ export default function App() {
             lineOffsetPixels={lineOffsetPixels}
             odPointSize={odPointSize}
             odLabelSize={odLabelSize}
+            pathOpacityPercent={pathOpacityPercent}
             showOdLabels={showOdLabels}
             onSelectLink={setSelectedLinkId}
             onSelectPath={setSelectedPathId}

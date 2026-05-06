@@ -82,16 +82,30 @@ npm run build
 - 当 `Period = By interval` 时，会显示离散刻度滑键  
   刻度数量和标签直接由 `ratio_bias_wape_analysis` 里的 interval 文件名解析得到
 - `Displayed paths`：控制点击 link 后最多显示多少条 path
+- `Path opacity`：控制点击 link 后路径高亮的不透明度，默认 `10%`
 - `Link path-count filter`：按 path 数量过滤 link
 - `Hide unobserved links`：隐藏当前 color file 下没有 observed 覆盖的 link
 - `Path-covered links only`：只显示有 path 覆盖的 link
 - `Show OD points / Show OD labels`：控制 O/D 点和标签
+- `WAPE / Bias`：使用 IQR 四分位距法识别 outlier，并在地图上用黄色 halo 高亮对应 link
 
 ## 如果想改参数，去哪里改
 
 颜色映射：
 
 - [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/data/metrics.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/data/metrics.ts)
+
+切换逻辑说明：
+
+- 修改 `Color file`、`Metric` 或 `Period` 时，demo 会尽量保持另外两个当前选择不变
+- 只有当新数据主题下当前选择不存在时，才会退回到该主题下可用的第一个选项
+
+outlier 规则说明：
+
+- `WAPE` 和 `Bias` 都用 IQR 四分位距法确定 outlier
+- `Bias` 会识别高侧和低侧 outlier
+- `WAPE` 只识别高侧 outlier
+- outlier link 会在地图上叠加黄色 halo
 
 主筛选逻辑：
 
@@ -106,6 +120,7 @@ npm run build
 地图线宽、偏移、OD 点样式：
 
 - [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createLinkLayer.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createLinkLayer.ts)
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createHighlightedPathLayer.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createHighlightedPathLayer.ts)
 - [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/linkOffset.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/linkOffset.ts)
 - [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createOdPointLayers.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createOdPointLayers.ts)
 

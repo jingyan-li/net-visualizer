@@ -5,8 +5,12 @@ export interface FieldStats {
   max: number;
   displayMin: number;
   displayMax: number;
+  lowerOutlierFence: number;
+  upperOutlierFence: number;
   midpoint: number;
   clipped: boolean;
+  hasLowerOutliers: boolean;
+  hasUpperOutliers: boolean;
   scaleType: ColorScaleType;
 }
 
@@ -89,8 +93,12 @@ export function computeFieldStats(
       max,
       displayMin: Math.min(displayMin, 0),
       displayMax: Math.max(displayMax, 0),
+      lowerOutlierFence: q1 - 1.5 * iqr,
+      upperOutlierFence: q3 + 1.5 * iqr,
       midpoint: 0,
       clipped: min < displayMin || max > displayMax,
+      hasLowerOutliers: min < displayMin,
+      hasUpperOutliers: max > displayMax,
       scaleType: options.scaleType
     };
   }
@@ -105,10 +113,31 @@ export function computeFieldStats(
     max,
     displayMin,
     displayMax,
+    lowerOutlierFence: Math.max(0, q1 - 1.5 * iqr),
+    upperOutlierFence: q3 + 1.5 * iqr,
     midpoint: (displayMin + displayMax) / 2,
     clipped: max > displayMax,
+    hasLowerOutliers: false,
+    hasUpperOutliers: max > displayMax,
     scaleType: options.scaleType
   };
+}
+
+export function isOutlierValue(value: unknown, stats: FieldStats | null, hasData: boolean): boolean {
+  if (!hasData || !stats) {
+    return false;
+  }
+
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) {
+    return false;
+  }
+
+  if (stats.scaleType === "diverging") {
+    return numericValue < stats.lowerOutlierFence || numericValue > stats.upperOutlierFence;
+  }
+
+  return numericValue > stats.upperOutlierFence;
 }
 
 export interface ColorValueOptions {
