@@ -1,6 +1,7 @@
 [
   {
     "modality": "car_count",
+    "ratio_files": 3,
     "observed_links": 336,
     "ratio_links": 319,
     "intersection_links": 319,
@@ -15,6 +16,7 @@
   },
   {
     "modality": "truck_count",
+    "ratio_files": 3,
     "observed_links": 336,
     "ratio_links": 319,
     "intersection_links": 319,
@@ -29,6 +31,7 @@
   },
   {
     "modality": "car_tt",
+    "ratio_files": 12,
     "observed_links": 1771,
     "ratio_links": 1714,
     "intersection_links": 1714,
@@ -43,6 +46,7 @@
   },
   {
     "modality": "truck_tt",
+    "ratio_files": 12,
     "observed_links": 1791,
     "ratio_links": 1734,
     "intersection_links": 1734,

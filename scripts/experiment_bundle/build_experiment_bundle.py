@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import geopandas as gpd
+import numpy as np
 import orjson
 import pandas as pd
 
@@ -46,15 +47,13 @@ MODALITY_CONFIG = {
     },
 }
 
-HOUR_FILE_PATTERN = re.compile(r"^(?P<modality>.+)_hour_(?P<hour>\d+)\.csv$")
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build one experiment bundle for the path-link demo.")
     parser.add_argument("--experiment-id", required=True)
     parser.add_argument("--experiment-label", default=None)
     parser.add_argument("--network", required=True, type=Path)
-    parser.add_argument("--nodes-geojson", default=None, type=Path)
+    parser.add_argument("--nodes", default=None, type=Path)
     parser.add_argument("--path-table-csv", required=True, type=Path)
     parser.add_argument("--path-table-buffer", required=True, type=Path)
     parser.add_argument("--ratio-dir", required=True, type=Path)
@@ -124,12 +123,16 @@ def normalize_nodes(nodes_path: Path) -> gpd.GeoDataFrame:
 
 
 def infer_nodes_geojson_path(network_path: Path) -> Path:
-    candidate = network_path.parent / "nodes_ver2__codex_tmp.json"
-    if not candidate.exists():
-        raise FileNotFoundError(
-            f"Could not infer nodes geojson next to network file. Expected: {candidate}"
-        )
-    return candidate
+    candidates = [
+        network_path.parent / "nodes_ver2.shp",
+        network_path.parent / "nodes_ver2__codex_tmp.json",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError(
+        f"Could not infer node file next to network file. Tried: {', '.join(str(path) for path in candidates)}"
+    )
 
 
 def build_long_path_table(path_table_csv: Path, path_table_buffer: Path, network_path: Path) -> pd.DataFrame:
@@ -314,141 +317,206 @@ def build_contribution_buckets(
     return bucket_index, buckets
 
 
-def discover_hour_ids(ratio_dir: Path) -> dict[str, list[str]]:
-    hour_map: dict[str, set[str]] = {}
-    for csv_path in ratio_dir.glob("*_hour_*.csv"):
-        match = HOUR_FILE_PATTERN.match(csv_path.name)
+def sanitize_interval_id(interval_id: str) -> str:
+    return interval_id.replace("-", "_").replace(".", "_")
+
+
+def parse_interval_numeric_value(interval_id: str) -> float:
+    if "-" in interval_id:
+        hour_text, quarter_text = interval_id.split("-", 1)
+        return int(hour_text) + int(quarter_text) / 4.0
+    return float(interval_id)
+
+
+def format_interval_label(interval_kind: str, interval_id: str, fallback: str | None = None) -> str:
+    if fallback:
+        return fallback
+    if interval_kind == "hour":
+        whole = int(round(parse_interval_numeric_value(interval_id)))
+        return f"{whole:02d}:00-{whole + 1:02d}:00"
+    value = parse_interval_numeric_value(interval_id)
+    start_minutes = int(round(value * 60))
+    end_minutes = start_minutes + 15
+    return f"{start_minutes // 60:02d}:{start_minutes % 60:02d}-{end_minutes // 60:02d}:{end_minutes % 60:02d}"
+
+
+def discover_interval_files(ratio_dir: Path) -> dict[str, list[dict[str, Any]]]:
+    interval_map: dict[str, list[dict[str, Any]]] = {}
+    pattern = re.compile(
+        r"^(?P<modality>.+)_(?P<interval_kind>hour|15min)_(?P<interval_id>\d+|(?:\d+-[0-3]))\.csv$"
+    )
+
+    for csv_path in ratio_dir.glob("*.csv"):
+        match = pattern.match(csv_path.name)
         if not match:
             continue
         modality = match.group("modality")
-        hour = match.group("hour")
-        hour_map.setdefault(modality, set()).add(hour)
+        if modality not in MODALITY_CONFIG:
+            continue
+        interval_map.setdefault(modality, []).append(
+            {
+                "interval_kind": match.group("interval_kind"),
+                "interval_id": match.group("interval_id"),
+                "interval_key": f"interval_{sanitize_interval_id(match.group('interval_id'))}",
+                "path": csv_path,
+            }
+        )
 
-    if not hour_map:
-        raise FileNotFoundError(f"No *_hour_*.csv files found in {ratio_dir}")
+    if not interval_map:
+        raise FileNotFoundError(f"No interval CSV files found in {ratio_dir}")
 
-    return {
-        modality: sorted(hours, key=lambda value: int(value))
-        for modality, hours in hour_map.items()
-    }
+    for modality, items in interval_map.items():
+        interval_map[modality] = sorted(
+            items,
+            key=lambda item: parse_interval_numeric_value(str(item["interval_id"])),
+        )
+    return interval_map
 
 
 def build_modality_metrics(
     modality: str,
-    ratio_dir: Path,
+    interval_files: list[dict[str, Any]],
     coverage_df: pd.DataFrame,
     network_link_ids: pd.Series,
-    hour_ids: list[str],
-) -> pd.DataFrame:
+) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
     config = MODALITY_CONFIG[modality]
-    link_metrics_path = ratio_dir / f"{modality}_link_metrics.csv"
-    base_df = pd.DataFrame({"link_id": network_link_ids.astype(str)})
+    result = pd.DataFrame({"link_id": network_link_ids.astype(str)})
+    interval_specs: list[dict[str, Any]] = []
+    obs_interval_columns: list[str] = []
+    est_interval_columns: list[str] = []
 
-    totals = pd.read_csv(link_metrics_path).copy()
-    totals = totals.rename(columns={"linkID": "link_id"})
-    totals["link_id"] = totals["link_id"].astype(str)
-    totals["valid_total"] = (
-        pd.to_numeric(totals["obs_total"], errors="coerce").fillna(0).gt(0)
-        & pd.to_numeric(totals["bias_total"], errors="coerce").notna()
-        & pd.to_numeric(totals["wape_total"], errors="coerce").notna()
-    )
-    totals["observed_valid_total"] = pd.to_numeric(totals["obs_total"], errors="coerce").fillna(0).gt(0)
-    totals = totals[
-        [
-            "link_id",
-            "obs_total",
-            "est_total",
-            "bias_total",
-            "wape_total",
-            "valid_total",
-            "observed_valid_total",
-        ]
-    ].rename(
-        columns={
-            "obs_total": f"{modality}_obs_3h",
-            "est_total": f"{modality}_est_3h",
-            "bias_total": f"{modality}_bias_3h",
-            "wape_total": f"{modality}_wape_3h",
-            "valid_total": f"{modality}_valid_3h",
-            "observed_valid_total": f"{modality}_obs_valid_3h",
-        }
-    )
+    for index, interval in enumerate(interval_files):
+        frame = pd.read_csv(interval["path"]).copy()
+        if "linkID" not in frame.columns:
+            raise ValueError(f"{interval['path']} must contain linkID.")
+        frame = frame.rename(columns={"linkID": "link_id"})
+        frame["link_id"] = frame["link_id"].astype(str)
 
-    result = base_df.merge(totals, on="link_id", how="left")
-
-    coverage_column = config["coverage_column"]
-    coverage_copy = coverage_df[["linkID", coverage_column]].copy()
-    coverage_copy = coverage_copy.rename(
-        columns={
-            "linkID": "link_id",
-            coverage_column: f"{modality}_observed_count",
-        }
-    )
-    coverage_copy["link_id"] = coverage_copy["link_id"].astype(str)
-    coverage_copy[f"{modality}_observed_any"] = coverage_copy[f"{modality}_observed_count"].fillna(0).gt(0)
-    result = result.merge(coverage_copy, on="link_id", how="left")
-    result[f"{modality}_observed_count"] = result[f"{modality}_observed_count"].fillna(0).astype(int)
-    result[f"{modality}_observed_any"] = result[f"{modality}_observed_any"].fillna(False)
-
-    for hour in hour_ids:
-        hour_df = pd.read_csv(ratio_dir / f"{modality}_hour_{hour}.csv").copy()
-        hour_df = hour_df.rename(columns={"linkID": "link_id"})
-        hour_df["link_id"] = hour_df["link_id"].astype(str)
-        period_id = f"hour_{hour}"
-        hour_df[f"{modality}_obs_valid_{period_id}"] = (
-            pd.to_numeric(hour_df["OBS"], errors="coerce").fillna(0).gt(0)
+        interval_key = str(interval["interval_key"])
+        interval_id = str(interval["interval_id"])
+        interval_kind = str(interval["interval_kind"])
+        label = format_interval_label(
+            interval_kind,
+            interval_id,
+            str(frame["INTERVAL_LABEL"].iloc[0]) if "INTERVAL_LABEL" in frame.columns and not frame.empty else None,
         )
-        hour_df[f"{modality}_valid_{period_id}"] = (
-            pd.to_numeric(hour_df["OBS"], errors="coerce").fillna(0).gt(0)
-            & pd.to_numeric(hour_df["BIAS"], errors="coerce").notna()
-            & pd.to_numeric(hour_df["WAPE"], errors="coerce").notna()
-        )
-        hour_df = hour_df[
+
+        obs_col = f"{modality}_obs_{interval_key}"
+        est_col = f"{modality}_est_{interval_key}"
+        bias_col = f"{modality}_bias_{interval_key}"
+        wape_col = f"{modality}_wape_{interval_key}"
+        valid_col = f"{modality}_valid_{interval_key}"
+        obs_valid_col = f"{modality}_obs_valid_{interval_key}"
+        est_valid_col = f"{modality}_est_valid_{interval_key}"
+
+        frame[obs_valid_col] = pd.to_numeric(frame["OBS"], errors="coerce").fillna(0).gt(0)
+        frame[est_valid_col] = pd.to_numeric(frame["EST"], errors="coerce").notna()
+        if "VALID" in frame.columns:
+            valid_values = frame["VALID"]
+            frame[valid_col] = valid_values.astype(str).str.lower().map({"true": True, "false": False}).fillna(valid_values.astype(bool))
+        else:
+            frame[valid_col] = (
+                pd.to_numeric(frame["OBS"], errors="coerce").fillna(0).gt(0)
+                & pd.to_numeric(frame["BIAS"], errors="coerce").notna()
+                & pd.to_numeric(frame["WAPE"], errors="coerce").notna()
+            )
+
+        frame = frame[
             [
                 "link_id",
                 "OBS",
                 "EST",
                 "BIAS",
                 "WAPE",
-                f"{modality}_valid_{period_id}",
-                f"{modality}_obs_valid_{period_id}",
+                obs_valid_col,
+                est_valid_col,
+                valid_col,
             ]
         ].rename(
             columns={
-                "OBS": f"{modality}_obs_{period_id}",
-                "EST": f"{modality}_est_{period_id}",
-                "BIAS": f"{modality}_bias_{period_id}",
-                "WAPE": f"{modality}_wape_{period_id}",
+                "OBS": obs_col,
+                "EST": est_col,
+                "BIAS": bias_col,
+                "WAPE": wape_col,
             }
         )
-        result = result.merge(hour_df, on="link_id", how="left")
-        result[f"{modality}_valid_{period_id}"] = result[f"{modality}_valid_{period_id}"].fillna(False)
-        result[f"{modality}_obs_valid_{period_id}"] = result[f"{modality}_obs_valid_{period_id}"].fillna(False)
+        result = result.merge(frame, on="link_id", how="left")
+        result[obs_valid_col] = result[obs_valid_col].fillna(False)
+        result[est_valid_col] = result[est_valid_col].fillna(False)
+        result[valid_col] = result[valid_col].fillna(False)
 
-    return result
+        obs_interval_columns.append(obs_col)
+        est_interval_columns.append(est_col)
+        interval_specs.append(
+            {
+                "id": interval_id,
+                "key": interval_key,
+                "kind": interval_kind,
+                "label": label,
+                "index": index,
+            }
+        )
+
+    obs_matrix = result[obs_interval_columns].apply(pd.to_numeric, errors="coerce").to_numpy(dtype=float)
+    est_matrix = result[est_interval_columns].apply(pd.to_numeric, errors="coerce").to_numpy(dtype=float)
+    finite_pairs = np.isfinite(obs_matrix) & np.isfinite(est_matrix)
+    safe_obs = np.where(finite_pairs, obs_matrix, 0.0)
+    safe_est = np.where(finite_pairs, est_matrix, 0.0)
+
+    total_obs = np.where(finite_pairs.any(axis=1), safe_obs.sum(axis=1), np.nan)
+    total_est = np.where(np.isfinite(est_matrix).any(axis=1), np.nansum(est_matrix, axis=1), np.nan)
+    total_bias = np.where(total_obs > 0, (safe_est.sum(axis=1) - safe_obs.sum(axis=1)) / safe_obs.sum(axis=1), np.nan)
+    total_wape = np.where(total_obs > 0, np.abs(safe_est - safe_obs).sum(axis=1) / safe_obs.sum(axis=1), np.nan)
+
+    result[f"{modality}_obs_total"] = total_obs
+    result[f"{modality}_est_total"] = total_est
+    result[f"{modality}_bias_total"] = total_bias
+    result[f"{modality}_wape_total"] = total_wape
+    result[f"{modality}_obs_valid_total"] = np.isfinite(total_obs) & (total_obs > 0)
+    result[f"{modality}_est_valid_total"] = np.isfinite(total_est)
+    result[f"{modality}_valid_total"] = result[f"{modality}_obs_valid_total"] & np.isfinite(total_bias) & np.isfinite(total_wape)
+
+    coverage_column = config["coverage_column"]
+    if coverage_column in coverage_df.columns:
+        coverage_copy = coverage_df[["linkID", coverage_column]].copy()
+        coverage_copy = coverage_copy.rename(columns={"linkID": "link_id", coverage_column: f"{modality}_observed_count"})
+        coverage_copy["link_id"] = coverage_copy["link_id"].astype(str)
+        coverage_copy[f"{modality}_observed_any"] = coverage_copy[f"{modality}_observed_count"].fillna(0).gt(0)
+        result = result.merge(coverage_copy, on="link_id", how="left")
+        result[f"{modality}_observed_count"] = result[f"{modality}_observed_count"].fillna(0).astype(int)
+        result[f"{modality}_observed_any"] = result[f"{modality}_observed_any"].fillna(False)
+    else:
+        result[f"{modality}_observed_count"] = 0
+        result[f"{modality}_observed_any"] = False
+
+    return result, interval_specs
 
 
 def build_all_metrics(
     network_gdf: gpd.GeoDataFrame,
     ratio_dir: Path,
     coverage_csv: Path,
-) -> tuple[pd.DataFrame, dict[str, list[str]]]:
+) -> tuple[pd.DataFrame, dict[str, list[dict[str, Any]]], list[str]]:
     coverage_df = pd.read_csv(coverage_csv)
-    discovered_hours = discover_hour_ids(ratio_dir)
+    discovered_intervals = discover_interval_files(ratio_dir)
     merged: pd.DataFrame | None = None
+    available_modalities: list[str] = []
+    interval_specs_by_modality: dict[str, list[dict[str, Any]]] = {}
 
-    for modality in MODALITY_CONFIG:
-        modality_df = build_modality_metrics(
+    for modality, interval_files in discovered_intervals.items():
+        modality_df, interval_specs = build_modality_metrics(
             modality,
-            ratio_dir,
+            interval_files,
             coverage_df,
             network_gdf["link_id"],
-            discovered_hours.get(modality, []),
         )
         merged = modality_df if merged is None else merged.merge(modality_df, on="link_id", how="outer")
+        interval_specs_by_modality[modality] = interval_specs
+        available_modalities.append(modality)
 
-    assert merged is not None
-    return merged, discovered_hours
+    if merged is None:
+        raise ValueError("No modality metrics could be built.")
+    return merged, interval_specs_by_modality, available_modalities
 
 
 def to_serializable_props(row: pd.Series) -> dict[str, object]:
@@ -467,66 +535,67 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_bytes(orjson.dumps(payload, option=orjson.OPT_INDENT_2))
 
 
-def build_period_labels(hour_ids: list[str]) -> dict[str, str]:
-    labels = {"3h": f"Total ({len(hour_ids)}h)" if hour_ids else "Total"}
-    for hour in hour_ids:
-        labels[f"hour_{hour}"] = f"{int(hour):02d}:00-{int(hour) + 1:02d}:00"
-    return labels
-
-
-def build_color_file_definition(modality: str, hour_ids: list[str]) -> dict[str, Any]:
+def build_color_file_definition(
+    modality: str,
+    interval_specs: list[dict[str, Any]],
+) -> dict[str, Any]:
     label = MODALITY_CONFIG[modality]["label"]
-    field_by_period_obs = {"3h": f"{modality}_obs_3h"}
-    field_by_period_est = {"3h": f"{modality}_est_3h"}
-    field_by_period_wape = {"3h": f"{modality}_wape_3h"}
-    field_by_period_bias = {"3h": f"{modality}_bias_3h"}
-    mask_by_period = {"3h": f"{modality}_valid_3h"}
-    observed_mask_by_period = {"3h": f"{modality}_obs_valid_3h"}
+    interval_field_obs = {spec["key"]: f"{modality}_obs_{spec['key']}" for spec in interval_specs}
+    interval_field_est = {spec["key"]: f"{modality}_est_{spec['key']}" for spec in interval_specs}
+    interval_field_wape = {spec["key"]: f"{modality}_wape_{spec['key']}" for spec in interval_specs}
+    interval_field_bias = {spec["key"]: f"{modality}_bias_{spec['key']}" for spec in interval_specs}
+    interval_mask = {spec["key"]: f"{modality}_valid_{spec['key']}" for spec in interval_specs}
+    interval_est_mask = {spec["key"]: f"{modality}_est_valid_{spec['key']}" for spec in interval_specs}
+    interval_obs_mask = {spec["key"]: f"{modality}_obs_valid_{spec['key']}" for spec in interval_specs}
 
-    for hour in hour_ids:
-        period_id = f"hour_{hour}"
-        field_by_period_obs[period_id] = f"{modality}_obs_{period_id}"
-        field_by_period_est[period_id] = f"{modality}_est_{period_id}"
-        field_by_period_wape[period_id] = f"{modality}_wape_{period_id}"
-        field_by_period_bias[period_id] = f"{modality}_bias_{period_id}"
-        mask_by_period[period_id] = f"{modality}_valid_{period_id}"
-        observed_mask_by_period[period_id] = f"{modality}_obs_valid_{period_id}"
-
-    return {
+    definition = {
         "id": modality,
         "label": label,
         "sourceFile": f"{modality}.json",
         "defaultMeasureId": "bias",
-        "defaultPeriodId": "3h",
-        "periodLabels": build_period_labels(hour_ids),
+        "defaultPeriodMode": "total",
+        "defaultIntervalKey": interval_specs[0]["key"] if interval_specs else None,
+        "intervals": interval_specs,
         "measures": [
             {
                 "id": "obs",
                 "label": "Observed",
                 "scaleType": "sequential",
-                "fieldByPeriod": field_by_period_obs,
-                "maskFieldByPeriod": observed_mask_by_period,
+                "fieldTotal": f"{modality}_obs_total",
+                "fieldByInterval": interval_field_obs,
+                "maskFieldTotal": f"{modality}_obs_valid_total",
+                "maskFieldByInterval": interval_obs_mask,
             },
             {
                 "id": "est",
                 "label": "Estimate",
                 "scaleType": "sequential",
-                "fieldByPeriod": field_by_period_est,
-                "maskFieldByPeriod": mask_by_period,
+                "fieldTotal": f"{modality}_est_total",
+                "fieldByInterval": interval_field_est,
+                "maskFieldTotal": f"{modality}_est_valid_total",
+                "maskFieldByInterval": interval_est_mask,
             },
             {
                 "id": "wape",
                 "label": "WAPE",
                 "scaleType": "sequential",
-                "fieldByPeriod": field_by_period_wape,
-                "maskFieldByPeriod": mask_by_period,
+                "fieldTotal": f"{modality}_wape_total",
+                "fieldByInterval": interval_field_wape,
+                "maskFieldTotal": f"{modality}_valid_total",
+                "maskFieldByInterval": interval_mask,
+                "visibilityFieldTotal": f"{modality}_valid_total",
+                "visibilityFieldByInterval": interval_mask,
             },
             {
                 "id": "bias",
                 "label": "Bias",
                 "scaleType": "diverging",
-                "fieldByPeriod": field_by_period_bias,
-                "maskFieldByPeriod": mask_by_period,
+                "fieldTotal": f"{modality}_bias_total",
+                "fieldByInterval": interval_field_bias,
+                "maskFieldTotal": f"{modality}_valid_total",
+                "maskFieldByInterval": interval_mask,
+                "visibilityFieldTotal": f"{modality}_valid_total",
+                "visibilityFieldByInterval": interval_mask,
             },
         ],
         "notes": {
@@ -534,16 +603,17 @@ def build_color_file_definition(modality: str, hour_ids: list[str]) -> dict[str,
             "zh": "在 bias/WAPE 视图中，没有有效 observed-versus-estimated 对比的链路会显示为黑色。",
         },
     }
+    return definition
 
 
-def build_manifest(experiment_id: str, experiment_label: str, experiment_dir: Path) -> dict[str, Any]:
+def build_manifest(experiment_id: str, experiment_label: str, color_modalities: list[str]) -> dict[str, Any]:
     color_files = [
         {
             "id": modality,
             "label": MODALITY_CONFIG[modality]["label"],
             "path": f"/data/experiments/{experiment_id}/color_files/{modality}.json",
         }
-        for modality in MODALITY_CONFIG
+        for modality in color_modalities
     ]
     return {
         "id": experiment_id,
@@ -556,7 +626,7 @@ def build_manifest(experiment_id: str, experiment_label: str, experiment_dir: Pa
         "linkPathContribBucketDir": f"/data/experiments/{experiment_id}/paths/link_path_contrib_buckets",
         "linkPathContribBucketIndex": f"/data/experiments/{experiment_id}/paths/link_path_contrib_bucket_index.json",
         "colorFiles": color_files,
-        "defaultColorFileId": "car_tt",
+        "defaultColorFileId": "car_tt" if "car_tt" in color_modalities else color_modalities[0],
     }
 
 
@@ -584,6 +654,7 @@ def write_records(
     coverage_csv: Path,
     long_df: pd.DataFrame,
     metrics_df: pd.DataFrame,
+    color_modalities: list[str],
 ) -> None:
     target_dir = records_root / experiment_id
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -596,7 +667,7 @@ def write_records(
         "coverage_source_csv": str(coverage_csv),
         "path_count": int(long_df["path_id"].nunique()),
         "link_count": int(metrics_df["link_id"].nunique()),
-        "color_files": list(MODALITY_CONFIG.keys()),
+        "color_files": color_modalities,
     }
     write_json(target_dir / "bundle_summary.json", summary)
 
@@ -634,12 +705,16 @@ def main() -> None:
     records_root = args.records_root
 
     network_gdf = normalize_network(args.network)
-    metrics_df, discovered_hours = build_all_metrics(network_gdf, args.ratio_dir, args.coverage_csv)
+    metrics_df, interval_specs_by_modality, available_modalities = build_all_metrics(
+        network_gdf,
+        args.ratio_dir,
+        args.coverage_csv,
+    )
     merged_gdf = network_gdf.merge(metrics_df, on="link_id", how="left")
 
     long_df = build_long_path_table(args.path_table_csv, args.path_table_buffer, args.network)
-    nodes_geojson_path = args.nodes_geojson or infer_nodes_geojson_path(args.network)
-    od_points_geojson = build_od_points_geojson(long_df, nodes_geojson_path)
+    nodes_path = args.nodes or infer_nodes_geojson_path(args.network)
+    od_points_geojson = build_od_points_geojson(long_df, nodes_path)
     path_summary, link_to_paths, link_path_contrib = build_path_outputs(long_df)
 
     network_dir.mkdir(parents=True, exist_ok=True)
@@ -675,13 +750,16 @@ def main() -> None:
     for bucket_file, payload in bucket_payloads.items():
         write_json(bucket_dir / bucket_file, payload)
 
-    for modality in MODALITY_CONFIG:
+    for modality in available_modalities:
         write_json(
             color_dir / f"{modality}.json",
-            build_color_file_definition(modality, discovered_hours.get(modality, [])),
+            build_color_file_definition(
+                modality,
+                interval_specs_by_modality.get(modality, []),
+            ),
         )
 
-    write_json(experiment_dir / "manifest.json", build_manifest(experiment_id, experiment_label, experiment_dir))
+    write_json(experiment_dir / "manifest.json", build_manifest(experiment_id, experiment_label, available_modalities))
     update_experiment_index(args.output_root)
     write_records(
         experiment_id,
@@ -692,6 +770,7 @@ def main() -> None:
         args.coverage_csv,
         long_df,
         metrics_df,
+        available_modalities,
     )
 
     print(f"Wrote experiment bundle to {experiment_dir}")

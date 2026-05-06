@@ -74,8 +74,20 @@ export interface ColorMeasureDefinition {
   id: string;
   label: string;
   scaleType: "sequential" | "diverging";
-  fieldByPeriod: Record<string, string>;
-  maskFieldByPeriod?: Record<string, string>;
+  fieldTotal: string;
+  fieldByInterval: Record<string, string>;
+  maskFieldTotal?: string;
+  maskFieldByInterval?: Record<string, string>;
+  visibilityFieldTotal?: string;
+  visibilityFieldByInterval?: Record<string, string>;
+}
+
+export interface IntervalDefinition {
+  id: string;
+  key: string;
+  kind: "hour" | "15min";
+  label: string;
+  index: number;
 }
 
 export interface ColorFileDefinition {
@@ -83,8 +95,9 @@ export interface ColorFileDefinition {
   label: string;
   sourceFile?: string;
   defaultMeasureId?: string;
-  defaultPeriodId?: string;
-  periodLabels: Record<string, string>;
+  defaultPeriodMode?: "total" | "interval";
+  defaultIntervalKey?: string | null;
+  intervals: IntervalDefinition[];
   measures: ColorMeasureDefinition[];
   notes?: Record<string, string>;
 }

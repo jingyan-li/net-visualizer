@@ -3,80 +3,263 @@
   "label": "Car travel time",
   "sourceFile": "car_tt.json",
   "defaultMeasureId": "bias",
-  "defaultPeriodId": "3h",
-  "periodLabels": {
-    "3h": "Total (3h)",
-    "hour_15": "15:00-16:00",
-    "hour_16": "16:00-17:00",
-    "hour_17": "17:00-18:00"
-  },
+  "defaultPeriodMode": "total",
+  "defaultIntervalKey": "interval_15_0",
+  "intervals": [
+    {
+      "id": "15-0",
+      "key": "interval_15_0",
+      "kind": "15min",
+      "label": "15:00-15:15",
+      "index": 0
+    },
+    {
+      "id": "15-1",
+      "key": "interval_15_1",
+      "kind": "15min",
+      "label": "15:15-15:30",
+      "index": 1
+    },
+    {
+      "id": "15-2",
+      "key": "interval_15_2",
+      "kind": "15min",
+      "label": "15:30-15:45",
+      "index": 2
+    },
+    {
+      "id": "15-3",
+      "key": "interval_15_3",
+      "kind": "15min",
+      "label": "15:45-16:00",
+      "index": 3
+    },
+    {
+      "id": "16-0",
+      "key": "interval_16_0",
+      "kind": "15min",
+      "label": "16:00-16:15",
+      "index": 4
+    },
+    {
+      "id": "16-1",
+      "key": "interval_16_1",
+      "kind": "15min",
+      "label": "16:15-16:30",
+      "index": 5
+    },
+    {
+      "id": "16-2",
+      "key": "interval_16_2",
+      "kind": "15min",
+      "label": "16:30-16:45",
+      "index": 6
+    },
+    {
+      "id": "16-3",
+      "key": "interval_16_3",
+      "kind": "15min",
+      "label": "16:45-17:00",
+      "index": 7
+    },
+    {
+      "id": "17-0",
+      "key": "interval_17_0",
+      "kind": "15min",
+      "label": "17:00-17:15",
+      "index": 8
+    },
+    {
+      "id": "17-1",
+      "key": "interval_17_1",
+      "kind": "15min",
+      "label": "17:15-17:30",
+      "index": 9
+    },
+    {
+      "id": "17-2",
+      "key": "interval_17_2",
+      "kind": "15min",
+      "label": "17:30-17:45",
+      "index": 10
+    },
+    {
+      "id": "17-3",
+      "key": "interval_17_3",
+      "kind": "15min",
+      "label": "17:45-18:00",
+      "index": 11
+    }
+  ],
   "measures": [
     {
       "id": "obs",
       "label": "Observed",
       "scaleType": "sequential",
-      "fieldByPeriod": {
-        "3h": "car_tt_obs_3h",
-        "hour_15": "car_tt_obs_hour_15",
-        "hour_16": "car_tt_obs_hour_16",
-        "hour_17": "car_tt_obs_hour_17"
+      "fieldTotal": "car_tt_obs_total",
+      "fieldByInterval": {
+        "interval_15_0": "car_tt_obs_interval_15_0",
+        "interval_15_1": "car_tt_obs_interval_15_1",
+        "interval_15_2": "car_tt_obs_interval_15_2",
+        "interval_15_3": "car_tt_obs_interval_15_3",
+        "interval_16_0": "car_tt_obs_interval_16_0",
+        "interval_16_1": "car_tt_obs_interval_16_1",
+        "interval_16_2": "car_tt_obs_interval_16_2",
+        "interval_16_3": "car_tt_obs_interval_16_3",
+        "interval_17_0": "car_tt_obs_interval_17_0",
+        "interval_17_1": "car_tt_obs_interval_17_1",
+        "interval_17_2": "car_tt_obs_interval_17_2",
+        "interval_17_3": "car_tt_obs_interval_17_3"
       },
-      "maskFieldByPeriod": {
-        "3h": "car_tt_obs_valid_3h",
-        "hour_15": "car_tt_obs_valid_hour_15",
-        "hour_16": "car_tt_obs_valid_hour_16",
-        "hour_17": "car_tt_obs_valid_hour_17"
+      "maskFieldTotal": "car_tt_obs_valid_total",
+      "maskFieldByInterval": {
+        "interval_15_0": "car_tt_obs_valid_interval_15_0",
+        "interval_15_1": "car_tt_obs_valid_interval_15_1",
+        "interval_15_2": "car_tt_obs_valid_interval_15_2",
+        "interval_15_3": "car_tt_obs_valid_interval_15_3",
+        "interval_16_0": "car_tt_obs_valid_interval_16_0",
+        "interval_16_1": "car_tt_obs_valid_interval_16_1",
+        "interval_16_2": "car_tt_obs_valid_interval_16_2",
+        "interval_16_3": "car_tt_obs_valid_interval_16_3",
+        "interval_17_0": "car_tt_obs_valid_interval_17_0",
+        "interval_17_1": "car_tt_obs_valid_interval_17_1",
+        "interval_17_2": "car_tt_obs_valid_interval_17_2",
+        "interval_17_3": "car_tt_obs_valid_interval_17_3"
       }
     },
     {
       "id": "est",
       "label": "Estimate",
       "scaleType": "sequential",
-      "fieldByPeriod": {
-        "3h": "car_tt_est_3h",
-        "hour_15": "car_tt_est_hour_15",
-        "hour_16": "car_tt_est_hour_16",
-        "hour_17": "car_tt_est_hour_17"
+      "fieldTotal": "car_tt_est_total",
+      "fieldByInterval": {
+        "interval_15_0": "car_tt_est_interval_15_0",
+        "interval_15_1": "car_tt_est_interval_15_1",
+        "interval_15_2": "car_tt_est_interval_15_2",
+        "interval_15_3": "car_tt_est_interval_15_3",
+        "interval_16_0": "car_tt_est_interval_16_0",
+        "interval_16_1": "car_tt_est_interval_16_1",
+        "interval_16_2": "car_tt_est_interval_16_2",
+        "interval_16_3": "car_tt_est_interval_16_3",
+        "interval_17_0": "car_tt_est_interval_17_0",
+        "interval_17_1": "car_tt_est_interval_17_1",
+        "interval_17_2": "car_tt_est_interval_17_2",
+        "interval_17_3": "car_tt_est_interval_17_3"
       },
-      "maskFieldByPeriod": {
-        "3h": "car_tt_valid_3h",
-        "hour_15": "car_tt_valid_hour_15",
-        "hour_16": "car_tt_valid_hour_16",
-        "hour_17": "car_tt_valid_hour_17"
+      "maskFieldTotal": "car_tt_est_valid_total",
+      "maskFieldByInterval": {
+        "interval_15_0": "car_tt_est_valid_interval_15_0",
+        "interval_15_1": "car_tt_est_valid_interval_15_1",
+        "interval_15_2": "car_tt_est_valid_interval_15_2",
+        "interval_15_3": "car_tt_est_valid_interval_15_3",
+        "interval_16_0": "car_tt_est_valid_interval_16_0",
+        "interval_16_1": "car_tt_est_valid_interval_16_1",
+        "interval_16_2": "car_tt_est_valid_interval_16_2",
+        "interval_16_3": "car_tt_est_valid_interval_16_3",
+        "interval_17_0": "car_tt_est_valid_interval_17_0",
+        "interval_17_1": "car_tt_est_valid_interval_17_1",
+        "interval_17_2": "car_tt_est_valid_interval_17_2",
+        "interval_17_3": "car_tt_est_valid_interval_17_3"
       }
     },
     {
       "id": "wape",
       "label": "WAPE",
       "scaleType": "sequential",
-      "fieldByPeriod": {
-        "3h": "car_tt_wape_3h",
-        "hour_15": "car_tt_wape_hour_15",
-        "hour_16": "car_tt_wape_hour_16",
-        "hour_17": "car_tt_wape_hour_17"
+      "fieldTotal": "car_tt_wape_total",
+      "fieldByInterval": {
+        "interval_15_0": "car_tt_wape_interval_15_0",
+        "interval_15_1": "car_tt_wape_interval_15_1",
+        "interval_15_2": "car_tt_wape_interval_15_2",
+        "interval_15_3": "car_tt_wape_interval_15_3",
+        "interval_16_0": "car_tt_wape_interval_16_0",
+        "interval_16_1": "car_tt_wape_interval_16_1",
+        "interval_16_2": "car_tt_wape_interval_16_2",
+        "interval_16_3": "car_tt_wape_interval_16_3",
+        "interval_17_0": "car_tt_wape_interval_17_0",
+        "interval_17_1": "car_tt_wape_interval_17_1",
+        "interval_17_2": "car_tt_wape_interval_17_2",
+        "interval_17_3": "car_tt_wape_interval_17_3"
       },
-      "maskFieldByPeriod": {
-        "3h": "car_tt_valid_3h",
-        "hour_15": "car_tt_valid_hour_15",
-        "hour_16": "car_tt_valid_hour_16",
-        "hour_17": "car_tt_valid_hour_17"
+      "maskFieldTotal": "car_tt_valid_total",
+      "maskFieldByInterval": {
+        "interval_15_0": "car_tt_valid_interval_15_0",
+        "interval_15_1": "car_tt_valid_interval_15_1",
+        "interval_15_2": "car_tt_valid_interval_15_2",
+        "interval_15_3": "car_tt_valid_interval_15_3",
+        "interval_16_0": "car_tt_valid_interval_16_0",
+        "interval_16_1": "car_tt_valid_interval_16_1",
+        "interval_16_2": "car_tt_valid_interval_16_2",
+        "interval_16_3": "car_tt_valid_interval_16_3",
+        "interval_17_0": "car_tt_valid_interval_17_0",
+        "interval_17_1": "car_tt_valid_interval_17_1",
+        "interval_17_2": "car_tt_valid_interval_17_2",
+        "interval_17_3": "car_tt_valid_interval_17_3"
+      },
+      "visibilityFieldTotal": "car_tt_valid_total",
+      "visibilityFieldByInterval": {
+        "interval_15_0": "car_tt_valid_interval_15_0",
+        "interval_15_1": "car_tt_valid_interval_15_1",
+        "interval_15_2": "car_tt_valid_interval_15_2",
+        "interval_15_3": "car_tt_valid_interval_15_3",
+        "interval_16_0": "car_tt_valid_interval_16_0",
+        "interval_16_1": "car_tt_valid_interval_16_1",
+        "interval_16_2": "car_tt_valid_interval_16_2",
+        "interval_16_3": "car_tt_valid_interval_16_3",
+        "interval_17_0": "car_tt_valid_interval_17_0",
+        "interval_17_1": "car_tt_valid_interval_17_1",
+        "interval_17_2": "car_tt_valid_interval_17_2",
+        "interval_17_3": "car_tt_valid_interval_17_3"
       }
     },
     {
       "id": "bias",
       "label": "Bias",
       "scaleType": "diverging",
-      "fieldByPeriod": {
-        "3h": "car_tt_bias_3h",
-        "hour_15": "car_tt_bias_hour_15",
-        "hour_16": "car_tt_bias_hour_16",
-        "hour_17": "car_tt_bias_hour_17"
+      "fieldTotal": "car_tt_bias_total",
+      "fieldByInterval": {
+        "interval_15_0": "car_tt_bias_interval_15_0",
+        "interval_15_1": "car_tt_bias_interval_15_1",
+        "interval_15_2": "car_tt_bias_interval_15_2",
+        "interval_15_3": "car_tt_bias_interval_15_3",
+        "interval_16_0": "car_tt_bias_interval_16_0",
+        "interval_16_1": "car_tt_bias_interval_16_1",
+        "interval_16_2": "car_tt_bias_interval_16_2",
+        "interval_16_3": "car_tt_bias_interval_16_3",
+        "interval_17_0": "car_tt_bias_interval_17_0",
+        "interval_17_1": "car_tt_bias_interval_17_1",
+        "interval_17_2": "car_tt_bias_interval_17_2",
+        "interval_17_3": "car_tt_bias_interval_17_3"
       },
-      "maskFieldByPeriod": {
-        "3h": "car_tt_valid_3h",
-        "hour_15": "car_tt_valid_hour_15",
-        "hour_16": "car_tt_valid_hour_16",
-        "hour_17": "car_tt_valid_hour_17"
+      "maskFieldTotal": "car_tt_valid_total",
+      "maskFieldByInterval": {
+        "interval_15_0": "car_tt_valid_interval_15_0",
+        "interval_15_1": "car_tt_valid_interval_15_1",
+        "interval_15_2": "car_tt_valid_interval_15_2",
+        "interval_15_3": "car_tt_valid_interval_15_3",
+        "interval_16_0": "car_tt_valid_interval_16_0",
+        "interval_16_1": "car_tt_valid_interval_16_1",
+        "interval_16_2": "car_tt_valid_interval_16_2",
+        "interval_16_3": "car_tt_valid_interval_16_3",
+        "interval_17_0": "car_tt_valid_interval_17_0",
+        "interval_17_1": "car_tt_valid_interval_17_1",
+        "interval_17_2": "car_tt_valid_interval_17_2",
+        "interval_17_3": "car_tt_valid_interval_17_3"
+      },
+      "visibilityFieldTotal": "car_tt_valid_total",
+      "visibilityFieldByInterval": {
+        "interval_15_0": "car_tt_valid_interval_15_0",
+        "interval_15_1": "car_tt_valid_interval_15_1",
+        "interval_15_2": "car_tt_valid_interval_15_2",
+        "interval_15_3": "car_tt_valid_interval_15_3",
+        "interval_16_0": "car_tt_valid_interval_16_0",
+        "interval_16_1": "car_tt_valid_interval_16_1",
+        "interval_16_2": "car_tt_valid_interval_16_2",
+        "interval_16_3": "car_tt_valid_interval_16_3",
+        "interval_17_0": "car_tt_valid_interval_17_0",
+        "interval_17_1": "car_tt_valid_interval_17_1",
+        "interval_17_2": "car_tt_valid_interval_17_2",
+        "interval_17_3": "car_tt_valid_interval_17_3"
       }
     }
   ],

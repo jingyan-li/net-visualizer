@@ -2,160 +2,258 @@
 
 ## 项目原理
 
-这个 demo 的核心目标是把“链路表现”和“经过该链路的路径集合”放到同一个交互界面里看。
+这个 demo 把三类信息叠在同一个交互界面里：
 
-整体逻辑分三层：
+1. 路网几何  
+   从 `links_ver2.shp` 读取 link 形状。
 
-1. 网络层  
-   以 `links_ver2` 为底图，每条 link 都带有多组可着色属性，例如 `observed / estimate / wape / bias`。
-
-2. 路径层  
-   每条 path 先从 `path_table.csv` 的 node 序列转换为 link 序列，再建立：
+2. 路径覆盖关系  
+   从 `path_table.csv` 中的 node 序列恢复每条 path 经过的 link 序列，并建立：
    - `link -> paths`
    - `path -> link_sequence`
-   - `link -> contribution records`
+   - `link -> path contribution`
 
-3. 实验层  
-   每次实验结果打成一个独立 bundle，放在 `public/data/experiments/<exp_id>/`。  
-   前端先选 `Experiment`，再选 `Color file / Metric / Period`，因此后续新增 `exp22 / exp23` 时不需要改前端结构。
+3. 实验结果着色  
+   从 `Pittsburgh_DODE/results/<exp>/ratio_bias_wape_analysis/` 和 `link_observation_coverage.csv` 读取 observed / estimate / bias / wape，并支持：
+   - `Total`
+   - `By interval`
 
 ## 目录结构
 
 ```text
 path-link-visualization-demo/
-  public/data/experiments/       # 每个实验的静态可视化数据包
-  records/                       # 审计记录、说明文档
-  scripts/
-    experiment_bundle/           # 把实验结果打包成 demo 可读格式
-  src/
-    components/                  # Toolbar、Sidebar、Legend 等界面组件
-    layers/                      # deck.gl 图层
-    data/                        # 数据加载与颜色计算
-    store/                       # zustand 状态
+  public/data/experiments/       # 每个实验的静态数据包
+  records/                       # 审计记录和说明
+  scripts/experiment_bundle/     # 把实验结果打包成 demo 可读格式
+  src/components/                # Toolbar、Sidebar、Legend 等
+  src/layers/                    # deck.gl 图层
+  src/data/                      # 数据加载与颜色映射
+  src/store/                     # 前端状态
 ```
 
-## 运行方式
+## Pull 之后要安装什么
 
-先激活本项目环境：
+Python 侧：
+
+- `python >= 3.10`
+- `geopandas`
+- `pandas`
+- `numpy`
+- `orjson`
+- `pyogrio`
+- `shapely`
+
+前端：
+
+- `node >= 18`
+- `npm >= 9`
+
+推荐：
+
+```bash
+conda env create -f environment.yml
+conda activate "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/.conda/path-link-demo-env"
+cd "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo"
+npm install
+```
+
+## 启动方式
 
 ```bash
 conda activate "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/.conda/path-link-demo-env"
 cd "/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo"
-```
-
-启动前端：
-
-```bash
 npm run dev
 ```
 
-如果要重新构建 `exp21`：
+构建检查：
+
+```bash
+npm run build
+```
+
+## 当前交互
+
+- `Experiment`：选择实验，比如 `exp21`
+- `Color file`：只显示当前实验实际存在的数据主题
+- `Metric`：`Observed / Estimate / WAPE / Bias`
+- `Period`：只保留两种
+  - `Total`
+  - `By interval`
+- 当 `Period = By interval` 时，会显示离散刻度滑键  
+  刻度数量和标签直接由 `ratio_bias_wape_analysis` 里的 interval 文件名解析得到
+- `Displayed paths`：控制点击 link 后最多显示多少条 path
+- `Link path-count filter`：按 path 数量过滤 link
+- `Hide unobserved links`：隐藏当前 color file 下没有 observed 覆盖的 link
+- `Path-covered links only`：只显示有 path 覆盖的 link
+- `Show OD points / Show OD labels`：控制 O/D 点和标签
+
+## 如果想改参数，去哪里改
+
+颜色映射：
+
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/data/metrics.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/data/metrics.ts)
+
+主筛选逻辑：
+
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/App.tsx](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/App.tsx)
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/components/Toolbar.tsx](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/components/Toolbar.tsx)
+
+路径排序与展示：
+
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/App.tsx](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/App.tsx)
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/components/Sidebar.tsx](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/components/Sidebar.tsx)
+
+地图线宽、偏移、OD 点样式：
+
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createLinkLayer.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createLinkLayer.ts)
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/linkOffset.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/linkOffset.ts)
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createOdPointLayers.ts](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/src/layers/createOdPointLayers.ts)
+
+## Demo 需要哪些输入文件
+
+### 1. 路网和节点
+
+- `input_files_v3/gis/links_ver2.shp`
+- `input_files_v3/gis/nodes_ver2.shp`
+
+节点文件要求：
+
+- 必须包含 `node_id`
+- 必须包含几何
+
+### 2. Path 基础文件
+
+- `input_files_v3/original_output/path_table.csv`
+- `input_files_v3/path_table_buffer`
+
+`path_table.csv` 至少要有：
+
+- `Origin_ID`
+- `Destination_ID`
+- `path`
+- `rank`
+
+其中 `path` 是 node id 序列，例如：
+
+```text
+[4000, 2341, 1680, ...]
+```
+
+`path_table_buffer`：
+
+- 空格分隔文本
+- 每一行对应 `path_table.csv` 中同序的一条 path
+- 每列表示一个时间段下该 path 的份额或权重
+
+### 3. 实验结果文件
+
+- `results/<exp>/ratio_bias_wape_analysis/`
+- `results/<exp>/link_observation_coverage.csv`
+
+当前不再需要：
+
+- `nodes_ver2__codex_tmp.json`
+- `*_link_metrics.csv`
+- `epoch_estimates.npz`
+
+## `ratio_bias_wape_analysis` 的文件格式
+
+### 文件名规则
+
+- hourly:
+  `{car/truck}_{count/tt}_hour_<hour>.csv`
+- 15min:
+  `{car/truck}_{count/tt}_15min_<hour>-<quarter>.csv`
+
+示例：
+
+- `car_count_hour_15.csv`
+- `truck_count_hour_17.csv`
+- `car_tt_15min_15-0.csv`
+- `truck_tt_15min_17-3.csv`
+
+这些文件名会被 demo 自动解析成 `By interval` 的离散滑键。
+
+### 每个 interval CSV 的列
+
+至少需要：
+
+- `linkID`
+- `OBS`
+- `EST`
+- `RATIO`
+- `BIAS`
+- `WAPE`
+- `VALID`
+
+可选说明列：
+
+- `INTERVAL_ID`
+- `INTERVAL_LABEL`
+- `INTERVAL_KIND`
+
+## `link_observation_coverage.csv` 的格式
+
+至少应包含：
+
+- `linkID`
+- `car_flow_count`
+- `truck_flow_count`
+- `car_tt_count`
+- `truck_tt_count`
+- `flow_count`
+- `tt_count`
+- `total_count`
+- `car_flow_ratio`
+- `truck_flow_ratio`
+- `car_tt_ratio`
+- `truck_tt_ratio`
+- `flow_ratio`
+- `tt_ratio`
+- `total_ratio`
+
+demo 用它来判断：
+
+- 哪些 link 在当前 color file 下属于 observed
+- `Hide unobserved links` 应该隐藏哪些 link
+
+## 生成一个新的实验包
+
+主脚本：
+
+- [/Users/exps/Person Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/scripts/experiment_bundle/build_experiment_bundle.py](/Users/exps/Person%20Materials/Phd-CMU-CEE/2-Research-Materials/Server_code/path-link-visualization-demo/scripts/experiment_bundle/build_experiment_bundle.py)
+
+示例：
 
 ```bash
 python scripts/experiment_bundle/build_experiment_bundle.py \
   --experiment-id exp21 \
   --experiment-label "Exp 21" \
   --network "../Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/gis/links_ver2.shp" \
+  --nodes "../Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/gis/nodes_ver2.shp" \
   --path-table-csv "../Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/original_output/path_table.csv" \
-  --path-table-buffer "../Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/original_output/path_table_buffer" \
+  --path-table-buffer "../Pittsburgh_Network/Pittsburgh_DODE/input_files_v3/path_table_buffer" \
   --ratio-dir "../Pittsburgh_Network/Pittsburgh_DODE/results/exp21/ratio_bias_wape_analysis" \
   --coverage-csv "../Pittsburgh_Network/Pittsburgh_DODE/results/exp21/link_observation_coverage.csv"
 ```
 
-## 前端交互说明
+说明：
 
-- `Color file`：选择数据主题，例如 `car_count / car_tt / truck_count / truck_tt`
-- `Metric`：选择 `Observed / Estimate / WAPE / Bias`
-- `Period`：选择总时段或小时级结果
-- `Displayed paths`：控制当前点击 link 后最多显示多少条 path
-- `Path-covered links only`：只显示有 path 覆盖的 link
-- `Hide unobserved links`：按当前视图的有效 mask 过滤无值 link
-- `Show OD points`：显示所有 O/D 点，用黑点和编号标注
+- `--nodes` 现在直接接 `nodes_ver2.shp`
+- 如果不传，脚本会优先自动寻找 `nodes_ver2.shp`
+- bundle 脚本不再依赖 `*_link_metrics.csv`
 
-## 如果要修改颜色设置，改哪里
+## 鲁棒性说明
 
-### 1. 颜色数值映射
+当前版本支持：
 
-文件：
-- `src/data/metrics.ts`
+- 只有 `car`，没有 `truck`
+- 只有 `truck`，没有 `car`
+- 只有 `count`，没有 `tt`
+- 只有 `tt`，没有 `count`
 
-这里控制：
-- `bias` 的蓝-白-红映射
-- `wape / observed / estimate` 的白-红映射
-- outlier clipping 的计算方式
+规则是：
 
-如果你想：
-- 改红色更深/更浅：改 `getColorForValue()`
-- 改 outlier 阈值：改 `computeFieldStats()` 里 IQR 裁剪逻辑
-
-### 2. 图例颜色条
-
-文件：
-- `src/components/Legend.tsx`
-
-现在图例直接复用 `getColorForValue()`。  
-如果以后颜色改了，图例通常不用单独改；除非你想改图例标签格式或显示方式。
-
-## 如果要修改 path 展示逻辑，改哪里
-
-文件：
-- `src/App.tsx`
-- `src/components/PathList.tsx`
-
-当前逻辑：
-- 先按 `contribution` 从大到小排序
-- 如果贡献相同，优先展示 OD 对不同的 path
-- 再由 `Displayed paths` 滑条决定展示多少条
-
-如果你想：
-- 改默认展示条数：改 `src/store/useAppStore.ts` 里的 `maxHighlightedPaths`
-- 改最大展示上限：改 `src/components/Toolbar.tsx` 里滑条的 `max`
-- 改 path 排序策略：改 `src/App.tsx` 里的 `rankContributions()`
-
-## 如果要修改链路宽度、偏移和图层样式，改哪里
-
-文件：
-- `src/layers/createLinkLayer.ts`
-- `src/layers/createSelectedLinkLayer.ts`
-- `src/layers/createHighlightedPathLayer.ts`
-- `src/layers/createOdPointLayers.ts`
-
-常见修改：
-- 改普通 link 线宽：`createLinkLayer.ts`
-- 改选中 link 样式：`createSelectedLinkLayer.ts`
-- 改 path 高亮粗细/颜色：`createHighlightedPathLayer.ts`
-- 改 O/D 点大小、文字大小：`createOdPointLayers.ts`
-
-## 如果要给新实验生成可视化数据，怎么做
-
-主脚本：
-- `scripts/experiment_bundle/build_experiment_bundle.py`
-
-它会自动生成：
-- 网络 GeoJSON
-- links index
-- path summary
-- link to paths
-- contribution bucket files
-- color file 定义
-- OD points GeoJSON
-
-只要你的实验结果目录里有：
-- `ratio_bias_wape_analysis/*_link_metrics.csv`
-- `ratio_bias_wape_analysis/*_hour_*.csv`
-- `link_observation_coverage.csv`
-
-就可以按相同方式生成 `exp22 / exp23`。
-
-## 数据口径提醒
-
-1. `Origin_ID / Destination_ID` 是 OD 点编号，不一定等于网络 node id。  
-   demo 里：
-   - 地图上 O/D 点旁边显示的是 OD 点编号
-   - sidebar 的 OD 汇总表显示的是对应的 `origin_node_id / destination_node_id`
-
-2. `Hide unobserved links` 现在优先按当前视图的 `valid mask` 过滤，  
-   所以它隐藏的是“当前 metric + 当前 period 下无有效值”的 link。
-
-3. path 高亮显示的是“当前 link 对应的 path 集合中的前 N 条”，  
-   不是把所有 path 一次性全部画出来。
+- `ratio_bias_wape_analysis` 里实际存在哪个 modality 的 CSV，demo 就只显示哪个
+- 缺失的 modality 不会出现在 `Color file` 下拉框里
+- `link_observation_coverage.csv` 中缺失 modality 会按 `0` 处理

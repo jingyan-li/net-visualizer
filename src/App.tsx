@@ -120,6 +120,10 @@ function buildFallbackContributions(
   return records;
 }
 
+function getLegacyPeriodMap<T>(measure: ColorMeasureDefinition, key: "fieldByPeriod" | "maskFieldByPeriod") {
+  return (measure as unknown as Record<string, T | undefined>)[key] as Record<string, T> | undefined;
+}
+
 export default function App() {
   const {
     linksGeojson,
@@ -172,7 +176,8 @@ export default function App() {
   const [selectedColorFileId, setSelectedColorFileId] = useState("");
   const [colorFileDefinition, setColorFileDefinition] = useState<ColorFileDefinition | null>(null);
   const [selectedMeasureId, setSelectedMeasureId] = useState("");
-  const [selectedPeriodId, setSelectedPeriodId] = useState("");
+  const [selectedPeriodMode, setSelectedPeriodMode] = useState<"total" | "interval">("total");
+  const [selectedIntervalKey, setSelectedIntervalKey] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -268,9 +273,8 @@ export default function App() {
         }
         setColorFileDefinition(definition);
         setSelectedMeasureId(definition.defaultMeasureId ?? definition.measures[0]?.id ?? "");
-        setSelectedPeriodId(
-          definition.defaultPeriodId ?? Object.keys(definition.periodLabels)[0] ?? ""
-        );
+        setSelectedPeriodMode(definition.defaultPeriodMode ?? "total");
+        setSelectedIntervalKey(definition.defaultIntervalKey ?? definition.intervals?.[0]?.key ?? null);
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Failed to load color file.");
@@ -293,30 +297,62 @@ export default function App() {
       setSelectedMeasureId(colorFileDefinition.defaultMeasureId ?? colorFileDefinition.measures[0]?.id ?? "");
     }
 
-    if (!(selectedPeriodId in colorFileDefinition.periodLabels)) {
-      setSelectedPeriodId(
-        colorFileDefinition.defaultPeriodId ?? Object.keys(colorFileDefinition.periodLabels)[0] ?? ""
-      );
+    if (selectedPeriodMode !== "total" && selectedPeriodMode !== "interval") {
+      setSelectedPeriodMode(colorFileDefinition.defaultPeriodMode ?? "total");
     }
-  }, [colorFileDefinition, selectedMeasureId, selectedPeriodId]);
+
+    if (
+      (colorFileDefinition.intervals?.length ?? 0) > 0 &&
+      !colorFileDefinition.intervals.some((item) => item.key === selectedIntervalKey)
+    ) {
+      setSelectedIntervalKey(colorFileDefinition.defaultIntervalKey ?? colorFileDefinition.intervals[0]?.key ?? null);
+    }
+  }, [colorFileDefinition, selectedIntervalKey, selectedMeasureId, selectedPeriodMode]);
 
   const activeMeasure = useMemo<ColorMeasureDefinition | null>(
     () => colorFileDefinition?.measures.find((item) => item.id === selectedMeasureId) ?? null,
     [colorFileDefinition, selectedMeasureId]
   );
 
-  const activeField = activeMeasure?.fieldByPeriod[selectedPeriodId] ?? "";
-  const activeMaskField = activeMeasure?.maskFieldByPeriod?.[selectedPeriodId];
+  const intervals = colorFileDefinition?.intervals ?? [];
+  const activeInterval = intervals.find((item) => item.key === selectedIntervalKey) ?? intervals[0] ?? null;
+  const legacyFieldByPeriod = activeMeasure ? getLegacyPeriodMap<string>(activeMeasure, "fieldByPeriod") : undefined;
+  const legacyMaskByPeriod = activeMeasure ? getLegacyPeriodMap<string>(activeMeasure, "maskFieldByPeriod") : undefined;
+  const fallbackIntervalField =
+    activeInterval && legacyFieldByPeriod
+      ? legacyFieldByPeriod[activeInterval.key] ??
+        legacyFieldByPeriod[activeInterval.id] ??
+        legacyFieldByPeriod[`hour_${activeInterval.id}`]
+      : "";
+  const fallbackIntervalMask =
+    activeInterval && legacyMaskByPeriod
+      ? legacyMaskByPeriod[activeInterval.key] ??
+        legacyMaskByPeriod[activeInterval.id] ??
+        legacyMaskByPeriod[`hour_${activeInterval.id}`]
+      : undefined;
+  const activeField =
+    selectedPeriodMode === "interval"
+      ? activeMeasure?.fieldByInterval?.[activeInterval?.key ?? ""] ?? fallbackIntervalField ?? ""
+      : activeMeasure?.fieldTotal ?? "";
+  const activeMaskField =
+    selectedPeriodMode === "interval"
+      ? activeMeasure?.maskFieldByInterval?.[activeInterval?.key ?? ""] ?? fallbackIntervalMask
+      : activeMeasure?.maskFieldTotal;
   const activeScaleType = activeMeasure?.scaleType ?? "sequential";
   const activeObservedField = selectedColorFileId ? `${selectedColorFileId}_observed_any` : "";
-  const activeVisibilityField = activeMaskField ?? activeObservedField;
+  const activeVisibilityField =
+    selectedPeriodMode === "interval"
+      ? activeMeasure?.visibilityFieldByInterval?.[activeInterval?.key ?? ""]
+      : activeMeasure?.visibilityFieldTotal;
+  const activeHideFilterField = activeVisibilityField ?? activeObservedField;
   const activeLegendTitle = [
     colorFiles.find((item) => item.id === selectedColorFileId)?.label ?? "",
     activeMeasure?.label ?? "",
-    colorFileDefinition?.periodLabels[selectedPeriodId] ?? ""
+    selectedPeriodMode === "interval" ? activeInterval?.label ?? "" : "Total"
   ]
     .filter(Boolean)
     .join(" | ");
+  const activeLinksIndex = linksIndex;
 
   useEffect(() => {
     if (activeField && activeField !== colorBy) {
@@ -331,16 +367,16 @@ export default function App() {
   }, [clearSelection, linkToPaths, selectedLinkId, showCoveredLinksOnly]);
 
   useEffect(() => {
-    if (!hideUnobservedLinks || !selectedLinkId || !activeVisibilityField) {
+    if (!hideUnobservedLinks || !selectedLinkId || !activeHideFilterField) {
       return;
     }
     const selectedObserved = coerceBoolean(
-      linksIndex[selectedLinkId]?.properties?.[activeVisibilityField]
+      activeLinksIndex[selectedLinkId]?.properties?.[activeHideFilterField]
     );
     if (!selectedObserved) {
       clearSelection();
     }
-  }, [activeVisibilityField, clearSelection, hideUnobservedLinks, linksIndex, selectedLinkId]);
+  }, [activeHideFilterField, activeLinksIndex, clearSelection, hideUnobservedLinks, selectedLinkId]);
 
   useEffect(() => {
     async function refreshContributions() {
@@ -413,11 +449,15 @@ export default function App() {
   const maxHighlightedPathsLimit = selectedLinkId ? Math.max(1, contributions.length) : 40;
   const hasPathCoverage = selectedLinkId ? selectedLinkId in linkToPaths : false;
 
+  const activeLinksGeojsonBase = useMemo<GeoJSON.FeatureCollection | null>(() => {
+    return linksGeojson;
+  }, [linksGeojson]);
+
   const pathCountThresholdMax = useMemo(() => {
-    if (!linksGeojson) {
+    if (!activeLinksGeojsonBase) {
       return 0;
     }
-    const counts = linksGeojson.features
+    const counts = activeLinksGeojsonBase.features
       .filter((feature) => {
         if (activeVisibilityField) {
           return coerceBoolean(feature.properties?.[activeVisibilityField]);
@@ -430,7 +470,7 @@ export default function App() {
         return linkToPaths[linkId]?.length ?? 0;
       });
     return counts.length > 0 ? Math.max(...counts) : 0;
-  }, [activeField, activeVisibilityField, colorBy, linkToPaths, linksGeojson]);
+  }, [activeField, activeLinksGeojsonBase, activeVisibilityField, colorBy, linkToPaths]);
 
   const activePathCountThreshold = pathCountThreshold ?? pathCountThresholdMax;
 
@@ -453,31 +493,28 @@ export default function App() {
   }, [clearSelection, linkToPaths, pathCountThreshold, selectedLinkId]);
 
   const displayedLinksGeojson = useMemo<GeoJSON.FeatureCollection | null>(() => {
-    if (!linksGeojson) {
+    if (!activeLinksGeojsonBase) {
       return null;
     }
-    if (!showCoveredLinksOnly && !hideUnobservedLinks) {
-      return linksGeojson;
-    }
     return {
-      ...linksGeojson,
-      features: linksGeojson.features.filter((feature) => {
+      ...activeLinksGeojsonBase,
+      features: activeLinksGeojsonBase.features.filter((feature) => {
         const linkId = String(feature.properties?.link_id ?? "");
         const coveredOk = !showCoveredLinksOnly || linkId in linkToPaths;
         const observedOk =
           !hideUnobservedLinks ||
-          !activeVisibilityField ||
-          coerceBoolean(feature.properties?.[activeVisibilityField]);
+          !activeHideFilterField ||
+          coerceBoolean(feature.properties?.[activeHideFilterField]);
         const pathCountOk = (linkToPaths[linkId]?.length ?? 0) <= activePathCountThreshold;
         return coveredOk && observedOk && pathCountOk;
       })
     };
   }, [
+    activeHideFilterField,
+    activeLinksGeojsonBase,
     activePathCountThreshold,
-    activeVisibilityField,
     hideUnobservedLinks,
     linkToPaths,
-    linksGeojson,
     showCoveredLinksOnly
   ]);
 
@@ -509,7 +546,7 @@ export default function App() {
         if (!path) {
           return null;
         }
-        return buildPathGeometry(path, linksIndex);
+        return buildPathGeometry(path, activeLinksIndex);
       })
       .filter(
         (
@@ -522,12 +559,12 @@ export default function App() {
       type: "FeatureCollection",
       features: features as GeoJSON.Feature[]
     };
-  }, [highlightedPathIds, linksIndex, pathSummary]);
+  }, [activeLinksIndex, highlightedPathIds, pathSummary]);
 
-  const linkProperties = selectedLinkId ? linksIndex[selectedLinkId]?.properties ?? null : null;
+  const linkProperties = selectedLinkId ? activeLinksIndex[selectedLinkId]?.properties ?? null : null;
   const activeMetricValue =
-    selectedLinkId && linksIndex[selectedLinkId]
-      ? linksIndex[selectedLinkId].properties?.[activeField || colorBy]
+    selectedLinkId && activeLinksIndex[selectedLinkId]
+      ? activeLinksIndex[selectedLinkId].properties?.[activeField || colorBy]
       : null;
 
   useEffect(() => {
@@ -559,7 +596,9 @@ export default function App() {
         selectedColorFileId={selectedColorFileId}
         colorFileDefinition={colorFileDefinition}
         selectedMeasureId={selectedMeasureId}
-        selectedPeriodId={selectedPeriodId}
+        selectedPeriodMode={selectedPeriodMode}
+        selectedIntervalKey={selectedIntervalKey}
+        intervals={intervals}
         maxHighlightedPaths={maxHighlightedPaths}
         maxHighlightedPathsLimit={maxHighlightedPathsLimit}
         pathCountThreshold={activePathCountThreshold}
@@ -575,7 +614,8 @@ export default function App() {
         onExperimentChange={setSelectedExperimentId}
         onColorFileChange={setSelectedColorFileId}
         onMeasureChange={setSelectedMeasureId}
-        onPeriodChange={setSelectedPeriodId}
+        onPeriodModeChange={setSelectedPeriodMode}
+        onIntervalKeyChange={setSelectedIntervalKey}
         onMaxHighlightedPathsChange={setMaxHighlightedPaths}
         onPathCountThresholdChange={setPathCountThreshold}
         onLinkWidthScaleChange={setLinkWidthScale}

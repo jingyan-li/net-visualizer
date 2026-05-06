@@ -7,7 +7,7 @@
         "point_id": "100130",
         "node_id": "4000",
         "point_role": "O",
-        "label": "100130"
+        "label": "4000"
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +23,7 @@
         "point_id": "100008",
         "node_id": "4001",
         "point_role": "O",
-        "label": "100008"
+        "label": "4001"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +39,7 @@
         "point_id": "100245",
         "node_id": "4002",
         "point_role": "O",
-        "label": "100245"
+        "label": "4002"
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +55,7 @@
         "point_id": "100018",
         "node_id": "4003",
         "point_role": "O",
-        "label": "100018"
+        "label": "4003"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +71,7 @@
         "point_id": "100114",
         "node_id": "4004",
         "point_role": "O",
-        "label": "100114"
+        "label": "4004"
       },
       "geometry": {
         "type": "Point",
@@ -87,7 +87,7 @@
         "point_id": "100133",
         "node_id": "4005",
         "point_role": "O",
-        "label": "100133"
+        "label": "4005"
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +103,7 @@
         "point_id": "100246",
         "node_id": "4006",
         "point_role": "O",
-        "label": "100246"
+        "label": "4006"
       },
       "geometry": {
         "type": "Point",
@@ -119,7 +119,7 @@
         "point_id": "100124",
         "node_id": "4007",
         "point_role": "O",
-        "label": "100124"
+        "label": "4007"
       },
       "geometry": {
         "type": "Point",
@@ -135,7 +135,7 @@
         "point_id": "100129",
         "node_id": "4008",
         "point_role": "O",
-        "label": "100129"
+        "label": "4008"
       },
       "geometry": {
         "type": "Point",
@@ -151,7 +151,7 @@
         "point_id": "100125",
         "node_id": "4009",
         "point_role": "O",
-        "label": "100125"
+        "label": "4009"
       },
       "geometry": {
         "type": "Point",
@@ -167,7 +167,7 @@
         "point_id": "100132",
         "node_id": "4010",
         "point_role": "O",
-        "label": "100132"
+        "label": "4010"
       },
       "geometry": {
         "type": "Point",
@@ -183,7 +183,7 @@
         "point_id": "100247",
         "node_id": "4011",
         "point_role": "O",
-        "label": "100247"
+        "label": "4011"
       },
       "geometry": {
         "type": "Point",
@@ -199,7 +199,7 @@
         "point_id": "100251",
         "node_id": "4012",
         "point_role": "O",
-        "label": "100251"
+        "label": "4012"
       },
       "geometry": {
         "type": "Point",
@@ -215,7 +215,7 @@
         "point_id": "100020",
         "node_id": "4013",
         "point_role": "O",
-        "label": "100020"
+        "label": "4013"
       },
       "geometry": {
         "type": "Point",
@@ -231,7 +231,7 @@
         "point_id": "100244",
         "node_id": "4014",
         "point_role": "O",
-        "label": "100244"
+        "label": "4014"
       },
       "geometry": {
         "type": "Point",
@@ -247,7 +247,7 @@
         "point_id": "100136",
         "node_id": "4015",
         "point_role": "O",
-        "label": "100136"
+        "label": "4015"
       },
       "geometry": {
         "type": "Point",
@@ -263,7 +263,7 @@
         "point_id": "100123",
         "node_id": "4016",
         "point_role": "O",
-        "label": "100123"
+        "label": "4016"
       },
       "geometry": {
         "type": "Point",
@@ -279,7 +279,7 @@
         "point_id": "100007",
         "node_id": "4017",
         "point_role": "O",
-        "label": "100007"
+        "label": "4017"
       },
       "geometry": {
         "type": "Point",
@@ -295,7 +295,7 @@
         "point_id": "100011",
         "node_id": "4018",
         "point_role": "O",
-        "label": "100011"
+        "label": "4018"
       },
       "geometry": {
         "type": "Point",
@@ -311,7 +311,7 @@
         "point_id": "100122",
         "node_id": "4019",
         "point_role": "O",
-        "label": "100122"
+        "label": "4019"
       },
       "geometry": {
         "type": "Point",
@@ -327,7 +327,7 @@
         "point_id": "100019",
         "node_id": "4020",
         "point_role": "O",
-        "label": "100019"
+        "label": "4020"
       },
       "geometry": {
         "type": "Point",
@@ -343,7 +343,7 @@
         "point_id": "100126",
         "node_id": "4021",
         "point_role": "O",
-        "label": "100126"
+        "label": "4021"
       },
       "geometry": {
         "type": "Point",
@@ -359,7 +359,7 @@
         "point_id": "100014",
         "node_id": "4022",
         "point_role": "O",
-        "label": "100014"
+        "label": "4022"
       },
       "geometry": {
         "type": "Point",
@@ -375,7 +375,7 @@
         "point_id": "100115",
         "node_id": "4023",
         "point_role": "O",
-        "label": "100115"
+        "label": "4023"
       },
       "geometry": {
         "type": "Point",
@@ -391,7 +391,7 @@
         "point_id": "100119",
         "node_id": "4024",
         "point_role": "O",
-        "label": "100119"
+        "label": "4024"
       },
       "geometry": {
         "type": "Point",
@@ -407,7 +407,7 @@
         "point_id": "100137",
         "node_id": "4025",
         "point_role": "O",
-        "label": "100137"
+        "label": "4025"
       },
       "geometry": {
         "type": "Point",
@@ -423,7 +423,7 @@
         "point_id": "100009",
         "node_id": "4026",
         "point_role": "O",
-        "label": "100009"
+        "label": "4026"
       },
       "geometry": {
         "type": "Point",
@@ -439,7 +439,7 @@
         "point_id": "100127",
         "node_id": "4027",
         "point_role": "O",
-        "label": "100127"
+        "label": "4027"
       },
       "geometry": {
         "type": "Point",
@@ -455,7 +455,7 @@
         "point_id": "100005",
         "node_id": "4028",
         "point_role": "O",
-        "label": "100005"
+        "label": "4028"
       },
       "geometry": {
         "type": "Point",
@@ -471,7 +471,7 @@
         "point_id": "100250",
         "node_id": "4029",
         "point_role": "O",
-        "label": "100250"
+        "label": "4029"
       },
       "geometry": {
         "type": "Point",
@@ -487,7 +487,7 @@
         "point_id": "100001",
         "node_id": "4030",
         "point_role": "O",
-        "label": "100001"
+        "label": "4030"
       },
       "geometry": {
         "type": "Point",
@@ -503,7 +503,7 @@
         "point_id": "100138",
         "node_id": "4031",
         "point_role": "O",
-        "label": "100138"
+        "label": "4031"
       },
       "geometry": {
         "type": "Point",
@@ -519,7 +519,7 @@
         "point_id": "100012",
         "node_id": "4032",
         "point_role": "O",
-        "label": "100012"
+        "label": "4032"
       },
       "geometry": {
         "type": "Point",
@@ -535,7 +535,7 @@
         "point_id": "100004",
         "node_id": "4033",
         "point_role": "O",
-        "label": "100004"
+        "label": "4033"
       },
       "geometry": {
         "type": "Point",
@@ -551,7 +551,7 @@
         "point_id": "100118",
         "node_id": "4034",
         "point_role": "O",
-        "label": "100118"
+        "label": "4034"
       },
       "geometry": {
         "type": "Point",
@@ -567,7 +567,7 @@
         "point_id": "100135",
         "node_id": "4035",
         "point_role": "O",
-        "label": "100135"
+        "label": "4035"
       },
       "geometry": {
         "type": "Point",
@@ -583,7 +583,7 @@
         "point_id": "100017",
         "node_id": "4036",
         "point_role": "O",
-        "label": "100017"
+        "label": "4036"
       },
       "geometry": {
         "type": "Point",
@@ -599,7 +599,7 @@
         "point_id": "100015",
         "node_id": "4037",
         "point_role": "O",
-        "label": "100015"
+        "label": "4037"
       },
       "geometry": {
         "type": "Point",
@@ -615,7 +615,7 @@
         "point_id": "100006",
         "node_id": "4038",
         "point_role": "O",
-        "label": "100006"
+        "label": "4038"
       },
       "geometry": {
         "type": "Point",
@@ -631,7 +631,7 @@
         "point_id": "100131",
         "node_id": "4039",
         "point_role": "O",
-        "label": "100131"
+        "label": "4039"
       },
       "geometry": {
         "type": "Point",
@@ -647,7 +647,7 @@
         "point_id": "100116",
         "node_id": "4040",
         "point_role": "O",
-        "label": "100116"
+        "label": "4040"
       },
       "geometry": {
         "type": "Point",
@@ -663,7 +663,7 @@
         "point_id": "100120",
         "node_id": "4041",
         "point_role": "O",
-        "label": "100120"
+        "label": "4041"
       },
       "geometry": {
         "type": "Point",
@@ -679,7 +679,7 @@
         "point_id": "100002",
         "node_id": "4042",
         "point_role": "O",
-        "label": "100002"
+        "label": "4042"
       },
       "geometry": {
         "type": "Point",
@@ -695,7 +695,7 @@
         "point_id": "100248",
         "node_id": "4043",
         "point_role": "O",
-        "label": "100248"
+        "label": "4043"
       },
       "geometry": {
         "type": "Point",
@@ -711,7 +711,7 @@
         "point_id": "100003",
         "node_id": "4044",
         "point_role": "O",
-        "label": "100003"
+        "label": "4044"
       },
       "geometry": {
         "type": "Point",
@@ -727,7 +727,7 @@
         "point_id": "100121",
         "node_id": "4045",
         "point_role": "O",
-        "label": "100121"
+        "label": "4045"
       },
       "geometry": {
         "type": "Point",
@@ -743,7 +743,7 @@
         "point_id": "100013",
         "node_id": "4046",
         "point_role": "O",
-        "label": "100013"
+        "label": "4046"
       },
       "geometry": {
         "type": "Point",
@@ -759,7 +759,7 @@
         "point_id": "100117",
         "node_id": "4047",
         "point_role": "O",
-        "label": "100117"
+        "label": "4047"
       },
       "geometry": {
         "type": "Point",
@@ -775,7 +775,7 @@
         "point_id": "100249",
         "node_id": "4048",
         "point_role": "O",
-        "label": "100249"
+        "label": "4048"
       },
       "geometry": {
         "type": "Point",
@@ -791,7 +791,7 @@
         "point_id": "100010",
         "node_id": "4049",
         "point_role": "O",
-        "label": "100010"
+        "label": "4049"
       },
       "geometry": {
         "type": "Point",
@@ -807,7 +807,7 @@
         "point_id": "100134",
         "node_id": "4050",
         "point_role": "O",
-        "label": "100134"
+        "label": "4050"
       },
       "geometry": {
         "type": "Point",
@@ -823,7 +823,7 @@
         "point_id": "100128",
         "node_id": "4051",
         "point_role": "O",
-        "label": "100128"
+        "label": "4051"
       },
       "geometry": {
         "type": "Point",
@@ -839,7 +839,7 @@
         "point_id": "100016",
         "node_id": "4052",
         "point_role": "O",
-        "label": "100016"
+        "label": "4052"
       },
       "geometry": {
         "type": "Point",
@@ -855,7 +855,7 @@
         "point_id": "100181",
         "node_id": "4053",
         "point_role": "O",
-        "label": "100181"
+        "label": "4053"
       },
       "geometry": {
         "type": "Point",
@@ -871,7 +871,7 @@
         "point_id": "100243",
         "node_id": "4054",
         "point_role": "O",
-        "label": "100243"
+        "label": "4054"
       },
       "geometry": {
         "type": "Point",
@@ -887,7 +887,7 @@
         "point_id": "100203",
         "node_id": "4055",
         "point_role": "O",
-        "label": "100203"
+        "label": "4055"
       },
       "geometry": {
         "type": "Point",
@@ -903,7 +903,7 @@
         "point_id": "100202",
         "node_id": "4056",
         "point_role": "O",
-        "label": "100202"
+        "label": "4056"
       },
       "geometry": {
         "type": "Point",
@@ -919,7 +919,7 @@
         "point_id": "100201",
         "node_id": "4057",
         "point_role": "O",
-        "label": "100201"
+        "label": "4057"
       },
       "geometry": {
         "type": "Point",
@@ -935,7 +935,7 @@
         "point_id": "100050",
         "node_id": "4058",
         "point_role": "O",
-        "label": "100050"
+        "label": "4058"
       },
       "geometry": {
         "type": "Point",
@@ -951,7 +951,7 @@
         "point_id": "100165",
         "node_id": "4059",
         "point_role": "O",
-        "label": "100165"
+        "label": "4059"
       },
       "geometry": {
         "type": "Point",
@@ -967,7 +967,7 @@
         "point_id": "100200",
         "node_id": "4060",
         "point_role": "O",
-        "label": "100200"
+        "label": "4060"
       },
       "geometry": {
         "type": "Point",
@@ -983,7 +983,7 @@
         "point_id": "100199",
         "node_id": "4061",
         "point_role": "O",
-        "label": "100199"
+        "label": "4061"
       },
       "geometry": {
         "type": "Point",
@@ -999,7 +999,7 @@
         "point_id": "100166",
         "node_id": "4062",
         "point_role": "O",
-        "label": "100166"
+        "label": "4062"
       },
       "geometry": {
         "type": "Point",
@@ -1015,7 +1015,7 @@
         "point_id": "100198",
         "node_id": "4063",
         "point_role": "O",
-        "label": "100198"
+        "label": "4063"
       },
       "geometry": {
         "type": "Point",
@@ -1031,7 +1031,7 @@
         "point_id": "100197",
         "node_id": "4064",
         "point_role": "O",
-        "label": "100197"
+        "label": "4064"
       },
       "geometry": {
         "type": "Point",
@@ -1047,7 +1047,7 @@
         "point_id": "100082",
         "node_id": "4065",
         "point_role": "O",
-        "label": "100082"
+        "label": "4065"
       },
       "geometry": {
         "type": "Point",
@@ -1063,7 +1063,7 @@
         "point_id": "100051",
         "node_id": "4066",
         "point_role": "O",
-        "label": "100051"
+        "label": "4066"
       },
       "geometry": {
         "type": "Point",
@@ -1079,7 +1079,7 @@
         "point_id": "100167",
         "node_id": "4067",
         "point_role": "O",
-        "label": "100167"
+        "label": "4067"
       },
       "geometry": {
         "type": "Point",
@@ -1095,7 +1095,7 @@
         "point_id": "100081",
         "node_id": "4068",
         "point_role": "O",
-        "label": "100081"
+        "label": "4068"
       },
       "geometry": {
         "type": "Point",
@@ -1111,7 +1111,7 @@
         "point_id": "100168",
         "node_id": "4069",
         "point_role": "O",
-        "label": "100168"
+        "label": "4069"
       },
       "geometry": {
         "type": "Point",
@@ -1127,7 +1127,7 @@
         "point_id": "100080",
         "node_id": "4070",
         "point_role": "O",
-        "label": "100080"
+        "label": "4070"
       },
       "geometry": {
         "type": "Point",
@@ -1143,7 +1143,7 @@
         "point_id": "100079",
         "node_id": "4071",
         "point_role": "O",
-        "label": "100079"
+        "label": "4071"
       },
       "geometry": {
         "type": "Point",
@@ -1159,7 +1159,7 @@
         "point_id": "100078",
         "node_id": "4072",
         "point_role": "O",
-        "label": "100078"
+        "label": "4072"
       },
       "geometry": {
         "type": "Point",
@@ -1175,7 +1175,7 @@
         "point_id": "100196",
         "node_id": "4073",
         "point_role": "O",
-        "label": "100196"
+        "label": "4073"
       },
       "geometry": {
         "type": "Point",
@@ -1191,7 +1191,7 @@
         "point_id": "100169",
         "node_id": "4074",
         "point_role": "O",
-        "label": "100169"
+        "label": "4074"
       },
       "geometry": {
         "type": "Point",
@@ -1207,7 +1207,7 @@
         "point_id": "100077",
         "node_id": "4075",
         "point_role": "O",
-        "label": "100077"
+        "label": "4075"
       },
       "geometry": {
         "type": "Point",
@@ -1223,7 +1223,7 @@
         "point_id": "100049",
         "node_id": "4076",
         "point_role": "O",
-        "label": "100049"
+        "label": "4076"
       },
       "geometry": {
         "type": "Point",
@@ -1239,7 +1239,7 @@
         "point_id": "100195",
         "node_id": "4077",
         "point_role": "O",
-        "label": "100195"
+        "label": "4077"
       },
       "geometry": {
         "type": "Point",
@@ -1255,7 +1255,7 @@
         "point_id": "100204",
         "node_id": "4078",
         "point_role": "O",
-        "label": "100204"
+        "label": "4078"
       },
       "geometry": {
         "type": "Point",
@@ -1271,7 +1271,7 @@
         "point_id": "100083",
         "node_id": "4079",
         "point_role": "O",
-        "label": "100083"
+        "label": "4079"
       },
       "geometry": {
         "type": "Point",
@@ -1287,7 +1287,7 @@
         "point_id": "100085",
         "node_id": "4080",
         "point_role": "O",
-        "label": "100085"
+        "label": "4080"
       },
       "geometry": {
         "type": "Point",
@@ -1303,7 +1303,7 @@
         "point_id": "100216",
         "node_id": "4081",
         "point_role": "O",
-        "label": "100216"
+        "label": "4081"
       },
       "geometry": {
         "type": "Point",
@@ -1319,7 +1319,7 @@
         "point_id": "100043",
         "node_id": "4082",
         "point_role": "O",
-        "label": "100043"
+        "label": "4082"
       },
       "geometry": {
         "type": "Point",
@@ -1335,7 +1335,7 @@
         "point_id": "100163",
         "node_id": "4083",
         "point_role": "O",
-        "label": "100163"
+        "label": "4083"
       },
       "geometry": {
         "type": "Point",
@@ -1351,7 +1351,7 @@
         "point_id": "100215",
         "node_id": "4084",
         "point_role": "O",
-        "label": "100215"
+        "label": "4084"
       },
       "geometry": {
         "type": "Point",
@@ -1367,7 +1367,7 @@
         "point_id": "100164",
         "node_id": "4085",
         "point_role": "O",
-        "label": "100164"
+        "label": "4085"
       },
       "geometry": {
         "type": "Point",
@@ -1383,7 +1383,7 @@
         "point_id": "100214",
         "node_id": "4086",
         "point_role": "O",
-        "label": "100214"
+        "label": "4086"
       },
       "geometry": {
         "type": "Point",
@@ -1399,7 +1399,7 @@
         "point_id": "100213",
         "node_id": "4087",
         "point_role": "O",
-        "label": "100213"
+        "label": "4087"
       },
       "geometry": {
         "type": "Point",
@@ -1415,7 +1415,7 @@
         "point_id": "100212",
         "node_id": "4088",
         "point_role": "O",
-        "label": "100212"
+        "label": "4088"
       },
       "geometry": {
         "type": "Point",
@@ -1431,7 +1431,7 @@
         "point_id": "100044",
         "node_id": "4089",
         "point_role": "O",
-        "label": "100044"
+        "label": "4089"
       },
       "geometry": {
         "type": "Point",
@@ -1447,7 +1447,7 @@
         "point_id": "100211",
         "node_id": "4090",
         "point_role": "O",
-        "label": "100211"
+        "label": "4090"
       },
       "geometry": {
         "type": "Point",
@@ -1463,7 +1463,7 @@
         "point_id": "100084",
         "node_id": "4091",
         "point_role": "O",
-        "label": "100084"
+        "label": "4091"
       },
       "geometry": {
         "type": "Point",
@@ -1479,7 +1479,7 @@
         "point_id": "100045",
         "node_id": "4092",
         "point_role": "O",
-        "label": "100045"
+        "label": "4092"
       },
       "geometry": {
         "type": "Point",
@@ -1495,7 +1495,7 @@
         "point_id": "100210",
         "node_id": "4093",
         "point_role": "O",
-        "label": "100210"
+        "label": "4093"
       },
       "geometry": {
         "type": "Point",
@@ -1511,7 +1511,7 @@
         "point_id": "100046",
         "node_id": "4094",
         "point_role": "O",
-        "label": "100046"
+        "label": "4094"
       },
       "geometry": {
         "type": "Point",
@@ -1527,7 +1527,7 @@
         "point_id": "100209",
         "node_id": "4095",
         "point_role": "O",
-        "label": "100209"
+        "label": "4095"
       },
       "geometry": {
         "type": "Point",
@@ -1543,7 +1543,7 @@
         "point_id": "100047",
         "node_id": "4096",
         "point_role": "O",
-        "label": "100047"
+        "label": "4096"
       },
       "geometry": {
         "type": "Point",
@@ -1559,7 +1559,7 @@
         "point_id": "100208",
         "node_id": "4097",
         "point_role": "O",
-        "label": "100208"
+        "label": "4097"
       },
       "geometry": {
         "type": "Point",
@@ -1575,7 +1575,7 @@
         "point_id": "100207",
         "node_id": "4098",
         "point_role": "O",
-        "label": "100207"
+        "label": "4098"
       },
       "geometry": {
         "type": "Point",
@@ -1591,7 +1591,7 @@
         "point_id": "100206",
         "node_id": "4099",
         "point_role": "O",
-        "label": "100206"
+        "label": "4099"
       },
       "geometry": {
         "type": "Point",
@@ -1607,7 +1607,7 @@
         "point_id": "100205",
         "node_id": "4100",
         "point_role": "O",
-        "label": "100205"
+        "label": "4100"
       },
       "geometry": {
         "type": "Point",
@@ -1623,7 +1623,7 @@
         "point_id": "100048",
         "node_id": "4101",
         "point_role": "O",
-        "label": "100048"
+        "label": "4101"
       },
       "geometry": {
         "type": "Point",
@@ -1639,7 +1639,7 @@
         "point_id": "100086",
         "node_id": "4102",
         "point_role": "O",
-        "label": "100086"
+        "label": "4102"
       },
       "geometry": {
         "type": "Point",
@@ -1655,7 +1655,7 @@
         "point_id": "100194",
         "node_id": "4103",
         "point_role": "O",
-        "label": "100194"
+        "label": "4103"
       },
       "geometry": {
         "type": "Point",
@@ -1671,7 +1671,7 @@
         "point_id": "100193",
         "node_id": "4104",
         "point_role": "O",
-        "label": "100193"
+        "label": "4104"
       },
       "geometry": {
         "type": "Point",
@@ -1687,7 +1687,7 @@
         "point_id": "100069",
         "node_id": "4105",
         "point_role": "O",
-        "label": "100069"
+        "label": "4105"
       },
       "geometry": {
         "type": "Point",
@@ -1703,7 +1703,7 @@
         "point_id": "100184",
         "node_id": "4106",
         "point_role": "O",
-        "label": "100184"
+        "label": "4106"
       },
       "geometry": {
         "type": "Point",
@@ -1719,7 +1719,7 @@
         "point_id": "100057",
         "node_id": "4107",
         "point_role": "O",
-        "label": "100057"
+        "label": "4107"
       },
       "geometry": {
         "type": "Point",
@@ -1735,7 +1735,7 @@
         "point_id": "100058",
         "node_id": "4108",
         "point_role": "O",
-        "label": "100058"
+        "label": "4108"
       },
       "geometry": {
         "type": "Point",
@@ -1751,7 +1751,7 @@
         "point_id": "100177",
         "node_id": "4109",
         "point_role": "O",
-        "label": "100177"
+        "label": "4109"
       },
       "geometry": {
         "type": "Point",
@@ -1767,7 +1767,7 @@
         "point_id": "100059",
         "node_id": "4110",
         "point_role": "O",
-        "label": "100059"
+        "label": "4110"
       },
       "geometry": {
         "type": "Point",
@@ -1783,7 +1783,7 @@
         "point_id": "100183",
         "node_id": "4111",
         "point_role": "O",
-        "label": "100183"
+        "label": "4111"
       },
       "geometry": {
         "type": "Point",
@@ -1799,7 +1799,7 @@
         "point_id": "100182",
         "node_id": "4112",
         "point_role": "O",
-        "label": "100182"
+        "label": "4112"
       },
       "geometry": {
         "type": "Point",
@@ -1815,7 +1815,7 @@
         "point_id": "100060",
         "node_id": "4113",
         "point_role": "O",
-        "label": "100060"
+        "label": "4113"
       },
       "geometry": {
         "type": "Point",
@@ -1831,7 +1831,7 @@
         "point_id": "100068",
         "node_id": "4114",
         "point_role": "O",
-        "label": "100068"
+        "label": "4114"
       },
       "geometry": {
         "type": "Point",
@@ -1847,7 +1847,7 @@
         "point_id": "100178",
         "node_id": "4115",
         "point_role": "O",
-        "label": "100178"
+        "label": "4115"
       },
       "geometry": {
         "type": "Point",
@@ -1863,7 +1863,7 @@
         "point_id": "100061",
         "node_id": "4116",
         "point_role": "O",
-        "label": "100061"
+        "label": "4116"
       },
       "geometry": {
         "type": "Point",
@@ -1879,7 +1879,7 @@
         "point_id": "100062",
         "node_id": "4117",
         "point_role": "O",
-        "label": "100062"
+        "label": "4117"
       },
       "geometry": {
         "type": "Point",
@@ -1895,7 +1895,7 @@
         "point_id": "100063",
         "node_id": "4118",
         "point_role": "O",
-        "label": "100063"
+        "label": "4118"
       },
       "geometry": {
         "type": "Point",
@@ -1911,7 +1911,7 @@
         "point_id": "100067",
         "node_id": "4119",
         "point_role": "O",
-        "label": "100067"
+        "label": "4119"
       },
       "geometry": {
         "type": "Point",
@@ -1927,7 +1927,7 @@
         "point_id": "100064",
         "node_id": "4120",
         "point_role": "O",
-        "label": "100064"
+        "label": "4120"
       },
       "geometry": {
         "type": "Point",
@@ -1943,7 +1943,7 @@
         "point_id": "100066",
         "node_id": "4121",
         "point_role": "O",
-        "label": "100066"
+        "label": "4121"
       },
       "geometry": {
         "type": "Point",
@@ -1959,7 +1959,7 @@
         "point_id": "100179",
         "node_id": "4122",
         "point_role": "O",
-        "label": "100179"
+        "label": "4122"
       },
       "geometry": {
         "type": "Point",
@@ -1975,7 +1975,7 @@
         "point_id": "100065",
         "node_id": "4123",
         "point_role": "O",
-        "label": "100065"
+        "label": "4123"
       },
       "geometry": {
         "type": "Point",
@@ -1991,7 +1991,7 @@
         "point_id": "100180",
         "node_id": "4124",
         "point_role": "O",
-        "label": "100180"
+        "label": "4124"
       },
       "geometry": {
         "type": "Point",
@@ -2007,7 +2007,7 @@
         "point_id": "100139",
         "node_id": "4125",
         "point_role": "O",
-        "label": "100139"
+        "label": "4125"
       },
       "geometry": {
         "type": "Point",
@@ -2023,7 +2023,7 @@
         "point_id": "100070",
         "node_id": "4126",
         "point_role": "O",
-        "label": "100070"
+        "label": "4126"
       },
       "geometry": {
         "type": "Point",
@@ -2039,7 +2039,7 @@
         "point_id": "100170",
         "node_id": "4127",
         "point_role": "O",
-        "label": "100170"
+        "label": "4127"
       },
       "geometry": {
         "type": "Point",
@@ -2055,7 +2055,7 @@
         "point_id": "100071",
         "node_id": "4128",
         "point_role": "O",
-        "label": "100071"
+        "label": "4128"
       },
       "geometry": {
         "type": "Point",
@@ -2071,7 +2071,7 @@
         "point_id": "100073",
         "node_id": "4129",
         "point_role": "O",
-        "label": "100073"
+        "label": "4129"
       },
       "geometry": {
         "type": "Point",
@@ -2087,7 +2087,7 @@
         "point_id": "100171",
         "node_id": "4130",
         "point_role": "O",
-        "label": "100171"
+        "label": "4130"
       },
       "geometry": {
         "type": "Point",
@@ -2103,7 +2103,7 @@
         "point_id": "100192",
         "node_id": "4131",
         "point_role": "O",
-        "label": "100192"
+        "label": "4131"
       },
       "geometry": {
         "type": "Point",
@@ -2119,7 +2119,7 @@
         "point_id": "100076",
         "node_id": "4132",
         "point_role": "O",
-        "label": "100076"
+        "label": "4132"
       },
       "geometry": {
         "type": "Point",
@@ -2135,7 +2135,7 @@
         "point_id": "100191",
         "node_id": "4133",
         "point_role": "O",
-        "label": "100191"
+        "label": "4133"
       },
       "geometry": {
         "type": "Point",
@@ -2151,7 +2151,7 @@
         "point_id": "100052",
         "node_id": "4134",
         "point_role": "O",
-        "label": "100052"
+        "label": "4134"
       },
       "geometry": {
         "type": "Point",
@@ -2167,7 +2167,7 @@
         "point_id": "100190",
         "node_id": "4135",
         "point_role": "O",
-        "label": "100190"
+        "label": "4135"
       },
       "geometry": {
         "type": "Point",
@@ -2183,7 +2183,7 @@
         "point_id": "100172",
         "node_id": "4136",
         "point_role": "O",
-        "label": "100172"
+        "label": "4136"
       },
       "geometry": {
         "type": "Point",
@@ -2199,7 +2199,7 @@
         "point_id": "100173",
         "node_id": "4137",
         "point_role": "O",
-        "label": "100173"
+        "label": "4137"
       },
       "geometry": {
         "type": "Point",
@@ -2215,7 +2215,7 @@
         "point_id": "100175",
         "node_id": "4138",
         "point_role": "O",
-        "label": "100175"
+        "label": "4138"
       },
       "geometry": {
         "type": "Point",
@@ -2231,7 +2231,7 @@
         "point_id": "100176",
         "node_id": "4139",
         "point_role": "O",
-        "label": "100176"
+        "label": "4139"
       },
       "geometry": {
         "type": "Point",
@@ -2247,7 +2247,7 @@
         "point_id": "100189",
         "node_id": "4140",
         "point_role": "O",
-        "label": "100189"
+        "label": "4140"
       },
       "geometry": {
         "type": "Point",
@@ -2263,7 +2263,7 @@
         "point_id": "100053",
         "node_id": "4141",
         "point_role": "O",
-        "label": "100053"
+        "label": "4141"
       },
       "geometry": {
         "type": "Point",
@@ -2279,7 +2279,7 @@
         "point_id": "100054",
         "node_id": "4142",
         "point_role": "O",
-        "label": "100054"
+        "label": "4142"
       },
       "geometry": {
         "type": "Point",
@@ -2295,7 +2295,7 @@
         "point_id": "100188",
         "node_id": "4143",
         "point_role": "O",
-        "label": "100188"
+        "label": "4143"
       },
       "geometry": {
         "type": "Point",
@@ -2311,7 +2311,7 @@
         "point_id": "100187",
         "node_id": "4144",
         "point_role": "O",
-        "label": "100187"
+        "label": "4144"
       },
       "geometry": {
         "type": "Point",
@@ -2327,7 +2327,7 @@
         "point_id": "100055",
         "node_id": "4145",
         "point_role": "O",
-        "label": "100055"
+        "label": "4145"
       },
       "geometry": {
         "type": "Point",
@@ -2343,7 +2343,7 @@
         "point_id": "100075",
         "node_id": "4146",
         "point_role": "O",
-        "label": "100075"
+        "label": "4146"
       },
       "geometry": {
         "type": "Point",
@@ -2359,7 +2359,7 @@
         "point_id": "100186",
         "node_id": "4147",
         "point_role": "O",
-        "label": "100186"
+        "label": "4147"
       },
       "geometry": {
         "type": "Point",
@@ -2375,7 +2375,7 @@
         "point_id": "100074",
         "node_id": "4148",
         "point_role": "O",
-        "label": "100074"
+        "label": "4148"
       },
       "geometry": {
         "type": "Point",
@@ -2391,7 +2391,7 @@
         "point_id": "100185",
         "node_id": "4149",
         "point_role": "O",
-        "label": "100185"
+        "label": "4149"
       },
       "geometry": {
         "type": "Point",
@@ -2407,7 +2407,7 @@
         "point_id": "100056",
         "node_id": "4150",
         "point_role": "O",
-        "label": "100056"
+        "label": "4150"
       },
       "geometry": {
         "type": "Point",
@@ -2423,7 +2423,7 @@
         "point_id": "100072",
         "node_id": "4151",
         "point_role": "O",
-        "label": "100072"
+        "label": "4151"
       },
       "geometry": {
         "type": "Point",
@@ -2439,7 +2439,7 @@
         "point_id": "100162",
         "node_id": "4152",
         "point_role": "O",
-        "label": "100162"
+        "label": "4152"
       },
       "geometry": {
         "type": "Point",
@@ -2455,7 +2455,7 @@
         "point_id": "100174",
         "node_id": "4153",
         "point_role": "O",
-        "label": "100174"
+        "label": "4153"
       },
       "geometry": {
         "type": "Point",
@@ -2471,7 +2471,7 @@
         "point_id": "100217",
         "node_id": "4154",
         "point_role": "O",
-        "label": "100217"
+        "label": "4154"
       },
       "geometry": {
         "type": "Point",
@@ -2487,7 +2487,7 @@
         "point_id": "100026",
         "node_id": "4155",
         "point_role": "O",
-        "label": "100026"
+        "label": "4155"
       },
       "geometry": {
         "type": "Point",
@@ -2503,7 +2503,7 @@
         "point_id": "100144",
         "node_id": "4156",
         "point_role": "O",
-        "label": "100144"
+        "label": "4156"
       },
       "geometry": {
         "type": "Point",
@@ -2519,7 +2519,7 @@
         "point_id": "100108",
         "node_id": "4157",
         "point_role": "O",
-        "label": "100108"
+        "label": "4157"
       },
       "geometry": {
         "type": "Point",
@@ -2535,7 +2535,7 @@
         "point_id": "100027",
         "node_id": "4158",
         "point_role": "O",
-        "label": "100027"
+        "label": "4158"
       },
       "geometry": {
         "type": "Point",
@@ -2551,7 +2551,7 @@
         "point_id": "100028",
         "node_id": "4159",
         "point_role": "O",
-        "label": "100028"
+        "label": "4159"
       },
       "geometry": {
         "type": "Point",
@@ -2567,7 +2567,7 @@
         "point_id": "100107",
         "node_id": "4160",
         "point_role": "O",
-        "label": "100107"
+        "label": "4160"
       },
       "geometry": {
         "type": "Point",
@@ -2583,7 +2583,7 @@
         "point_id": "100106",
         "node_id": "4161",
         "point_role": "O",
-        "label": "100106"
+        "label": "4161"
       },
       "geometry": {
         "type": "Point",
@@ -2599,7 +2599,7 @@
         "point_id": "100105",
         "node_id": "4162",
         "point_role": "O",
-        "label": "100105"
+        "label": "4162"
       },
       "geometry": {
         "type": "Point",
@@ -2615,7 +2615,7 @@
         "point_id": "100104",
         "node_id": "4163",
         "point_role": "O",
-        "label": "100104"
+        "label": "4163"
       },
       "geometry": {
         "type": "Point",
@@ -2631,7 +2631,7 @@
         "point_id": "100103",
         "node_id": "4164",
         "point_role": "O",
-        "label": "100103"
+        "label": "4164"
       },
       "geometry": {
         "type": "Point",
@@ -2647,7 +2647,7 @@
         "point_id": "100102",
         "node_id": "4165",
         "point_role": "O",
-        "label": "100102"
+        "label": "4165"
       },
       "geometry": {
         "type": "Point",
@@ -2663,7 +2663,7 @@
         "point_id": "100100",
         "node_id": "4166",
         "point_role": "O",
-        "label": "100100"
+        "label": "4166"
       },
       "geometry": {
         "type": "Point",
@@ -2679,7 +2679,7 @@
         "point_id": "100145",
         "node_id": "4167",
         "point_role": "O",
-        "label": "100145"
+        "label": "4167"
       },
       "geometry": {
         "type": "Point",
@@ -2695,7 +2695,7 @@
         "point_id": "100029",
         "node_id": "4168",
         "point_role": "O",
-        "label": "100029"
+        "label": "4168"
       },
       "geometry": {
         "type": "Point",
@@ -2711,7 +2711,7 @@
         "point_id": "100030",
         "node_id": "4169",
         "point_role": "O",
-        "label": "100030"
+        "label": "4169"
       },
       "geometry": {
         "type": "Point",
@@ -2727,7 +2727,7 @@
         "point_id": "100232",
         "node_id": "4170",
         "point_role": "O",
-        "label": "100232"
+        "label": "4170"
       },
       "geometry": {
         "type": "Point",
@@ -2743,7 +2743,7 @@
         "point_id": "100146",
         "node_id": "4171",
         "point_role": "O",
-        "label": "100146"
+        "label": "4171"
       },
       "geometry": {
         "type": "Point",
@@ -2759,7 +2759,7 @@
         "point_id": "100147",
         "node_id": "4172",
         "point_role": "O",
-        "label": "100147"
+        "label": "4172"
       },
       "geometry": {
         "type": "Point",
@@ -2775,7 +2775,7 @@
         "point_id": "100099",
         "node_id": "4173",
         "point_role": "O",
-        "label": "100099"
+        "label": "4173"
       },
       "geometry": {
         "type": "Point",
@@ -2791,7 +2791,7 @@
         "point_id": "100148",
         "node_id": "4174",
         "point_role": "O",
-        "label": "100148"
+        "label": "4174"
       },
       "geometry": {
         "type": "Point",
@@ -2807,7 +2807,7 @@
         "point_id": "100231",
         "node_id": "4175",
         "point_role": "O",
-        "label": "100231"
+        "label": "4175"
       },
       "geometry": {
         "type": "Point",
@@ -2823,7 +2823,7 @@
         "point_id": "100233",
         "node_id": "4176",
         "point_role": "O",
-        "label": "100233"
+        "label": "4176"
       },
       "geometry": {
         "type": "Point",
@@ -2839,7 +2839,7 @@
         "point_id": "100098",
         "node_id": "4177",
         "point_role": "O",
-        "label": "100098"
+        "label": "4177"
       },
       "geometry": {
         "type": "Point",
@@ -2855,7 +2855,7 @@
         "point_id": "100109",
         "node_id": "4178",
         "point_role": "O",
-        "label": "100109"
+        "label": "4178"
       },
       "geometry": {
         "type": "Point",
@@ -2871,7 +2871,7 @@
         "point_id": "100143",
         "node_id": "4179",
         "point_role": "O",
-        "label": "100143"
+        "label": "4179"
       },
       "geometry": {
         "type": "Point",
@@ -2887,7 +2887,7 @@
         "point_id": "100242",
         "node_id": "4180",
         "point_role": "O",
-        "label": "100242"
+        "label": "4180"
       },
       "geometry": {
         "type": "Point",
@@ -2903,7 +2903,7 @@
         "point_id": "100161",
         "node_id": "4181",
         "point_role": "O",
-        "label": "100161"
+        "label": "4181"
       },
       "geometry": {
         "type": "Point",
@@ -2919,7 +2919,7 @@
         "point_id": "100021",
         "node_id": "4182",
         "point_role": "O",
-        "label": "100021"
+        "label": "4182"
       },
       "geometry": {
         "type": "Point",
@@ -2935,7 +2935,7 @@
         "point_id": "100022",
         "node_id": "4183",
         "point_role": "O",
-        "label": "100022"
+        "label": "4183"
       },
       "geometry": {
         "type": "Point",
@@ -2951,7 +2951,7 @@
         "point_id": "100140",
         "node_id": "4184",
         "point_role": "O",
-        "label": "100140"
+        "label": "4184"
       },
       "geometry": {
         "type": "Point",
@@ -2967,7 +2967,7 @@
         "point_id": "100241",
         "node_id": "4185",
         "point_role": "O",
-        "label": "100241"
+        "label": "4185"
       },
       "geometry": {
         "type": "Point",
@@ -2983,7 +2983,7 @@
         "point_id": "100023",
         "node_id": "4186",
         "point_role": "O",
-        "label": "100023"
+        "label": "4186"
       },
       "geometry": {
         "type": "Point",
@@ -2999,7 +2999,7 @@
         "point_id": "100113",
         "node_id": "4187",
         "point_role": "O",
-        "label": "100113"
+        "label": "4187"
       },
       "geometry": {
         "type": "Point",
@@ -3015,7 +3015,7 @@
         "point_id": "100024",
         "node_id": "4188",
         "point_role": "O",
-        "label": "100024"
+        "label": "4188"
       },
       "geometry": {
         "type": "Point",
@@ -3031,7 +3031,7 @@
         "point_id": "100141",
         "node_id": "4189",
         "point_role": "O",
-        "label": "100141"
+        "label": "4189"
       },
       "geometry": {
         "type": "Point",
@@ -3047,7 +3047,7 @@
         "point_id": "100112",
         "node_id": "4190",
         "point_role": "O",
-        "label": "100112"
+        "label": "4190"
       },
       "geometry": {
         "type": "Point",
@@ -3063,7 +3063,7 @@
         "point_id": "100240",
         "node_id": "4191",
         "point_role": "O",
-        "label": "100240"
+        "label": "4191"
       },
       "geometry": {
         "type": "Point",
@@ -3079,7 +3079,7 @@
         "point_id": "100239",
         "node_id": "4192",
         "point_role": "O",
-        "label": "100239"
+        "label": "4192"
       },
       "geometry": {
         "type": "Point",
@@ -3095,7 +3095,7 @@
         "point_id": "100238",
         "node_id": "4193",
         "point_role": "O",
-        "label": "100238"
+        "label": "4193"
       },
       "geometry": {
         "type": "Point",
@@ -3111,7 +3111,7 @@
         "point_id": "100237",
         "node_id": "4194",
         "point_role": "O",
-        "label": "100237"
+        "label": "4194"
       },
       "geometry": {
         "type": "Point",
@@ -3127,7 +3127,7 @@
         "point_id": "100236",
         "node_id": "4195",
         "point_role": "O",
-        "label": "100236"
+        "label": "4195"
       },
       "geometry": {
         "type": "Point",
@@ -3143,7 +3143,7 @@
         "point_id": "100235",
         "node_id": "4196",
         "point_role": "O",
-        "label": "100235"
+        "label": "4196"
       },
       "geometry": {
         "type": "Point",
@@ -3159,7 +3159,7 @@
         "point_id": "100234",
         "node_id": "4197",
         "point_role": "O",
-        "label": "100234"
+        "label": "4197"
       },
       "geometry": {
         "type": "Point",
@@ -3175,7 +3175,7 @@
         "point_id": "100142",
         "node_id": "4198",
         "point_role": "O",
-        "label": "100142"
+        "label": "4198"
       },
       "geometry": {
         "type": "Point",
@@ -3191,7 +3191,7 @@
         "point_id": "100111",
         "node_id": "4199",
         "point_role": "O",
-        "label": "100111"
+        "label": "4199"
       },
       "geometry": {
         "type": "Point",
@@ -3207,7 +3207,7 @@
         "point_id": "100110",
         "node_id": "4200",
         "point_role": "O",
-        "label": "100110"
+        "label": "4200"
       },
       "geometry": {
         "type": "Point",
@@ -3223,7 +3223,7 @@
         "point_id": "100025",
         "node_id": "4201",
         "point_role": "O",
-        "label": "100025"
+        "label": "4201"
       },
       "geometry": {
         "type": "Point",
@@ -3239,7 +3239,7 @@
         "point_id": "100149",
         "node_id": "4202",
         "point_role": "O",
-        "label": "100149"
+        "label": "4202"
       },
       "geometry": {
         "type": "Point",
@@ -3255,7 +3255,7 @@
         "point_id": "100101",
         "node_id": "4203",
         "point_role": "O",
-        "label": "100101"
+        "label": "4203"
       },
       "geometry": {
         "type": "Point",
@@ -3271,7 +3271,7 @@
         "point_id": "100096",
         "node_id": "4204",
         "point_role": "O",
-        "label": "100096"
+        "label": "4204"
       },
       "geometry": {
         "type": "Point",
@@ -3287,7 +3287,7 @@
         "point_id": "100225",
         "node_id": "4205",
         "point_role": "O",
-        "label": "100225"
+        "label": "4205"
       },
       "geometry": {
         "type": "Point",
@@ -3303,7 +3303,7 @@
         "point_id": "100156",
         "node_id": "4206",
         "point_role": "O",
-        "label": "100156"
+        "label": "4206"
       },
       "geometry": {
         "type": "Point",
@@ -3319,7 +3319,7 @@
         "point_id": "100039",
         "node_id": "4207",
         "point_role": "O",
-        "label": "100039"
+        "label": "4207"
       },
       "geometry": {
         "type": "Point",
@@ -3335,7 +3335,7 @@
         "point_id": "100157",
         "node_id": "4208",
         "point_role": "O",
-        "label": "100157"
+        "label": "4208"
       },
       "geometry": {
         "type": "Point",
@@ -3351,7 +3351,7 @@
         "point_id": "100091",
         "node_id": "4209",
         "point_role": "O",
-        "label": "100091"
+        "label": "4209"
       },
       "geometry": {
         "type": "Point",
@@ -3367,7 +3367,7 @@
         "point_id": "100090",
         "node_id": "4210",
         "point_role": "O",
-        "label": "100090"
+        "label": "4210"
       },
       "geometry": {
         "type": "Point",
@@ -3383,7 +3383,7 @@
         "point_id": "100040",
         "node_id": "4211",
         "point_role": "O",
-        "label": "100040"
+        "label": "4211"
       },
       "geometry": {
         "type": "Point",
@@ -3399,7 +3399,7 @@
         "point_id": "100089",
         "node_id": "4212",
         "point_role": "O",
-        "label": "100089"
+        "label": "4212"
       },
       "geometry": {
         "type": "Point",
@@ -3415,7 +3415,7 @@
         "point_id": "100041",
         "node_id": "4213",
         "point_role": "O",
-        "label": "100041"
+        "label": "4213"
       },
       "geometry": {
         "type": "Point",
@@ -3431,7 +3431,7 @@
         "point_id": "100097",
         "node_id": "4214",
         "point_role": "O",
-        "label": "100097"
+        "label": "4214"
       },
       "geometry": {
         "type": "Point",
@@ -3447,7 +3447,7 @@
         "point_id": "100155",
         "node_id": "4215",
         "point_role": "O",
-        "label": "100155"
+        "label": "4215"
       },
       "geometry": {
         "type": "Point",
@@ -3463,7 +3463,7 @@
         "point_id": "100087",
         "node_id": "4216",
         "point_role": "O",
-        "label": "100087"
+        "label": "4216"
       },
       "geometry": {
         "type": "Point",
@@ -3479,7 +3479,7 @@
         "point_id": "100224",
         "node_id": "4217",
         "point_role": "O",
-        "label": "100224"
+        "label": "4217"
       },
       "geometry": {
         "type": "Point",
@@ -3495,7 +3495,7 @@
         "point_id": "100223",
         "node_id": "4218",
         "point_role": "O",
-        "label": "100223"
+        "label": "4218"
       },
       "geometry": {
         "type": "Point",
@@ -3511,7 +3511,7 @@
         "point_id": "100222",
         "node_id": "4219",
         "point_role": "O",
-        "label": "100222"
+        "label": "4219"
       },
       "geometry": {
         "type": "Point",
@@ -3527,7 +3527,7 @@
         "point_id": "100221",
         "node_id": "4220",
         "point_role": "O",
-        "label": "100221"
+        "label": "4220"
       },
       "geometry": {
         "type": "Point",
@@ -3543,7 +3543,7 @@
         "point_id": "100220",
         "node_id": "4221",
         "point_role": "O",
-        "label": "100220"
+        "label": "4221"
       },
       "geometry": {
         "type": "Point",
@@ -3559,7 +3559,7 @@
         "point_id": "100219",
         "node_id": "4222",
         "point_role": "O",
-        "label": "100219"
+        "label": "4222"
       },
       "geometry": {
         "type": "Point",
@@ -3575,7 +3575,7 @@
         "point_id": "100159",
         "node_id": "4223",
         "point_role": "O",
-        "label": "100159"
+        "label": "4223"
       },
       "geometry": {
         "type": "Point",
@@ -3591,7 +3591,7 @@
         "point_id": "100218",
         "node_id": "4224",
         "point_role": "O",
-        "label": "100218"
+        "label": "4224"
       },
       "geometry": {
         "type": "Point",
@@ -3607,7 +3607,7 @@
         "point_id": "100042",
         "node_id": "4225",
         "point_role": "O",
-        "label": "100042"
+        "label": "4225"
       },
       "geometry": {
         "type": "Point",
@@ -3623,7 +3623,7 @@
         "point_id": "100160",
         "node_id": "4226",
         "point_role": "O",
-        "label": "100160"
+        "label": "4226"
       },
       "geometry": {
         "type": "Point",
@@ -3639,7 +3639,7 @@
         "point_id": "100158",
         "node_id": "4227",
         "point_role": "O",
-        "label": "100158"
+        "label": "4227"
       },
       "geometry": {
         "type": "Point",
@@ -3655,7 +3655,7 @@
         "point_id": "100154",
         "node_id": "4228",
         "point_role": "O",
-        "label": "100154"
+        "label": "4228"
       },
       "geometry": {
         "type": "Point",
@@ -3671,7 +3671,7 @@
         "point_id": "100088",
         "node_id": "4229",
         "point_role": "O",
-        "label": "100088"
+        "label": "4229"
       },
       "geometry": {
         "type": "Point",
@@ -3687,7 +3687,7 @@
         "point_id": "100226",
         "node_id": "4230",
         "point_role": "O",
-        "label": "100226"
+        "label": "4230"
       },
       "geometry": {
         "type": "Point",
@@ -3703,7 +3703,7 @@
         "point_id": "100092",
         "node_id": "4231",
         "point_role": "O",
-        "label": "100092"
+        "label": "4231"
       },
       "geometry": {
         "type": "Point",
@@ -3719,7 +3719,7 @@
         "point_id": "100095",
         "node_id": "4232",
         "point_role": "O",
-        "label": "100095"
+        "label": "4232"
       },
       "geometry": {
         "type": "Point",
@@ -3735,7 +3735,7 @@
         "point_id": "100150",
         "node_id": "4233",
         "point_role": "O",
-        "label": "100150"
+        "label": "4233"
       },
       "geometry": {
         "type": "Point",
@@ -3751,7 +3751,7 @@
         "point_id": "100230",
         "node_id": "4234",
         "point_role": "O",
-        "label": "100230"
+        "label": "4234"
       },
       "geometry": {
         "type": "Point",
@@ -3767,7 +3767,7 @@
         "point_id": "100151",
         "node_id": "4235",
         "point_role": "O",
-        "label": "100151"
+        "label": "4235"
       },
       "geometry": {
         "type": "Point",
@@ -3783,7 +3783,7 @@
         "point_id": "100094",
         "node_id": "4236",
         "point_role": "O",
-        "label": "100094"
+        "label": "4236"
       },
       "geometry": {
         "type": "Point",
@@ -3799,7 +3799,7 @@
         "point_id": "100152",
         "node_id": "4237",
         "point_role": "O",
-        "label": "100152"
+        "label": "4237"
       },
       "geometry": {
         "type": "Point",
@@ -3815,7 +3815,7 @@
         "point_id": "100153",
         "node_id": "4238",
         "point_role": "O",
-        "label": "100153"
+        "label": "4238"
       },
       "geometry": {
         "type": "Point",
@@ -3831,7 +3831,7 @@
         "point_id": "100033",
         "node_id": "4239",
         "point_role": "O",
-        "label": "100033"
+        "label": "4239"
       },
       "geometry": {
         "type": "Point",
@@ -3847,7 +3847,7 @@
         "point_id": "100229",
         "node_id": "4240",
         "point_role": "O",
-        "label": "100229"
+        "label": "4240"
       },
       "geometry": {
         "type": "Point",
@@ -3863,7 +3863,7 @@
         "point_id": "100093",
         "node_id": "4241",
         "point_role": "O",
-        "label": "100093"
+        "label": "4241"
       },
       "geometry": {
         "type": "Point",
@@ -3879,7 +3879,7 @@
         "point_id": "100038",
         "node_id": "4242",
         "point_role": "O",
-        "label": "100038"
+        "label": "4242"
       },
       "geometry": {
         "type": "Point",
@@ -3895,7 +3895,7 @@
         "point_id": "100031",
         "node_id": "4243",
         "point_role": "O",
-        "label": "100031"
+        "label": "4243"
       },
       "geometry": {
         "type": "Point",
@@ -3911,7 +3911,7 @@
         "point_id": "100037",
         "node_id": "4244",
         "point_role": "O",
-        "label": "100037"
+        "label": "4244"
       },
       "geometry": {
         "type": "Point",
@@ -3927,7 +3927,7 @@
         "point_id": "100036",
         "node_id": "4245",
         "point_role": "O",
-        "label": "100036"
+        "label": "4245"
       },
       "geometry": {
         "type": "Point",
@@ -3943,7 +3943,7 @@
         "point_id": "100228",
         "node_id": "4246",
         "point_role": "O",
-        "label": "100228"
+        "label": "4246"
       },
       "geometry": {
         "type": "Point",
@@ -3959,7 +3959,7 @@
         "point_id": "100227",
         "node_id": "4247",
         "point_role": "O",
-        "label": "100227"
+        "label": "4247"
       },
       "geometry": {
         "type": "Point",
@@ -3975,7 +3975,7 @@
         "point_id": "100035",
         "node_id": "4248",
         "point_role": "O",
-        "label": "100035"
+        "label": "4248"
       },
       "geometry": {
         "type": "Point",
@@ -3991,7 +3991,7 @@
         "point_id": "100034",
         "node_id": "4249",
         "point_role": "O",
-        "label": "100034"
+        "label": "4249"
       },
       "geometry": {
         "type": "Point",
@@ -4007,7 +4007,7 @@
         "point_id": "100032",
         "node_id": "4250",
         "point_role": "O",
-        "label": "100032"
+        "label": "4250"
       },
       "geometry": {
         "type": "Point",
@@ -4023,7 +4023,7 @@
         "point_id": "200043",
         "node_id": "5158",
         "point_role": "D",
-        "label": "200043"
+        "label": "5158"
       },
       "geometry": {
         "type": "Point",
@@ -4039,7 +4039,7 @@
         "point_id": "200005",
         "node_id": "5163",
         "point_role": "D",
-        "label": "200005"
+        "label": "5163"
       },
       "geometry": {
         "type": "Point",
@@ -4055,7 +4055,7 @@
         "point_id": "200220",
         "node_id": "5115",
         "point_role": "D",
-        "label": "200220"
+        "label": "5115"
       },
       "geometry": {
         "type": "Point",
@@ -4071,7 +4071,7 @@
         "point_id": "200195",
         "node_id": "5060",
         "point_role": "D",
-        "label": "200195"
+        "label": "5060"
       },
       "geometry": {
         "type": "Point",
@@ -4087,7 +4087,7 @@
         "point_id": "200054",
         "node_id": "5146",
         "point_role": "D",
-        "label": "200054"
+        "label": "5146"
       },
       "geometry": {
         "type": "Point",
@@ -4103,7 +4103,7 @@
         "point_id": "200224",
         "node_id": "5119",
         "point_role": "D",
-        "label": "200224"
+        "label": "5119"
       },
       "geometry": {
         "type": "Point",
@@ -4119,7 +4119,7 @@
         "point_id": "200110",
         "node_id": "5201",
         "point_role": "D",
-        "label": "200110"
+        "label": "5201"
       },
       "geometry": {
         "type": "Point",
@@ -4135,7 +4135,7 @@
         "point_id": "200205",
         "node_id": "5100",
         "point_role": "D",
-        "label": "200205"
+        "label": "5100"
       },
       "geometry": {
         "type": "Point",
@@ -4151,7 +4151,7 @@
         "point_id": "200206",
         "node_id": "5101",
         "point_role": "D",
-        "label": "200206"
+        "label": "5101"
       },
       "geometry": {
         "type": "Point",
@@ -4167,7 +4167,7 @@
         "point_id": "200150",
         "node_id": "5048",
         "point_role": "D",
-        "label": "200150"
+        "label": "5048"
       },
       "geometry": {
         "type": "Point",
@@ -4183,7 +4183,7 @@
         "point_id": "200176",
         "node_id": "5010",
         "point_role": "D",
-        "label": "200176"
+        "label": "5010"
       },
       "geometry": {
         "type": "Point",
@@ -4199,7 +4199,7 @@
         "point_id": "200175",
         "node_id": "5009",
         "point_role": "D",
-        "label": "200175"
+        "label": "5009"
       },
       "geometry": {
         "type": "Point",
@@ -4215,7 +4215,7 @@
         "point_id": "200008",
         "node_id": "5166",
         "point_role": "D",
-        "label": "200008"
+        "label": "5166"
       },
       "geometry": {
         "type": "Point",
@@ -4231,7 +4231,7 @@
         "point_id": "200181",
         "node_id": "5015",
         "point_role": "D",
-        "label": "200181"
+        "label": "5015"
       },
       "geometry": {
         "type": "Point",
@@ -4247,7 +4247,7 @@
         "point_id": "200034",
         "node_id": "5127",
         "point_role": "D",
-        "label": "200034"
+        "label": "5127"
       },
       "geometry": {
         "type": "Point",
@@ -4263,7 +4263,7 @@
         "point_id": "200031",
         "node_id": "5154",
         "point_role": "D",
-        "label": "200031"
+        "label": "5154"
       },
       "geometry": {
         "type": "Point",
@@ -4279,7 +4279,7 @@
         "point_id": "200234",
         "node_id": "5066",
         "point_role": "D",
-        "label": "200234"
+        "label": "5066"
       },
       "geometry": {
         "type": "Point",
@@ -4295,7 +4295,7 @@
         "point_id": "200219",
         "node_id": "5114",
         "point_role": "D",
-        "label": "200219"
+        "label": "5114"
       },
       "geometry": {
         "type": "Point",
@@ -4311,7 +4311,7 @@
         "point_id": "200223",
         "node_id": "5118",
         "point_role": "D",
-        "label": "200223"
+        "label": "5118"
       },
       "geometry": {
         "type": "Point",
@@ -4327,7 +4327,7 @@
         "point_id": "200046",
         "node_id": "5138",
         "point_role": "D",
-        "label": "200046"
+        "label": "5138"
       },
       "geometry": {
         "type": "Point",
@@ -4343,7 +4343,7 @@
         "point_id": "200180",
         "node_id": "5014",
         "point_role": "D",
-        "label": "200180"
+        "label": "5014"
       },
       "geometry": {
         "type": "Point",
@@ -4359,7 +4359,7 @@
         "point_id": "200232",
         "node_id": "5064",
         "point_role": "D",
-        "label": "200232"
+        "label": "5064"
       },
       "geometry": {
         "type": "Point",
@@ -4375,7 +4375,7 @@
         "point_id": "200078",
         "node_id": "5235",
         "point_role": "D",
-        "label": "200078"
+        "label": "5235"
       },
       "geometry": {
         "type": "Point",
@@ -4391,7 +4391,7 @@
         "point_id": "200214",
         "node_id": "5109",
         "point_role": "D",
-        "label": "200214"
+        "label": "5109"
       },
       "geometry": {
         "type": "Point",
@@ -4407,7 +4407,7 @@
         "point_id": "200182",
         "node_id": "5016",
         "point_role": "D",
-        "label": "200182"
+        "label": "5016"
       },
       "geometry": {
         "type": "Point",
@@ -4423,7 +4423,7 @@
         "point_id": "200158",
         "node_id": "5055",
         "point_role": "D",
-        "label": "200158"
+        "label": "5055"
       },
       "geometry": {
         "type": "Point",
@@ -4439,7 +4439,7 @@
         "point_id": "200101",
         "node_id": "5192",
         "point_role": "D",
-        "label": "200101"
+        "label": "5192"
       },
       "geometry": {
         "type": "Point",
@@ -4455,7 +4455,7 @@
         "point_id": "200037",
         "node_id": "5130",
         "point_role": "D",
-        "label": "200037"
+        "label": "5130"
       },
       "geometry": {
         "type": "Point",
@@ -4471,7 +4471,7 @@
         "point_id": "200040",
         "node_id": "5133",
         "point_role": "D",
-        "label": "200040"
+        "label": "5133"
       },
       "geometry": {
         "type": "Point",
@@ -4487,7 +4487,7 @@
         "point_id": "200041",
         "node_id": "5134",
         "point_role": "D",
-        "label": "200041"
+        "label": "5134"
       },
       "geometry": {
         "type": "Point",
@@ -4503,7 +4503,7 @@
         "point_id": "200047",
         "node_id": "5139",
         "point_role": "D",
-        "label": "200047"
+        "label": "5139"
       },
       "geometry": {
         "type": "Point",
@@ -4519,7 +4519,7 @@
         "point_id": "200056",
         "node_id": "5148",
         "point_role": "D",
-        "label": "200056"
+        "label": "5148"
       },
       "geometry": {
         "type": "Point",
@@ -4535,7 +4535,7 @@
         "point_id": "200109",
         "node_id": "5200",
         "point_role": "D",
-        "label": "200109"
+        "label": "5200"
       },
       "geometry": {
         "type": "Point",
@@ -4551,7 +4551,7 @@
         "point_id": "200069",
         "node_id": "5225",
         "point_role": "D",
-        "label": "200069"
+        "label": "5225"
       },
       "geometry": {
         "type": "Point",
@@ -4567,7 +4567,7 @@
         "point_id": "200160",
         "node_id": "5057",
         "point_role": "D",
-        "label": "200160"
+        "label": "5057"
       },
       "geometry": {
         "type": "Point",
@@ -4583,7 +4583,7 @@
         "point_id": "200156",
         "node_id": "5053",
         "point_role": "D",
-        "label": "200156"
+        "label": "5053"
       },
       "geometry": {
         "type": "Point",
@@ -4599,7 +4599,7 @@
         "point_id": "200184",
         "node_id": "5017",
         "point_role": "D",
-        "label": "200184"
+        "label": "5017"
       },
       "geometry": {
         "type": "Point",
@@ -4615,7 +4615,7 @@
         "point_id": "200083",
         "node_id": "5239",
         "point_role": "D",
-        "label": "200083"
+        "label": "5239"
       },
       "geometry": {
         "type": "Point",
@@ -4631,7 +4631,7 @@
         "point_id": "200025",
         "node_id": "5182",
         "point_role": "D",
-        "label": "200025"
+        "label": "5182"
       },
       "geometry": {
         "type": "Point",
@@ -4647,7 +4647,7 @@
         "point_id": "200018",
         "node_id": "5175",
         "point_role": "D",
-        "label": "200018"
+        "label": "5175"
       },
       "geometry": {
         "type": "Point",
@@ -4663,7 +4663,7 @@
         "point_id": "200085",
         "node_id": "5241",
         "point_role": "D",
-        "label": "200085"
+        "label": "5241"
       },
       "geometry": {
         "type": "Point",
@@ -4679,7 +4679,7 @@
         "point_id": "200194",
         "node_id": "5033",
         "point_role": "D",
-        "label": "200194"
+        "label": "5033"
       },
       "geometry": {
         "type": "Point",
@@ -4695,7 +4695,7 @@
         "point_id": "200192",
         "node_id": "5023",
         "point_role": "D",
-        "label": "200192"
+        "label": "5023"
       },
       "geometry": {
         "type": "Point",
@@ -4711,7 +4711,7 @@
         "point_id": "200050",
         "node_id": "5142",
         "point_role": "D",
-        "label": "200050"
+        "label": "5142"
       },
       "geometry": {
         "type": "Point",
@@ -4727,7 +4727,7 @@
         "point_id": "200154",
         "node_id": "5051",
         "point_role": "D",
-        "label": "200154"
+        "label": "5051"
       },
       "geometry": {
         "type": "Point",
@@ -4743,7 +4743,7 @@
         "point_id": "200218",
         "node_id": "5113",
         "point_role": "D",
-        "label": "200218"
+        "label": "5113"
       },
       "geometry": {
         "type": "Point",
@@ -4759,7 +4759,7 @@
         "point_id": "200123",
         "node_id": "5212",
         "point_role": "D",
-        "label": "200123"
+        "label": "5212"
       },
       "geometry": {
         "type": "Point",
@@ -4775,7 +4775,7 @@
         "point_id": "200172",
         "node_id": "5006",
         "point_role": "D",
-        "label": "200172"
+        "label": "5006"
       },
       "geometry": {
         "type": "Point",
@@ -4791,7 +4791,7 @@
         "point_id": "200248",
         "node_id": "5079",
         "point_role": "D",
-        "label": "200248"
+        "label": "5079"
       },
       "geometry": {
         "type": "Point",
@@ -4807,7 +4807,7 @@
         "point_id": "200244",
         "node_id": "5075",
         "point_role": "D",
-        "label": "200244"
+        "label": "5075"
       },
       "geometry": {
         "type": "Point",
@@ -4823,7 +4823,7 @@
         "point_id": "200179",
         "node_id": "5013",
         "point_role": "D",
-        "label": "200179"
+        "label": "5013"
       },
       "geometry": {
         "type": "Point",
@@ -4839,7 +4839,7 @@
         "point_id": "200247",
         "node_id": "5078",
         "point_role": "D",
-        "label": "200247"
+        "label": "5078"
       },
       "geometry": {
         "type": "Point",
@@ -4855,7 +4855,7 @@
         "point_id": "200023",
         "node_id": "5180",
         "point_role": "D",
-        "label": "200023"
+        "label": "5180"
       },
       "geometry": {
         "type": "Point",
@@ -4871,7 +4871,7 @@
         "point_id": "200062",
         "node_id": "5186",
         "point_role": "D",
-        "label": "200062"
+        "label": "5186"
       },
       "geometry": {
         "type": "Point",
@@ -4887,7 +4887,7 @@
         "point_id": "200061",
         "node_id": "5170",
         "point_role": "D",
-        "label": "200061"
+        "label": "5170"
       },
       "geometry": {
         "type": "Point",
@@ -4903,7 +4903,7 @@
         "point_id": "200201",
         "node_id": "5096",
         "point_role": "D",
-        "label": "200201"
+        "label": "5096"
       },
       "geometry": {
         "type": "Point",
@@ -4919,7 +4919,7 @@
         "point_id": "200064",
         "node_id": "5188",
         "point_role": "D",
-        "label": "200064"
+        "label": "5188"
       },
       "geometry": {
         "type": "Point",
@@ -4935,7 +4935,7 @@
         "point_id": "200146",
         "node_id": "5045",
         "point_role": "D",
-        "label": "200146"
+        "label": "5045"
       },
       "geometry": {
         "type": "Point",
@@ -4951,7 +4951,7 @@
         "point_id": "200016",
         "node_id": "5173",
         "point_role": "D",
-        "label": "200016"
+        "label": "5173"
       },
       "geometry": {
         "type": "Point",
@@ -4967,7 +4967,7 @@
         "point_id": "200032",
         "node_id": "5153",
         "point_role": "D",
-        "label": "200032"
+        "label": "5153"
       },
       "geometry": {
         "type": "Point",
@@ -4983,7 +4983,7 @@
         "point_id": "200087",
         "node_id": "5243",
         "point_role": "D",
-        "label": "200087"
+        "label": "5243"
       },
       "geometry": {
         "type": "Point",
@@ -4999,7 +4999,7 @@
         "point_id": "200230",
         "node_id": "5090",
         "point_role": "D",
-        "label": "200230"
+        "label": "5090"
       },
       "geometry": {
         "type": "Point",
@@ -5015,7 +5015,7 @@
         "point_id": "200155",
         "node_id": "5052",
         "point_role": "D",
-        "label": "200155"
+        "label": "5052"
       },
       "geometry": {
         "type": "Point",
@@ -5031,7 +5031,7 @@
         "point_id": "200250",
         "node_id": "5081",
         "point_role": "D",
-        "label": "200250"
+        "label": "5081"
       },
       "geometry": {
         "type": "Point",
@@ -5047,7 +5047,7 @@
         "point_id": "200153",
         "node_id": "5050",
         "point_role": "D",
-        "label": "200153"
+        "label": "5050"
       },
       "geometry": {
         "type": "Point",
@@ -5063,7 +5063,7 @@
         "point_id": "200117",
         "node_id": "5207",
         "point_role": "D",
-        "label": "200117"
+        "label": "5207"
       },
       "geometry": {
         "type": "Point",
@@ -5079,7 +5079,7 @@
         "point_id": "200104",
         "node_id": "5195",
         "point_role": "D",
-        "label": "200104"
+        "label": "5195"
       },
       "geometry": {
         "type": "Point",
@@ -5095,7 +5095,7 @@
         "point_id": "200225",
         "node_id": "5120",
         "point_role": "D",
-        "label": "200225"
+        "label": "5120"
       },
       "geometry": {
         "type": "Point",
@@ -5111,7 +5111,7 @@
         "point_id": "200211",
         "node_id": "5106",
         "point_role": "D",
-        "label": "200211"
+        "label": "5106"
       },
       "geometry": {
         "type": "Point",
@@ -5127,7 +5127,7 @@
         "point_id": "200120",
         "node_id": "5209",
         "point_role": "D",
-        "label": "200120"
+        "label": "5209"
       },
       "geometry": {
         "type": "Point",
@@ -5143,7 +5143,7 @@
         "point_id": "200132",
         "node_id": "5031",
         "point_role": "D",
-        "label": "200132"
+        "label": "5031"
       },
       "geometry": {
         "type": "Point",
@@ -5159,7 +5159,7 @@
         "point_id": "200133",
         "node_id": "5032",
         "point_role": "D",
-        "label": "200133"
+        "label": "5032"
       },
       "geometry": {
         "type": "Point",
@@ -5175,7 +5175,7 @@
         "point_id": "200119",
         "node_id": "5159",
         "point_role": "D",
-        "label": "200119"
+        "label": "5159"
       },
       "geometry": {
         "type": "Point",
@@ -5191,7 +5191,7 @@
         "point_id": "200187",
         "node_id": "5020",
         "point_role": "D",
-        "label": "200187"
+        "label": "5020"
       },
       "geometry": {
         "type": "Point",
@@ -5207,7 +5207,7 @@
         "point_id": "200042",
         "node_id": "5135",
         "point_role": "D",
-        "label": "200042"
+        "label": "5135"
       },
       "geometry": {
         "type": "Point",
@@ -5223,7 +5223,7 @@
         "point_id": "200159",
         "node_id": "5056",
         "point_role": "D",
-        "label": "200159"
+        "label": "5056"
       },
       "geometry": {
         "type": "Point",
@@ -5239,7 +5239,7 @@
         "point_id": "200161",
         "node_id": "5058",
         "point_role": "D",
-        "label": "200161"
+        "label": "5058"
       },
       "geometry": {
         "type": "Point",
@@ -5255,7 +5255,7 @@
         "point_id": "200227",
         "node_id": "5093",
         "point_role": "D",
-        "label": "200227"
+        "label": "5093"
       },
       "geometry": {
         "type": "Point",
@@ -5271,7 +5271,7 @@
         "point_id": "200014",
         "node_id": "5185",
         "point_role": "D",
-        "label": "200014"
+        "label": "5185"
       },
       "geometry": {
         "type": "Point",
@@ -5287,7 +5287,7 @@
         "point_id": "200048",
         "node_id": "5140",
         "point_role": "D",
-        "label": "200048"
+        "label": "5140"
       },
       "geometry": {
         "type": "Point",
@@ -5303,7 +5303,7 @@
         "point_id": "200136",
         "node_id": "5035",
         "point_role": "D",
-        "label": "200136"
+        "label": "5035"
       },
       "geometry": {
         "type": "Point",
@@ -5319,7 +5319,7 @@
         "point_id": "200239",
         "node_id": "5071",
         "point_role": "D",
-        "label": "200239"
+        "label": "5071"
       },
       "geometry": {
         "type": "Point",
@@ -5335,7 +5335,7 @@
         "point_id": "200030",
         "node_id": "5155",
         "point_role": "D",
-        "label": "200030"
+        "label": "5155"
       },
       "geometry": {
         "type": "Point",
@@ -5351,7 +5351,7 @@
         "point_id": "200241",
         "node_id": "5073",
         "point_role": "D",
-        "label": "200241"
+        "label": "5073"
       },
       "geometry": {
         "type": "Point",
@@ -5367,7 +5367,7 @@
         "point_id": "200116",
         "node_id": "5206",
         "point_role": "D",
-        "label": "200116"
+        "label": "5206"
       },
       "geometry": {
         "type": "Point",
@@ -5383,7 +5383,7 @@
         "point_id": "200126",
         "node_id": "5215",
         "point_role": "D",
-        "label": "200126"
+        "label": "5215"
       },
       "geometry": {
         "type": "Point",
@@ -5399,7 +5399,7 @@
         "point_id": "200072",
         "node_id": "5228",
         "point_role": "D",
-        "label": "200072"
+        "label": "5228"
       },
       "geometry": {
         "type": "Point",
@@ -5415,7 +5415,7 @@
         "point_id": "200099",
         "node_id": "5250",
         "point_role": "D",
-        "label": "200099"
+        "label": "5250"
       },
       "geometry": {
         "type": "Point",
@@ -5431,7 +5431,7 @@
         "point_id": "200144",
         "node_id": "5042",
         "point_role": "D",
-        "label": "200144"
+        "label": "5042"
       },
       "geometry": {
         "type": "Point",
@@ -5447,7 +5447,7 @@
         "point_id": "200207",
         "node_id": "5102",
         "point_role": "D",
-        "label": "200207"
+        "label": "5102"
       },
       "geometry": {
         "type": "Point",
@@ -5463,7 +5463,7 @@
         "point_id": "200004",
         "node_id": "5085",
         "point_role": "D",
-        "label": "200004"
+        "label": "5085"
       },
       "geometry": {
         "type": "Point",
@@ -5479,7 +5479,7 @@
         "point_id": "200092",
         "node_id": "5248",
         "point_role": "D",
-        "label": "200092"
+        "label": "5248"
       },
       "geometry": {
         "type": "Point",
@@ -5495,7 +5495,7 @@
         "point_id": "200166",
         "node_id": "5002",
         "point_role": "D",
-        "label": "200166"
+        "label": "5002"
       },
       "geometry": {
         "type": "Point",
@@ -5511,7 +5511,7 @@
         "point_id": "200228",
         "node_id": "5092",
         "point_role": "D",
-        "label": "200228"
+        "label": "5092"
       },
       "geometry": {
         "type": "Point",
@@ -5527,7 +5527,7 @@
         "point_id": "200055",
         "node_id": "5147",
         "point_role": "D",
-        "label": "200055"
+        "label": "5147"
       },
       "geometry": {
         "type": "Point",
@@ -5543,7 +5543,7 @@
         "point_id": "200029",
         "node_id": "5156",
         "point_role": "D",
-        "label": "200029"
+        "label": "5156"
       },
       "geometry": {
         "type": "Point",
@@ -5559,7 +5559,7 @@
         "point_id": "200074",
         "node_id": "5230",
         "point_role": "D",
-        "label": "200074"
+        "label": "5230"
       },
       "geometry": {
         "type": "Point",
@@ -5575,7 +5575,7 @@
         "point_id": "200112",
         "node_id": "5203",
         "point_role": "D",
-        "label": "200112"
+        "label": "5203"
       },
       "geometry": {
         "type": "Point",
@@ -5591,7 +5591,7 @@
         "point_id": "200017",
         "node_id": "5174",
         "point_role": "D",
-        "label": "200017"
+        "label": "5174"
       },
       "geometry": {
         "type": "Point",
@@ -5607,7 +5607,7 @@
         "point_id": "200149",
         "node_id": "5047",
         "point_role": "D",
-        "label": "200149"
+        "label": "5047"
       },
       "geometry": {
         "type": "Point",
@@ -5623,7 +5623,7 @@
         "point_id": "200115",
         "node_id": "5205",
         "point_role": "D",
-        "label": "200115"
+        "label": "5205"
       },
       "geometry": {
         "type": "Point",
@@ -5639,7 +5639,7 @@
         "point_id": "200236",
         "node_id": "5068",
         "point_role": "D",
-        "label": "200236"
+        "label": "5068"
       },
       "geometry": {
         "type": "Point",
@@ -5655,7 +5655,7 @@
         "point_id": "200067",
         "node_id": "5223",
         "point_role": "D",
-        "label": "200067"
+        "label": "5223"
       },
       "geometry": {
         "type": "Point",
@@ -5671,7 +5671,7 @@
         "point_id": "200198",
         "node_id": "5094",
         "point_role": "D",
-        "label": "200198"
+        "label": "5094"
       },
       "geometry": {
         "type": "Point",
@@ -5687,7 +5687,7 @@
         "point_id": "200111",
         "node_id": "5089",
         "point_role": "D",
-        "label": "200111"
+        "label": "5089"
       },
       "geometry": {
         "type": "Point",
@@ -5703,7 +5703,7 @@
         "point_id": "200170",
         "node_id": "5003",
         "point_role": "D",
-        "label": "200170"
+        "label": "5003"
       },
       "geometry": {
         "type": "Point",
@@ -5719,7 +5719,7 @@
         "point_id": "200213",
         "node_id": "5122",
         "point_role": "D",
-        "label": "200213"
+        "label": "5122"
       },
       "geometry": {
         "type": "Point",
@@ -5735,7 +5735,7 @@
         "point_id": "200105",
         "node_id": "5196",
         "point_role": "D",
-        "label": "200105"
+        "label": "5196"
       },
       "geometry": {
         "type": "Point",
@@ -5751,7 +5751,7 @@
         "point_id": "200088",
         "node_id": "5244",
         "point_role": "D",
-        "label": "200088"
+        "label": "5244"
       },
       "geometry": {
         "type": "Point",
@@ -5767,7 +5767,7 @@
         "point_id": "200231",
         "node_id": "5063",
         "point_role": "D",
-        "label": "200231"
+        "label": "5063"
       },
       "geometry": {
         "type": "Point",
@@ -5783,7 +5783,7 @@
         "point_id": "200233",
         "node_id": "5065",
         "point_role": "D",
-        "label": "200233"
+        "label": "5065"
       },
       "geometry": {
         "type": "Point",
@@ -5799,7 +5799,7 @@
         "point_id": "200006",
         "node_id": "5164",
         "point_role": "D",
-        "label": "200006"
+        "label": "5164"
       },
       "geometry": {
         "type": "Point",
@@ -5815,7 +5815,7 @@
         "point_id": "200139",
         "node_id": "5037",
         "point_role": "D",
-        "label": "200139"
+        "label": "5037"
       },
       "geometry": {
         "type": "Point",
@@ -5831,7 +5831,7 @@
         "point_id": "200177",
         "node_id": "5011",
         "point_role": "D",
-        "label": "200177"
+        "label": "5011"
       },
       "geometry": {
         "type": "Point",
@@ -5847,7 +5847,7 @@
         "point_id": "200049",
         "node_id": "5141",
         "point_role": "D",
-        "label": "200049"
+        "label": "5141"
       },
       "geometry": {
         "type": "Point",
@@ -5863,7 +5863,7 @@
         "point_id": "200246",
         "node_id": "5077",
         "point_role": "D",
-        "label": "200246"
+        "label": "5077"
       },
       "geometry": {
         "type": "Point",
@@ -5879,7 +5879,7 @@
         "point_id": "200097",
         "node_id": "5189",
         "point_role": "D",
-        "label": "200097"
+        "label": "5189"
       },
       "geometry": {
         "type": "Point",
@@ -5895,7 +5895,7 @@
         "point_id": "200145",
         "node_id": "5043",
         "point_role": "D",
-        "label": "200145"
+        "label": "5043"
       },
       "geometry": {
         "type": "Point",
@@ -5911,7 +5911,7 @@
         "point_id": "200171",
         "node_id": "5005",
         "point_role": "D",
-        "label": "200171"
+        "label": "5005"
       },
       "geometry": {
         "type": "Point",
@@ -5927,7 +5927,7 @@
         "point_id": "200038",
         "node_id": "5131",
         "point_role": "D",
-        "label": "200038"
+        "label": "5131"
       },
       "geometry": {
         "type": "Point",
@@ -5943,7 +5943,7 @@
         "point_id": "200199",
         "node_id": "5157",
         "point_role": "D",
-        "label": "200199"
+        "label": "5157"
       },
       "geometry": {
         "type": "Point",
@@ -5959,7 +5959,7 @@
         "point_id": "200026",
         "node_id": "5183",
         "point_role": "D",
-        "label": "200026"
+        "label": "5183"
       },
       "geometry": {
         "type": "Point",
@@ -5975,7 +5975,7 @@
         "point_id": "200163",
         "node_id": "5044",
         "point_role": "D",
-        "label": "200163"
+        "label": "5044"
       },
       "geometry": {
         "type": "Point",
@@ -5991,7 +5991,7 @@
         "point_id": "200028",
         "node_id": "5184",
         "point_role": "D",
-        "label": "200028"
+        "label": "5184"
       },
       "geometry": {
         "type": "Point",
@@ -6007,7 +6007,7 @@
         "point_id": "200063",
         "node_id": "5187",
         "point_role": "D",
-        "label": "200063"
+        "label": "5187"
       },
       "geometry": {
         "type": "Point",
@@ -6023,7 +6023,7 @@
         "point_id": "200137",
         "node_id": "5036",
         "point_role": "D",
-        "label": "200137"
+        "label": "5036"
       },
       "geometry": {
         "type": "Point",
@@ -6039,7 +6039,7 @@
         "point_id": "200036",
         "node_id": "5129",
         "point_role": "D",
-        "label": "200036"
+        "label": "5129"
       },
       "geometry": {
         "type": "Point",
@@ -6055,7 +6055,7 @@
         "point_id": "200066",
         "node_id": "5222",
         "point_role": "D",
-        "label": "200066"
+        "label": "5222"
       },
       "geometry": {
         "type": "Point",
@@ -6071,7 +6071,7 @@
         "point_id": "200169",
         "node_id": "5000",
         "point_role": "D",
-        "label": "200169"
+        "label": "5000"
       },
       "geometry": {
         "type": "Point",
@@ -6087,7 +6087,7 @@
         "point_id": "200096",
         "node_id": "5202",
         "point_role": "D",
-        "label": "200096"
+        "label": "5202"
       },
       "geometry": {
         "type": "Point",
@@ -6103,7 +6103,7 @@
         "point_id": "200010",
         "node_id": "5167",
         "point_role": "D",
-        "label": "200010"
+        "label": "5167"
       },
       "geometry": {
         "type": "Point",
@@ -6119,7 +6119,7 @@
         "point_id": "200185",
         "node_id": "5018",
         "point_role": "D",
-        "label": "200185"
+        "label": "5018"
       },
       "geometry": {
         "type": "Point",
@@ -6135,7 +6135,7 @@
         "point_id": "200251",
         "node_id": "5082",
         "point_role": "D",
-        "label": "200251"
+        "label": "5082"
       },
       "geometry": {
         "type": "Point",
@@ -6151,7 +6151,7 @@
         "point_id": "200084",
         "node_id": "5240",
         "point_role": "D",
-        "label": "200084"
+        "label": "5240"
       },
       "geometry": {
         "type": "Point",
@@ -6167,7 +6167,7 @@
         "point_id": "200212",
         "node_id": "5108",
         "point_role": "D",
-        "label": "200212"
+        "label": "5108"
       },
       "geometry": {
         "type": "Point",
@@ -6183,7 +6183,7 @@
         "point_id": "200127",
         "node_id": "5216",
         "point_role": "D",
-        "label": "200127"
+        "label": "5216"
       },
       "geometry": {
         "type": "Point",
@@ -6199,7 +6199,7 @@
         "point_id": "200238",
         "node_id": "5070",
         "point_role": "D",
-        "label": "200238"
+        "label": "5070"
       },
       "geometry": {
         "type": "Point",
@@ -6215,7 +6215,7 @@
         "point_id": "200202",
         "node_id": "5097",
         "point_role": "D",
-        "label": "200202"
+        "label": "5097"
       },
       "geometry": {
         "type": "Point",
@@ -6231,7 +6231,7 @@
         "point_id": "200073",
         "node_id": "5229",
         "point_role": "D",
-        "label": "200073"
+        "label": "5229"
       },
       "geometry": {
         "type": "Point",
@@ -6247,7 +6247,7 @@
         "point_id": "200033",
         "node_id": "5126",
         "point_role": "D",
-        "label": "200033"
+        "label": "5126"
       },
       "geometry": {
         "type": "Point",
@@ -6263,7 +6263,7 @@
         "point_id": "200100",
         "node_id": "5191",
         "point_role": "D",
-        "label": "200100"
+        "label": "5191"
       },
       "geometry": {
         "type": "Point",
@@ -6279,7 +6279,7 @@
         "point_id": "200075",
         "node_id": "5231",
         "point_role": "D",
-        "label": "200075"
+        "label": "5231"
       },
       "geometry": {
         "type": "Point",
@@ -6295,7 +6295,7 @@
         "point_id": "200039",
         "node_id": "5132",
         "point_role": "D",
-        "label": "200039"
+        "label": "5132"
       },
       "geometry": {
         "type": "Point",
@@ -6311,7 +6311,7 @@
         "point_id": "200098",
         "node_id": "5190",
         "point_role": "D",
-        "label": "200098"
+        "label": "5190"
       },
       "geometry": {
         "type": "Point",
@@ -6327,7 +6327,7 @@
         "point_id": "200052",
         "node_id": "5144",
         "point_role": "D",
-        "label": "200052"
+        "label": "5144"
       },
       "geometry": {
         "type": "Point",
@@ -6343,7 +6343,7 @@
         "point_id": "200013",
         "node_id": "5171",
         "point_role": "D",
-        "label": "200013"
+        "label": "5171"
       },
       "geometry": {
         "type": "Point",
@@ -6359,7 +6359,7 @@
         "point_id": "200002",
         "node_id": "5161",
         "point_role": "D",
-        "label": "200002"
+        "label": "5161"
       },
       "geometry": {
         "type": "Point",
@@ -6375,7 +6375,7 @@
         "point_id": "200196",
         "node_id": "5107",
         "point_role": "D",
-        "label": "200196"
+        "label": "5107"
       },
       "geometry": {
         "type": "Point",
@@ -6391,7 +6391,7 @@
         "point_id": "200229",
         "node_id": "5091",
         "point_role": "D",
-        "label": "200229"
+        "label": "5091"
       },
       "geometry": {
         "type": "Point",
@@ -6407,7 +6407,7 @@
         "point_id": "200152",
         "node_id": "5087",
         "point_role": "D",
-        "label": "200152"
+        "label": "5087"
       },
       "geometry": {
         "type": "Point",
@@ -6423,7 +6423,7 @@
         "point_id": "200141",
         "node_id": "5039",
         "point_role": "D",
-        "label": "200141"
+        "label": "5039"
       },
       "geometry": {
         "type": "Point",
@@ -6439,7 +6439,7 @@
         "point_id": "200009",
         "node_id": "5086",
         "point_role": "D",
-        "label": "200009"
+        "label": "5086"
       },
       "geometry": {
         "type": "Point",
@@ -6455,7 +6455,7 @@
         "point_id": "200183",
         "node_id": "5083",
         "point_role": "D",
-        "label": "200183"
+        "label": "5083"
       },
       "geometry": {
         "type": "Point",
@@ -6471,7 +6471,7 @@
         "point_id": "200240",
         "node_id": "5072",
         "point_role": "D",
-        "label": "200240"
+        "label": "5072"
       },
       "geometry": {
         "type": "Point",
@@ -6487,7 +6487,7 @@
         "point_id": "200091",
         "node_id": "5247",
         "point_role": "D",
-        "label": "200091"
+        "label": "5247"
       },
       "geometry": {
         "type": "Point",
@@ -6503,7 +6503,7 @@
         "point_id": "200114",
         "node_id": "5204",
         "point_role": "D",
-        "label": "200114"
+        "label": "5204"
       },
       "geometry": {
         "type": "Point",
@@ -6519,7 +6519,7 @@
         "point_id": "200015",
         "node_id": "5172",
         "point_role": "D",
-        "label": "200015"
+        "label": "5172"
       },
       "geometry": {
         "type": "Point",
@@ -6535,7 +6535,7 @@
         "point_id": "200242",
         "node_id": "5074",
         "point_role": "D",
-        "label": "200242"
+        "label": "5074"
       },
       "geometry": {
         "type": "Point",
@@ -6551,7 +6551,7 @@
         "point_id": "200051",
         "node_id": "5143",
         "point_role": "D",
-        "label": "200051"
+        "label": "5143"
       },
       "geometry": {
         "type": "Point",
@@ -6567,7 +6567,7 @@
         "point_id": "200021",
         "node_id": "5178",
         "point_role": "D",
-        "label": "200021"
+        "label": "5178"
       },
       "geometry": {
         "type": "Point",
@@ -6583,7 +6583,7 @@
         "point_id": "200209",
         "node_id": "5104",
         "point_role": "D",
-        "label": "200209"
+        "label": "5104"
       },
       "geometry": {
         "type": "Point",
@@ -6599,7 +6599,7 @@
         "point_id": "200106",
         "node_id": "5197",
         "point_role": "D",
-        "label": "200106"
+        "label": "5197"
       },
       "geometry": {
         "type": "Point",
@@ -6615,7 +6615,7 @@
         "point_id": "200191",
         "node_id": "5026",
         "point_role": "D",
-        "label": "200191"
+        "label": "5026"
       },
       "geometry": {
         "type": "Point",
@@ -6631,7 +6631,7 @@
         "point_id": "200086",
         "node_id": "5242",
         "point_role": "D",
-        "label": "200086"
+        "label": "5242"
       },
       "geometry": {
         "type": "Point",
@@ -6647,7 +6647,7 @@
         "point_id": "200001",
         "node_id": "5160",
         "point_role": "D",
-        "label": "200001"
+        "label": "5160"
       },
       "geometry": {
         "type": "Point",
@@ -6663,7 +6663,7 @@
         "point_id": "200235",
         "node_id": "5067",
         "point_role": "D",
-        "label": "200235"
+        "label": "5067"
       },
       "geometry": {
         "type": "Point",
@@ -6679,7 +6679,7 @@
         "point_id": "200113",
         "node_id": "5217",
         "point_role": "D",
-        "label": "200113"
+        "label": "5217"
       },
       "geometry": {
         "type": "Point",
@@ -6695,7 +6695,7 @@
         "point_id": "200167",
         "node_id": "5004",
         "point_role": "D",
-        "label": "200167"
+        "label": "5004"
       },
       "geometry": {
         "type": "Point",
@@ -6711,7 +6711,7 @@
         "point_id": "200135",
         "node_id": "5034",
         "point_role": "D",
-        "label": "200135"
+        "label": "5034"
       },
       "geometry": {
         "type": "Point",
@@ -6727,7 +6727,7 @@
         "point_id": "200058",
         "node_id": "5150",
         "point_role": "D",
-        "label": "200058"
+        "label": "5150"
       },
       "geometry": {
         "type": "Point",
@@ -6743,7 +6743,7 @@
         "point_id": "200200",
         "node_id": "5095",
         "point_role": "D",
-        "label": "200200"
+        "label": "5095"
       },
       "geometry": {
         "type": "Point",
@@ -6759,7 +6759,7 @@
         "point_id": "200216",
         "node_id": "5111",
         "point_role": "D",
-        "label": "200216"
+        "label": "5111"
       },
       "geometry": {
         "type": "Point",
@@ -6775,7 +6775,7 @@
         "point_id": "200226",
         "node_id": "5121",
         "point_role": "D",
-        "label": "200226"
+        "label": "5121"
       },
       "geometry": {
         "type": "Point",
@@ -6791,7 +6791,7 @@
         "point_id": "200197",
         "node_id": "5062",
         "point_role": "D",
-        "label": "200197"
+        "label": "5062"
       },
       "geometry": {
         "type": "Point",
@@ -6807,7 +6807,7 @@
         "point_id": "200007",
         "node_id": "5165",
         "point_role": "D",
-        "label": "200007"
+        "label": "5165"
       },
       "geometry": {
         "type": "Point",
@@ -6823,7 +6823,7 @@
         "point_id": "200221",
         "node_id": "5116",
         "point_role": "D",
-        "label": "200221"
+        "label": "5116"
       },
       "geometry": {
         "type": "Point",
@@ -6839,7 +6839,7 @@
         "point_id": "200203",
         "node_id": "5098",
         "point_role": "D",
-        "label": "200203"
+        "label": "5098"
       },
       "geometry": {
         "type": "Point",
@@ -6855,7 +6855,7 @@
         "point_id": "200134",
         "node_id": "5029",
         "point_role": "D",
-        "label": "200134"
+        "label": "5029"
       },
       "geometry": {
         "type": "Point",
@@ -6871,7 +6871,7 @@
         "point_id": "200193",
         "node_id": "5025",
         "point_role": "D",
-        "label": "200193"
+        "label": "5025"
       },
       "geometry": {
         "type": "Point",
@@ -6887,7 +6887,7 @@
         "point_id": "200190",
         "node_id": "5022",
         "point_role": "D",
-        "label": "200190"
+        "label": "5022"
       },
       "geometry": {
         "type": "Point",
@@ -6903,7 +6903,7 @@
         "point_id": "200157",
         "node_id": "5054",
         "point_role": "D",
-        "label": "200157"
+        "label": "5054"
       },
       "geometry": {
         "type": "Point",
@@ -6919,7 +6919,7 @@
         "point_id": "200089",
         "node_id": "5245",
         "point_role": "D",
-        "label": "200089"
+        "label": "5245"
       },
       "geometry": {
         "type": "Point",
@@ -6935,7 +6935,7 @@
         "point_id": "200095",
         "node_id": "5219",
         "point_role": "D",
-        "label": "200095"
+        "label": "5219"
       },
       "geometry": {
         "type": "Point",
@@ -6951,7 +6951,7 @@
         "point_id": "200121",
         "node_id": "5210",
         "point_role": "D",
-        "label": "200121"
+        "label": "5210"
       },
       "geometry": {
         "type": "Point",
@@ -6967,7 +6967,7 @@
         "point_id": "200076",
         "node_id": "5232",
         "point_role": "D",
-        "label": "200076"
+        "label": "5232"
       },
       "geometry": {
         "type": "Point",
@@ -6983,7 +6983,7 @@
         "point_id": "200143",
         "node_id": "5041",
         "point_role": "D",
-        "label": "200143"
+        "label": "5041"
       },
       "geometry": {
         "type": "Point",
@@ -6999,7 +6999,7 @@
         "point_id": "200151",
         "node_id": "5049",
         "point_role": "D",
-        "label": "200151"
+        "label": "5049"
       },
       "geometry": {
         "type": "Point",
@@ -7015,7 +7015,7 @@
         "point_id": "200070",
         "node_id": "5226",
         "point_role": "D",
-        "label": "200070"
+        "label": "5226"
       },
       "geometry": {
         "type": "Point",
@@ -7031,7 +7031,7 @@
         "point_id": "200020",
         "node_id": "5177",
         "point_role": "D",
-        "label": "200020"
+        "label": "5177"
       },
       "geometry": {
         "type": "Point",
@@ -7047,7 +7047,7 @@
         "point_id": "200147",
         "node_id": "5059",
         "point_role": "D",
-        "label": "200147"
+        "label": "5059"
       },
       "geometry": {
         "type": "Point",
@@ -7063,7 +7063,7 @@
         "point_id": "200217",
         "node_id": "5112",
         "point_role": "D",
-        "label": "200217"
+        "label": "5112"
       },
       "geometry": {
         "type": "Point",
@@ -7079,7 +7079,7 @@
         "point_id": "200249",
         "node_id": "5080",
         "point_role": "D",
-        "label": "200249"
+        "label": "5080"
       },
       "geometry": {
         "type": "Point",
@@ -7095,7 +7095,7 @@
         "point_id": "200164",
         "node_id": "5028",
         "point_role": "D",
-        "label": "200164"
+        "label": "5028"
       },
       "geometry": {
         "type": "Point",
@@ -7111,7 +7111,7 @@
         "point_id": "200053",
         "node_id": "5145",
         "point_role": "D",
-        "label": "200053"
+        "label": "5145"
       },
       "geometry": {
         "type": "Point",
@@ -7127,7 +7127,7 @@
         "point_id": "200128",
         "node_id": "5125",
         "point_role": "D",
-        "label": "200128"
+        "label": "5125"
       },
       "geometry": {
         "type": "Point",
@@ -7143,7 +7143,7 @@
         "point_id": "200148",
         "node_id": "5046",
         "point_role": "D",
-        "label": "200148"
+        "label": "5046"
       },
       "geometry": {
         "type": "Point",
@@ -7159,7 +7159,7 @@
         "point_id": "200162",
         "node_id": "5030",
         "point_role": "D",
-        "label": "200162"
+        "label": "5030"
       },
       "geometry": {
         "type": "Point",
@@ -7175,7 +7175,7 @@
         "point_id": "200094",
         "node_id": "5234",
         "point_role": "D",
-        "label": "200094"
+        "label": "5234"
       },
       "geometry": {
         "type": "Point",
@@ -7191,7 +7191,7 @@
         "point_id": "200125",
         "node_id": "5214",
         "point_role": "D",
-        "label": "200125"
+        "label": "5214"
       },
       "geometry": {
         "type": "Point",
@@ -7207,7 +7207,7 @@
         "point_id": "200044",
         "node_id": "5136",
         "point_role": "D",
-        "label": "200044"
+        "label": "5136"
       },
       "geometry": {
         "type": "Point",
@@ -7223,7 +7223,7 @@
         "point_id": "200165",
         "node_id": "5024",
         "point_role": "D",
-        "label": "200165"
+        "label": "5024"
       },
       "geometry": {
         "type": "Point",
@@ -7239,7 +7239,7 @@
         "point_id": "200118",
         "node_id": "5208",
         "point_role": "D",
-        "label": "200118"
+        "label": "5208"
       },
       "geometry": {
         "type": "Point",
@@ -7255,7 +7255,7 @@
         "point_id": "200079",
         "node_id": "5249",
         "point_role": "D",
-        "label": "200079"
+        "label": "5249"
       },
       "geometry": {
         "type": "Point",
@@ -7271,7 +7271,7 @@
         "point_id": "200012",
         "node_id": "5169",
         "point_role": "D",
-        "label": "200012"
+        "label": "5169"
       },
       "geometry": {
         "type": "Point",
@@ -7287,7 +7287,7 @@
         "point_id": "200080",
         "node_id": "5236",
         "point_role": "D",
-        "label": "200080"
+        "label": "5236"
       },
       "geometry": {
         "type": "Point",
@@ -7303,7 +7303,7 @@
         "point_id": "200222",
         "node_id": "5117",
         "point_role": "D",
-        "label": "200222"
+        "label": "5117"
       },
       "geometry": {
         "type": "Point",
@@ -7319,7 +7319,7 @@
         "point_id": "200178",
         "node_id": "5027",
         "point_role": "D",
-        "label": "200178"
+        "label": "5027"
       },
       "geometry": {
         "type": "Point",
@@ -7335,7 +7335,7 @@
         "point_id": "200003",
         "node_id": "5162",
         "point_role": "D",
-        "label": "200003"
+        "label": "5162"
       },
       "geometry": {
         "type": "Point",
@@ -7351,7 +7351,7 @@
         "point_id": "200027",
         "node_id": "5124",
         "point_role": "D",
-        "label": "200027"
+        "label": "5124"
       },
       "geometry": {
         "type": "Point",
@@ -7367,7 +7367,7 @@
         "point_id": "200215",
         "node_id": "5110",
         "point_role": "D",
-        "label": "200215"
+        "label": "5110"
       },
       "geometry": {
         "type": "Point",
@@ -7383,7 +7383,7 @@
         "point_id": "200102",
         "node_id": "5193",
         "point_role": "D",
-        "label": "200102"
+        "label": "5193"
       },
       "geometry": {
         "type": "Point",
@@ -7399,7 +7399,7 @@
         "point_id": "200022",
         "node_id": "5179",
         "point_role": "D",
-        "label": "200022"
+        "label": "5179"
       },
       "geometry": {
         "type": "Point",
@@ -7415,7 +7415,7 @@
         "point_id": "200024",
         "node_id": "5181",
         "point_role": "D",
-        "label": "200024"
+        "label": "5181"
       },
       "geometry": {
         "type": "Point",
@@ -7431,7 +7431,7 @@
         "point_id": "200204",
         "node_id": "5099",
         "point_role": "D",
-        "label": "200204"
+        "label": "5099"
       },
       "geometry": {
         "type": "Point",
@@ -7447,7 +7447,7 @@
         "point_id": "200045",
         "node_id": "5137",
         "point_role": "D",
-        "label": "200045"
+        "label": "5137"
       },
       "geometry": {
         "type": "Point",
@@ -7463,7 +7463,7 @@
         "point_id": "200011",
         "node_id": "5168",
         "point_role": "D",
-        "label": "200011"
+        "label": "5168"
       },
       "geometry": {
         "type": "Point",
@@ -7479,7 +7479,7 @@
         "point_id": "200081",
         "node_id": "5237",
         "point_role": "D",
-        "label": "200081"
+        "label": "5237"
       },
       "geometry": {
         "type": "Point",
@@ -7495,7 +7495,7 @@
         "point_id": "200093",
         "node_id": "5220",
         "point_role": "D",
-        "label": "200093"
+        "label": "5220"
       },
       "geometry": {
         "type": "Point",
@@ -7511,7 +7511,7 @@
         "point_id": "200103",
         "node_id": "5194",
         "point_role": "D",
-        "label": "200103"
+        "label": "5194"
       },
       "geometry": {
         "type": "Point",
@@ -7527,7 +7527,7 @@
         "point_id": "200189",
         "node_id": "5021",
         "point_role": "D",
-        "label": "200189"
+        "label": "5021"
       },
       "geometry": {
         "type": "Point",
@@ -7543,7 +7543,7 @@
         "point_id": "200035",
         "node_id": "5128",
         "point_role": "D",
-        "label": "200035"
+        "label": "5128"
       },
       "geometry": {
         "type": "Point",
@@ -7559,7 +7559,7 @@
         "point_id": "200140",
         "node_id": "5038",
         "point_role": "D",
-        "label": "200140"
+        "label": "5038"
       },
       "geometry": {
         "type": "Point",
@@ -7575,7 +7575,7 @@
         "point_id": "200243",
         "node_id": "5061",
         "point_role": "D",
-        "label": "200243"
+        "label": "5061"
       },
       "geometry": {
         "type": "Point",
@@ -7591,7 +7591,7 @@
         "point_id": "200138",
         "node_id": "5084",
         "point_role": "D",
-        "label": "200138"
+        "label": "5084"
       },
       "geometry": {
         "type": "Point",
@@ -7607,7 +7607,7 @@
         "point_id": "200124",
         "node_id": "5213",
         "point_role": "D",
-        "label": "200124"
+        "label": "5213"
       },
       "geometry": {
         "type": "Point",
@@ -7623,7 +7623,7 @@
         "point_id": "200122",
         "node_id": "5211",
         "point_role": "D",
-        "label": "200122"
+        "label": "5211"
       },
       "geometry": {
         "type": "Point",
@@ -7639,7 +7639,7 @@
         "point_id": "200082",
         "node_id": "5238",
         "point_role": "D",
-        "label": "200082"
+        "label": "5238"
       },
       "geometry": {
         "type": "Point",
@@ -7655,7 +7655,7 @@
         "point_id": "200245",
         "node_id": "5076",
         "point_role": "D",
-        "label": "200245"
+        "label": "5076"
       },
       "geometry": {
         "type": "Point",
@@ -7671,7 +7671,7 @@
         "point_id": "200131",
         "node_id": "5088",
         "point_role": "D",
-        "label": "200131"
+        "label": "5088"
       },
       "geometry": {
         "type": "Point",
@@ -7687,7 +7687,7 @@
         "point_id": "200129",
         "node_id": "5218",
         "point_role": "D",
-        "label": "200129"
+        "label": "5218"
       },
       "geometry": {
         "type": "Point",
@@ -7703,7 +7703,7 @@
         "point_id": "200168",
         "node_id": "5001",
         "point_role": "D",
-        "label": "200168"
+        "label": "5001"
       },
       "geometry": {
         "type": "Point",
@@ -7719,7 +7719,7 @@
         "point_id": "200019",
         "node_id": "5176",
         "point_role": "D",
-        "label": "200019"
+        "label": "5176"
       },
       "geometry": {
         "type": "Point",
@@ -7735,7 +7735,7 @@
         "point_id": "200108",
         "node_id": "5199",
         "point_role": "D",
-        "label": "200108"
+        "label": "5199"
       },
       "geometry": {
         "type": "Point",
@@ -7751,7 +7751,7 @@
         "point_id": "200068",
         "node_id": "5224",
         "point_role": "D",
-        "label": "200068"
+        "label": "5224"
       },
       "geometry": {
         "type": "Point",
@@ -7767,7 +7767,7 @@
         "point_id": "200057",
         "node_id": "5149",
         "point_role": "D",
-        "label": "200057"
+        "label": "5149"
       },
       "geometry": {
         "type": "Point",
@@ -7783,7 +7783,7 @@
         "point_id": "200188",
         "node_id": "5012",
         "point_role": "D",
-        "label": "200188"
+        "label": "5012"
       },
       "geometry": {
         "type": "Point",
@@ -7799,7 +7799,7 @@
         "point_id": "200208",
         "node_id": "5103",
         "point_role": "D",
-        "label": "200208"
+        "label": "5103"
       },
       "geometry": {
         "type": "Point",
@@ -7815,7 +7815,7 @@
         "point_id": "200077",
         "node_id": "5233",
         "point_role": "D",
-        "label": "200077"
+        "label": "5233"
       },
       "geometry": {
         "type": "Point",
@@ -7831,7 +7831,7 @@
         "point_id": "200186",
         "node_id": "5019",
         "point_role": "D",
-        "label": "200186"
+        "label": "5019"
       },
       "geometry": {
         "type": "Point",
@@ -7847,7 +7847,7 @@
         "point_id": "200210",
         "node_id": "5105",
         "point_role": "D",
-        "label": "200210"
+        "label": "5105"
       },
       "geometry": {
         "type": "Point",
@@ -7863,7 +7863,7 @@
         "point_id": "200059",
         "node_id": "5151",
         "point_role": "D",
-        "label": "200059"
+        "label": "5151"
       },
       "geometry": {
         "type": "Point",
@@ -7879,7 +7879,7 @@
         "point_id": "200090",
         "node_id": "5246",
         "point_role": "D",
-        "label": "200090"
+        "label": "5246"
       },
       "geometry": {
         "type": "Point",
@@ -7895,7 +7895,7 @@
         "point_id": "200065",
         "node_id": "5221",
         "point_role": "D",
-        "label": "200065"
+        "label": "5221"
       },
       "geometry": {
         "type": "Point",
@@ -7911,7 +7911,7 @@
         "point_id": "200107",
         "node_id": "5198",
         "point_role": "D",
-        "label": "200107"
+        "label": "5198"
       },
       "geometry": {
         "type": "Point",
@@ -7927,7 +7927,7 @@
         "point_id": "200142",
         "node_id": "5040",
         "point_role": "D",
-        "label": "200142"
+        "label": "5040"
       },
       "geometry": {
         "type": "Point",
@@ -7943,7 +7943,7 @@
         "point_id": "200237",
         "node_id": "5069",
         "point_role": "D",
-        "label": "200237"
+        "label": "5069"
       },
       "geometry": {
         "type": "Point",
@@ -7959,7 +7959,7 @@
         "point_id": "200060",
         "node_id": "5152",
         "point_role": "D",
-        "label": "200060"
+        "label": "5152"
       },
       "geometry": {
         "type": "Point",
@@ -7975,7 +7975,7 @@
         "point_id": "200071",
         "node_id": "5227",
         "point_role": "D",
-        "label": "200071"
+        "label": "5227"
       },
       "geometry": {
         "type": "Point",
@@ -7991,7 +7991,7 @@
         "point_id": "200174",
         "node_id": "5008",
         "point_role": "D",
-        "label": "200174"
+        "label": "5008"
       },
       "geometry": {
         "type": "Point",
@@ -8007,7 +8007,7 @@
         "point_id": "200173",
         "node_id": "5007",
         "point_role": "D",
-        "label": "200173"
+        "label": "5007"
       },
       "geometry": {
         "type": "Point",
@@ -8023,7 +8023,7 @@
         "point_id": "200130",
         "node_id": "5123",
         "point_role": "D",
-        "label": "200130"
+        "label": "5123"
       },
       "geometry": {
         "type": "Point",

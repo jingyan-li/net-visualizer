@@ -1,4 +1,4 @@
-import type { ColorFileDefinition, ColorFileEntry, ExperimentIndexEntry } from "../types";
+import type { ColorFileDefinition, ColorFileEntry, ExperimentIndexEntry, IntervalDefinition } from "../types";
 
 interface ToolbarProps {
   experiments: ExperimentIndexEntry[];
@@ -7,7 +7,9 @@ interface ToolbarProps {
   selectedColorFileId: string;
   colorFileDefinition: ColorFileDefinition | null;
   selectedMeasureId: string;
-  selectedPeriodId: string;
+  selectedPeriodMode: "total" | "interval";
+  selectedIntervalKey: string | null;
+  intervals: IntervalDefinition[];
   maxHighlightedPaths: number;
   maxHighlightedPathsLimit: number;
   pathCountThreshold: number;
@@ -23,7 +25,8 @@ interface ToolbarProps {
   onExperimentChange: (value: string) => void;
   onColorFileChange: (value: string) => void;
   onMeasureChange: (value: string) => void;
-  onPeriodChange: (value: string) => void;
+  onPeriodModeChange: (value: "total" | "interval") => void;
+  onIntervalKeyChange: (value: string | null) => void;
   onMaxHighlightedPathsChange: (value: number) => void;
   onPathCountThresholdChange: (value: number) => void;
   onLinkWidthScaleChange: (value: number) => void;
@@ -44,7 +47,9 @@ export function Toolbar({
   selectedColorFileId,
   colorFileDefinition,
   selectedMeasureId,
-  selectedPeriodId,
+  selectedPeriodMode,
+  selectedIntervalKey,
+  intervals,
   maxHighlightedPaths,
   maxHighlightedPathsLimit,
   pathCountThreshold,
@@ -60,7 +65,8 @@ export function Toolbar({
   onExperimentChange,
   onColorFileChange,
   onMeasureChange,
-  onPeriodChange,
+  onPeriodModeChange,
+  onIntervalKeyChange,
   onMaxHighlightedPathsChange,
   onPathCountThresholdChange,
   onLinkWidthScaleChange,
@@ -74,7 +80,10 @@ export function Toolbar({
   onClearSelection
 }: ToolbarProps) {
   const measures = colorFileDefinition?.measures ?? [];
-  const periodOptions = colorFileDefinition?.periodLabels ?? {};
+  const selectedIntervalIndex = Math.max(
+    0,
+    intervals.findIndex((interval) => interval.key === selectedIntervalKey)
+  );
 
   return (
     <div className="toolbar">
@@ -113,14 +122,37 @@ export function Toolbar({
 
       <label>
         <span>Period</span>
-        <select value={selectedPeriodId} onChange={(event) => onPeriodChange(event.target.value)}>
-          {Object.entries(periodOptions).map(([periodId, label]) => (
-            <option key={periodId} value={periodId}>
-              {label}
-            </option>
-          ))}
+        <select
+          value={selectedPeriodMode}
+          onChange={(event) => onPeriodModeChange(event.target.value as "total" | "interval")}
+        >
+          <option value="total">Total</option>
+          <option value="interval">By interval</option>
         </select>
       </label>
+
+      {selectedPeriodMode === "interval" && intervals.length > 0 ? (
+        <label className="slider-control">
+          <span>{`Interval: ${intervals[selectedIntervalIndex]?.label ?? "n/a"}`}</span>
+          <input
+            type="range"
+            min="0"
+            max={String(Math.max(0, intervals.length - 1))}
+            step="1"
+            value={selectedIntervalIndex}
+            list="interval-ticks"
+            onChange={(event) => {
+              const nextInterval = intervals[Number(event.target.value)];
+              onIntervalKeyChange(nextInterval?.key ?? null);
+            }}
+          />
+          <datalist id="interval-ticks">
+            {intervals.map((interval) => (
+              <option key={interval.key} value={interval.index} label={interval.id} />
+            ))}
+          </datalist>
+        </label>
+      ) : null}
 
       <label>
         <span>Displayed paths: {maxHighlightedPaths}</span>

@@ -2,8 +2,9 @@
 
 ## car_count
 
+- Ratio files / ratio 文件数: `3`
 - Observed links / observed 链路数: `336`
-- Ratio hourly links / ratio 小时链路数: `319`
+- Ratio links / ratio 链路数: `319`
 - Observed-only links / 仅 observed 的链路数: `17`
 - Ratio-only links / 仅 ratio 的链路数: `0`
 - Observed link ID range / observed linkID 范围: `10 - 10137`
@@ -13,8 +14,9 @@
 
 ## truck_count
 
+- Ratio files / ratio 文件数: `3`
 - Observed links / observed 链路数: `336`
-- Ratio hourly links / ratio 小时链路数: `319`
+- Ratio links / ratio 链路数: `319`
 - Observed-only links / 仅 observed 的链路数: `17`
 - Ratio-only links / 仅 ratio 的链路数: `0`
 - Observed link ID range / observed linkID 范围: `10 - 10137`
@@ -24,8 +26,9 @@
 
 ## car_tt
 
+- Ratio files / ratio 文件数: `12`
 - Observed links / observed 链路数: `1771`
-- Ratio hourly links / ratio 小时链路数: `1714`
+- Ratio links / ratio 链路数: `1714`
 - Observed-only links / 仅 observed 的链路数: `57`
 - Ratio-only links / 仅 ratio 的链路数: `0`
 - Observed link ID range / observed linkID 范围: `11 - 10165`
@@ -35,8 +38,9 @@
 
 ## truck_tt
 
+- Ratio files / ratio 文件数: `12`
 - Observed links / observed 链路数: `1791`
-- Ratio hourly links / ratio 小时链路数: `1734`
+- Ratio links / ratio 链路数: `1734`
 - Observed-only links / 仅 observed 的链路数: `57`
 - Ratio-only links / 仅 ratio 的链路数: `0`
 - Observed link ID range / observed linkID 范围: `11 - 10165`

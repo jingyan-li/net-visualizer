@@ -10,14 +10,14 @@
   "linkPathContribBucketIndex": "/data/experiments/exp21/paths/link_path_contrib_bucket_index.json",
   "colorFiles": [
     {
+      "id": "truck_tt",
+      "label": "Truck travel time",
+      "path": "/data/experiments/exp21/color_files/truck_tt.json"
+    },
+    {
       "id": "car_count",
       "label": "Car count",
       "path": "/data/experiments/exp21/color_files/car_count.json"
-    },
-    {
-      "id": "truck_count",
-      "label": "Truck count",
-      "path": "/data/experiments/exp21/color_files/truck_count.json"
     },
     {
       "id": "car_tt",
@@ -25,9 +25,9 @@
       "path": "/data/experiments/exp21/color_files/car_tt.json"
     },
     {
-      "id": "truck_tt",
-      "label": "Truck travel time",
-      "path": "/data/experiments/exp21/color_files/truck_tt.json"
+      "id": "truck_count",
+      "label": "Truck count",
+      "path": "/data/experiments/exp21/color_files/truck_count.json"
     }
   ],
   "defaultColorFileId": "car_tt"
