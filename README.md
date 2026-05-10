@@ -191,11 +191,14 @@ outlier 规则说明：
 
 ### 每个 interval CSV 的列
 
-至少需要：
+最少只需要：
 
 - `linkID`
 - `OBS`
 - `EST`
+
+这些列现在都可以不提供，bundle 会自动从 `OBS/EST` 推导：
+
 - `RATIO`
 - `BIAS`
 - `WAPE`
@@ -206,6 +209,12 @@ outlier 规则说明：
 - `INTERVAL_ID`
 - `INTERVAL_LABEL`
 - `INTERVAL_KIND`
+
+补充说明：
+
+- `ratio` 对当前 demo 不是必要输入，因为 `bias = ratio - 1`
+- demo 主要展示的是 `Observed / Estimate / Bias / WAPE`
+- `WAPE` 虽然保留为展示指标，但也不需要预先写进输入文件，脚本会自动计算
 
 ## `link_observation_coverage.csv` 的格式
 

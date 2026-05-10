@@ -389,6 +389,8 @@ def build_modality_metrics(
         frame = pd.read_csv(interval["path"]).copy()
         if "linkID" not in frame.columns:
             raise ValueError(f"{interval['path']} must contain linkID.")
+        if "OBS" not in frame.columns or "EST" not in frame.columns:
+            raise ValueError(f"{interval['path']} must contain OBS and EST columns.")
         frame = frame.rename(columns={"linkID": "link_id"})
         frame["link_id"] = frame["link_id"].astype(str)
 
@@ -409,14 +411,43 @@ def build_modality_metrics(
         obs_valid_col = f"{modality}_obs_valid_{interval_key}"
         est_valid_col = f"{modality}_est_valid_{interval_key}"
 
-        frame[obs_valid_col] = pd.to_numeric(frame["OBS"], errors="coerce").fillna(0).gt(0)
-        frame[est_valid_col] = pd.to_numeric(frame["EST"], errors="coerce").notna()
+        obs_numeric = pd.to_numeric(frame["OBS"], errors="coerce")
+        est_numeric = pd.to_numeric(frame["EST"], errors="coerce")
+        if "BIAS" in frame.columns:
+            bias_numeric = pd.to_numeric(frame["BIAS"], errors="coerce")
+        else:
+            bias_numeric = np.where(
+                obs_numeric.to_numpy(dtype=float) > 0,
+                (est_numeric.to_numpy(dtype=float) - obs_numeric.to_numpy(dtype=float))
+                / obs_numeric.to_numpy(dtype=float),
+                np.nan,
+            )
+            bias_numeric = pd.Series(bias_numeric, index=frame.index)
+
+        if "WAPE" in frame.columns:
+            wape_numeric = pd.to_numeric(frame["WAPE"], errors="coerce")
+        else:
+            wape_numeric = np.where(
+                obs_numeric.to_numpy(dtype=float) > 0,
+                np.abs(est_numeric.to_numpy(dtype=float) - obs_numeric.to_numpy(dtype=float))
+                / obs_numeric.to_numpy(dtype=float),
+                np.nan,
+            )
+            wape_numeric = pd.Series(wape_numeric, index=frame.index)
+
+        frame["OBS"] = obs_numeric
+        frame["EST"] = est_numeric
+        frame["BIAS"] = bias_numeric
+        frame["WAPE"] = wape_numeric
+
+        frame[obs_valid_col] = obs_numeric.fillna(0).gt(0)
+        frame[est_valid_col] = est_numeric.notna()
         if "VALID" in frame.columns:
             valid_values = frame["VALID"]
             frame[valid_col] = valid_values.astype(str).str.lower().map({"true": True, "false": False}).fillna(valid_values.astype(bool))
         else:
             frame[valid_col] = (
-                pd.to_numeric(frame["OBS"], errors="coerce").fillna(0).gt(0)
+                obs_numeric.fillna(0).gt(0)
                 & pd.to_numeric(frame["BIAS"], errors="coerce").notna()
                 & pd.to_numeric(frame["WAPE"], errors="coerce").notna()
             )
