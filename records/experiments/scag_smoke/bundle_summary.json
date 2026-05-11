@@ -1,0 +1,13 @@
+{
+  "experiment_id": "scag_smoke",
+  "experiment_label": "SCAG Smoke",
+  "network_source": "/home/ljy/Documents/projects/southern_california_case_study/src/net-visualizer/inputfile/scag_smoke/links.geojson",
+  "ratio_source_dir": "/home/ljy/Documents/projects/southern_california_case_study/src/net-visualizer/inputfile/scag_smoke/ratio_bias_wape_analysis",
+  "coverage_source_csv": "/home/ljy/Documents/projects/southern_california_case_study/src/net-visualizer/inputfile/scag_smoke/link_observation_coverage.csv",
+  "path_count": 14230,
+  "link_count": 13474,
+  "color_files": [
+    "car_count",
+    "car_tt"
+  ]
+}

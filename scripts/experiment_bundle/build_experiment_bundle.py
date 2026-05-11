@@ -58,6 +58,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--path-table-buffer", required=True, type=Path)
     parser.add_argument("--ratio-dir", required=True, type=Path)
     parser.add_argument("--coverage-csv", required=True, type=Path)
+    parser.add_argument(
+        "--od-demand",
+        type=Path,
+        default=None,
+        help="Optional MacPOSTS-style MNM_input_demand file. "
+             "Lines: 'O_id D_id v0 v1 ... vK-1'. Column k aligns with the k-th sorted interval.",
+    )
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--records-root", type=Path, default=DEFAULT_RECORDS_ROOT)
     return parser.parse_args()
@@ -637,7 +644,105 @@ def build_color_file_definition(
     return definition
 
 
-def build_manifest(experiment_id: str, experiment_label: str, color_modalities: list[str]) -> dict[str, Any]:
+def build_od_demand_payload(
+    demand_path: Path,
+    od_points_geojson: dict[str, Any],
+    interval_specs: list[dict[str, Any]],
+) -> dict[str, Any]:
+    expected_cols = len(interval_specs)
+    if expected_cols == 0:
+        raise ValueError("Cannot build OD demand: no intervals discovered from ratio_dir.")
+
+    origin_node_ids: set[str] = set()
+    destination_node_ids: set[str] = set()
+    for feature in od_points_geojson.get("features", []):
+        props = feature.get("properties") or {}
+        node_id = str(props.get("node_id", ""))
+        role = props.get("point_role")
+        if not node_id:
+            continue
+        if role == "O":
+            origin_node_ids.add(node_id)
+        elif role == "D":
+            destination_node_ids.add(node_id)
+
+    origin_acc: dict[str, list[float]] = {}
+    destination_acc: dict[str, list[float]] = {}
+
+    skipped_unknown_o = 0
+    skipped_unknown_d = 0
+
+    with demand_path.open("r", encoding="utf-8") as handle:
+        for raw_line in handle:
+            line = raw_line.strip()
+            if not line or line.startswith("#"):
+                continue
+            tokens = line.split()
+            if len(tokens) < 2 + expected_cols:
+                raise ValueError(
+                    f"od_demand line has {len(tokens)} tokens, expected at least {2 + expected_cols}: {line[:60]}"
+                )
+            origin_id = tokens[0]
+            destination_id = tokens[1]
+            values = [float(token) for token in tokens[2 : 2 + expected_cols]]
+
+            if origin_id in origin_node_ids:
+                acc = origin_acc.get(origin_id)
+                if acc is None:
+                    acc = [0.0] * expected_cols
+                    origin_acc[origin_id] = acc
+                for k, value in enumerate(values):
+                    acc[k] += value
+            else:
+                skipped_unknown_o += 1
+
+            if destination_id in destination_node_ids:
+                acc = destination_acc.get(destination_id)
+                if acc is None:
+                    acc = [0.0] * expected_cols
+                    destination_acc[destination_id] = acc
+                for k, value in enumerate(values):
+                    acc[k] += value
+            else:
+                skipped_unknown_d += 1
+
+    if skipped_unknown_o or skipped_unknown_d:
+        print(
+            f"[od_demand] dropped {skipped_unknown_o} rows with origin not in OD points, "
+            f"{skipped_unknown_d} rows with destination not in OD points (likely OD pairs without paths)."
+        )
+
+    all_node_ids = set(origin_acc.keys()) | set(destination_acc.keys())
+    zeros = [0.0] * expected_cols
+    by_node = {
+        node_id: {
+            "origin": origin_acc.get(node_id, zeros),
+            "destination": destination_acc.get(node_id, zeros),
+        }
+        for node_id in sorted(all_node_ids)
+    }
+
+    return {
+        "intervals": [
+            {
+                "key": str(spec["key"]),
+                "id": str(spec["id"]),
+                "kind": str(spec["kind"]),
+                "label": str(spec["label"]),
+                "index": int(spec["index"]),
+            }
+            for spec in interval_specs
+        ],
+        "by_node": by_node,
+    }
+
+
+def build_manifest(
+    experiment_id: str,
+    experiment_label: str,
+    color_modalities: list[str],
+    include_od_demand: bool,
+) -> dict[str, Any]:
     color_files = [
         {
             "id": modality,
@@ -646,7 +751,7 @@ def build_manifest(experiment_id: str, experiment_label: str, color_modalities: 
         }
         for modality in color_modalities
     ]
-    return {
+    manifest = {
         "id": experiment_id,
         "label": experiment_label,
         "linksGeojson": f"/data/experiments/{experiment_id}/network/links.geojson",
@@ -659,6 +764,9 @@ def build_manifest(experiment_id: str, experiment_label: str, color_modalities: 
         "colorFiles": color_files,
         "defaultColorFileId": "car_tt" if "car_tt" in color_modalities else color_modalities[0],
     }
+    if include_od_demand:
+        manifest["odDemandFile"] = f"/data/experiments/{experiment_id}/od/od_demand.json"
+    return manifest
 
 
 def update_experiment_index(output_root: Path) -> None:
@@ -790,7 +898,24 @@ def main() -> None:
             ),
         )
 
-    write_json(experiment_dir / "manifest.json", build_manifest(experiment_id, experiment_label, available_modalities))
+    has_od_demand = False
+    if args.od_demand:
+        canonical_intervals: list[dict[str, Any]] = []
+        for modality in available_modalities:
+            specs = interval_specs_by_modality.get(modality, [])
+            if specs:
+                canonical_intervals = specs
+                break
+        if not canonical_intervals:
+            raise ValueError("--od-demand provided but no intervals were discovered from ratio_dir.")
+        demand_payload = build_od_demand_payload(args.od_demand, od_points_geojson, canonical_intervals)
+        write_json(od_dir / "od_demand.json", demand_payload)
+        has_od_demand = True
+
+    write_json(
+        experiment_dir / "manifest.json",
+        build_manifest(experiment_id, experiment_label, available_modalities, has_od_demand),
+    )
     update_experiment_index(args.output_root)
     write_records(
         experiment_id,

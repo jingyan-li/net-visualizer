@@ -23,6 +23,7 @@ interface ToolbarProps {
   hideUnobservedLinks: boolean;
   showOdPoints: boolean;
   showOdLabels: boolean;
+  odDemandMode: "off" | "origin" | "destination";
   onExperimentChange: (value: string) => void;
   onColorFileChange: (value: string) => void;
   onMeasureChange: (value: string) => void;
@@ -39,6 +40,7 @@ interface ToolbarProps {
   onHideUnobservedLinksChange: (value: boolean) => void;
   onShowOdPointsChange: (value: boolean) => void;
   onShowOdLabelsChange: (value: boolean) => void;
+  onOdDemandModeChange: (value: "off" | "origin" | "destination") => void;
   onClearSelection: () => void;
 }
 
@@ -65,6 +67,7 @@ export function Toolbar({
   hideUnobservedLinks,
   showOdPoints,
   showOdLabels,
+  odDemandMode,
   onExperimentChange,
   onColorFileChange,
   onMeasureChange,
@@ -81,6 +84,7 @@ export function Toolbar({
   onHideUnobservedLinksChange,
   onShowOdPointsChange,
   onShowOdLabelsChange,
+  onOdDemandModeChange,
   onClearSelection
 }: ToolbarProps) {
   const measures = colorFileDefinition?.measures ?? [];
@@ -284,6 +288,26 @@ export function Toolbar({
           onChange={(event) => onShowOdLabelsChange(event.target.checked)}
         />
       </label>
+
+      <div className="segmented-control">
+        <span>OD demand</span>
+        <div className="segmented-control-buttons">
+          {([
+            ["off", "Off"],
+            ["origin", "O"],
+            ["destination", "D"]
+          ] as const).map(([value, label]) => (
+            <button
+              key={value}
+              type="button"
+              className={odDemandMode === value ? "segmented-active" : ""}
+              onClick={() => onOdDemandModeChange(value)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <button type="button" onClick={onClearSelection}>
         Clear selection

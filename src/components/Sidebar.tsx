@@ -6,6 +6,8 @@ import type { PathContribution } from "../types";
 interface SidebarProps {
   selectedLinkId: string | null;
   selectedPathId: string | null;
+  selectedOdFeature: GeoJSON.Feature<GeoJSON.Point, Record<string, unknown>> | null;
+  selectedOdDemand: { origin: number; destination: number } | null;
   linkProperties: Record<string, unknown> | null;
   contributions: PathContribution[];
   displayedContributions: PathContribution[];
@@ -40,6 +42,8 @@ function summarize(records: PathContribution[]) {
 export function Sidebar({
   selectedLinkId,
   selectedPathId,
+  selectedOdFeature,
+  selectedOdDemand,
   linkProperties,
   contributions,
   displayedContributions,
@@ -50,11 +54,65 @@ export function Sidebar({
   onSelectPath,
   loading
 }: SidebarProps) {
+  if (selectedOdFeature) {
+    const props = selectedOdFeature.properties ?? {};
+    const role = String(props.point_role ?? "");
+    const roleLabel = role === "O" ? "Origin" : role === "D" ? "Destination" : role || "n/a";
+    const ownDemand =
+      role === "O"
+        ? selectedOdDemand?.origin
+        : role === "D"
+          ? selectedOdDemand?.destination
+          : undefined;
+    const coords = (selectedOdFeature.geometry?.coordinates ?? []) as number[];
+    const [lng, lat] = coords;
+    return (
+      <aside className="sidebar">
+        <h2>Selected OD Node</h2>
+        <div className="sidebar-card">
+          <div className="metric-grid">
+            <div>
+              <span className="metric-label">Node ID</span>
+              <strong>{String(props.node_id ?? props.point_id ?? "n/a")}</strong>
+            </div>
+            <div>
+              <span className="metric-label">Role</span>
+              <strong>{roleLabel}</strong>
+            </div>
+            <div>
+              <span className="metric-label">{role === "D" ? "Destination demand" : "Origin demand"}</span>
+              <strong>{ownDemand !== undefined ? ownDemand.toFixed(3) : "0"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">Origin demand (this node)</span>
+              <strong>{(selectedOdDemand?.origin ?? 0).toFixed(3)}</strong>
+            </div>
+            <div>
+              <span className="metric-label">Destination demand (this node)</span>
+              <strong>{(selectedOdDemand?.destination ?? 0).toFixed(3)}</strong>
+            </div>
+            {Number.isFinite(lng) && Number.isFinite(lat) ? (
+              <div>
+                <span className="metric-label">Lon, Lat</span>
+                <strong>{`${lng.toFixed(5)}, ${lat.toFixed(5)}`}</strong>
+              </div>
+            ) : null}
+          </div>
+        </div>
+
+        <section className="sidebar-section">
+          <h3>OD Properties</h3>
+          <LinkAttributeTable properties={props} />
+        </section>
+      </aside>
+    );
+  }
+
   if (!selectedLinkId) {
     return (
       <aside className="sidebar">
         <h2>Inspector</h2>
-        <p className="empty-state">Click a link to inspect its attributes and all associated paths.</p>
+        <p className="empty-state">Click a link or an OD node to inspect attributes.</p>
       </aside>
     );
   }

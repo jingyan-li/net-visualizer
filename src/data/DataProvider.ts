@@ -13,6 +13,7 @@ import type {
   ExperimentIndexEntry,
   ExperimentManifest,
   InitialData,
+  OdDemandPayload,
   PathContribution,
   PathSummary
 } from "../types";
@@ -22,6 +23,7 @@ export interface DataProvider {
   loadManifest(manifestPath: string): Promise<ExperimentManifest>;
   loadInitialData(manifest: ExperimentManifest): Promise<InitialData>;
   loadColorFile(path: string): Promise<ColorFileDefinition>;
+  loadOdDemand(manifest: ExperimentManifest): Promise<OdDemandPayload | null>;
   getLinkContributions(manifest: ExperimentManifest, linkId: string): Promise<PathContribution[]>;
   getPathSummary(manifest: ExperimentManifest, pathId: string): Promise<PathSummary | null>;
   getPathGeometry(manifest: ExperimentManifest, pathId: string): Promise<GeoJSON.Feature | null>;
@@ -34,6 +36,7 @@ export class StaticJsonDataProvider implements DataProvider {
   private experimentIndexCache: ExperimentIndexEntry[] | null = null;
   private contribBucketIndexCache = new Map<string, Record<string, string>>();
   private contribBucketCache = new Map<string, Record<string, PathContribution[]>>();
+  private odDemandCache = new Map<string, OdDemandPayload | null>();
 
   async loadExperimentIndex(): Promise<ExperimentIndexEntry[]> {
     if (this.experimentIndexCache) {
@@ -71,6 +74,19 @@ export class StaticJsonDataProvider implements DataProvider {
     const loaded = await loadColorFile(path);
     this.colorFileCache.set(path, loaded);
     return loaded;
+  }
+
+  async loadOdDemand(manifest: ExperimentManifest): Promise<OdDemandPayload | null> {
+    if (this.odDemandCache.has(manifest.id)) {
+      return this.odDemandCache.get(manifest.id) ?? null;
+    }
+    if (!manifest.odDemandFile) {
+      this.odDemandCache.set(manifest.id, null);
+      return null;
+    }
+    const payload = await loadJson<OdDemandPayload>(manifest.odDemandFile);
+    this.odDemandCache.set(manifest.id, payload);
+    return payload;
   }
 
   async getLinkContributions(

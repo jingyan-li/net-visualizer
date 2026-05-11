@@ -10,6 +10,20 @@ interface OdPointProperties {
 
 type OdPointFeature = GeoJSON.Feature<GeoJSON.Point, OdPointProperties>;
 
+export interface NodeDemand {
+  origin: number;
+  destination: number;
+}
+
+export type OdDemandRole = "origin" | "destination";
+
+interface DemandOptions {
+  demandByNode: Record<string, NodeDemand>;
+  role: OdDemandRole;
+  minRadiusPx: number;
+  maxRadiusPx: number;
+}
+
 function hashLabel(value: string): number {
   let hash = 0;
   for (let index = 0; index < value.length; index += 1) {
@@ -37,37 +51,116 @@ function getLabelOffset(feature: OdPointFeature, labelSize: number): [number, nu
   return [Math.round(dx * radius), Math.round(dy * radius)];
 }
 
+const ROLE_FILTER: Record<OdDemandRole, string> = {
+  origin: "O",
+  destination: "D"
+};
+
+function demandValue(
+  feature: OdPointFeature,
+  demandByNode: Record<string, NodeDemand>,
+  role: OdDemandRole
+): number {
+  const nodeId = String(feature.properties?.node_id ?? "");
+  const record = demandByNode[nodeId];
+  if (!record) return 0;
+  return role === "origin" ? record.origin : record.destination;
+}
+
 export function createOdPointLayers(
   data: GeoJSON.FeatureCollection,
   pointSize: number,
   labelSize: number,
-  showLabels: boolean
+  showLabels: boolean,
+  demand: DemandOptions | undefined,
+  onSelect: ((key: string) => void) | undefined
 ): Layer[] {
-  const points = data.features.filter(
+  const allPoints = data.features.filter(
     (feature): feature is OdPointFeature =>
       feature.geometry?.type === "Point" &&
       Array.isArray(feature.geometry.coordinates) &&
       feature.geometry.coordinates.length >= 2
   );
 
+  if (allPoints.length === 0) {
+    return [];
+  }
+
+  const points = demand
+    ? allPoints.filter((feature) => feature.properties?.point_role === ROLE_FILTER[demand.role])
+    : allPoints;
+
   if (points.length === 0) {
     return [];
   }
 
+  let logMin = Infinity;
+  let logMax = -Infinity;
+  if (demand) {
+    for (const feature of points) {
+      const value = demandValue(feature, demand.demandByNode, demand.role);
+      if (value <= 0) continue;
+      const logged = Math.log10(value);
+      if (logged < logMin) logMin = logged;
+      if (logged > logMax) logMax = logged;
+    }
+    if (!Number.isFinite(logMin) || !Number.isFinite(logMax)) {
+      logMin = 0;
+      logMax = 0;
+    }
+  }
+
+  const logSpan = demand ? Math.max(logMax - logMin, 1e-9) : 0;
+
+  const getRadius = demand
+    ? (feature: OdPointFeature) => {
+        const value = demandValue(feature, demand.demandByNode, demand.role);
+        if (value <= 0) return demand.minRadiusPx;
+        const normalized = logMax === logMin ? 1 : (Math.log10(value) - logMin) / logSpan;
+        return demand.minRadiusPx + normalized * (demand.maxRadiusPx - demand.minRadiusPx);
+      }
+    : () => pointSize;
+
+  // 50% opacity = 128/255
+  const getFillColor = demand
+    ? (() => {
+        const color: [number, number, number, number] =
+          demand.role === "origin" ? [33, 102, 172, 128] : [178, 24, 43, 128];
+        return () => color;
+      })()
+    : () => [0, 0, 0, 220] as [number, number, number, number];
+
+  const radiusMaxPx = demand ? demand.maxRadiusPx : Math.max(2, pointSize);
+
   const layers: Layer[] = [
     new ScatterplotLayer<OdPointFeature>({
-      id: "od-points",
+      id: demand ? `od-points-demand-${demand.role}` : "od-points",
       data: points,
-      pickable: false,
+      pickable: true,
       radiusUnits: "pixels",
-      radiusMinPixels: Math.max(2, pointSize),
-      radiusMaxPixels: Math.max(2, pointSize),
-      getRadius: () => pointSize,
+      radiusMinPixels: demand ? Math.max(1, demand.minRadiusPx) : Math.max(2, pointSize),
+      radiusMaxPixels: radiusMaxPx,
+      getRadius,
       getPosition: (feature) => feature.geometry.coordinates as [number, number],
-      getFillColor: () => [0, 0, 0, 220],
-      getLineColor: () => [255, 255, 255, 120],
+      getFillColor,
+      getLineColor: () => [255, 255, 255, 160],
       stroked: true,
-      lineWidthMinPixels: 1
+      lineWidthMinPixels: 1,
+      onClick: onSelect
+        ? (info) => {
+            const props = (info.object as OdPointFeature | undefined)?.properties;
+            if (!props) return false;
+            const pointId = String(props.point_id ?? props.node_id ?? "");
+            const role = String(props.point_role ?? "");
+            if (!pointId) return false;
+            onSelect(`${pointId}__${role}`);
+            return true;
+          }
+        : undefined,
+      updateTriggers: {
+        getRadius: demand ? [demand.demandByNode, demand.role, logMin, logMax] : [pointSize],
+        getFillColor: [demand?.role ?? null]
+      }
     })
   ];
 

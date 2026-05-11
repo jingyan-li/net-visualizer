@@ -1,20 +1,98 @@
 import { useMemo } from "react";
 import type { Layer, MapViewState } from "@deck.gl/core";
+import { WebMercatorViewport } from "@deck.gl/core";
 import DeckGL from "@deck.gl/react";
 import { Map } from "react-map-gl/maplibre";
 import { createHighlightedPathLayer } from "../layers/createHighlightedPathLayer";
 import { createLinkLayer } from "../layers/createLinkLayer";
-import { createOdPointLayers } from "../layers/createOdPointLayers";
+import { createOdPointLayers, type NodeDemand, type OdDemandRole } from "../layers/createOdPointLayers";
 import { createSelectedLinkLayer } from "../layers/createSelectedLinkLayer";
 import type { ColorScaleType, FieldStats } from "../data/metrics";
 
-const INITIAL_VIEW_STATE: MapViewState = {
-  longitude: -79.9959,
-  latitude: 40.4406,
-  zoom: 10,
+const FALLBACK_VIEW_STATE: MapViewState = {
+  longitude: -118.2437,
+  latitude: 34.0522,
+  zoom: 9,
   pitch: 0,
   bearing: 0
 };
+
+interface BBox {
+  minLng: number;
+  minLat: number;
+  maxLng: number;
+  maxLat: number;
+}
+
+function expandBBox(box: BBox, lng: number, lat: number): void {
+  if (lng < box.minLng) box.minLng = lng;
+  if (lng > box.maxLng) box.maxLng = lng;
+  if (lat < box.minLat) box.minLat = lat;
+  if (lat > box.maxLat) box.maxLat = lat;
+}
+
+function computeBBox(features: GeoJSON.Feature[]): BBox | null {
+  const box: BBox = {
+    minLng: Infinity,
+    minLat: Infinity,
+    maxLng: -Infinity,
+    maxLat: -Infinity
+  };
+  let found = false;
+
+  const visitCoords = (coords: unknown): void => {
+    if (!Array.isArray(coords)) return;
+    if (typeof coords[0] === "number" && typeof coords[1] === "number") {
+      expandBBox(box, coords[0] as number, coords[1] as number);
+      found = true;
+      return;
+    }
+    for (const child of coords) visitCoords(child);
+  };
+
+  for (const feature of features) {
+    const geom = feature.geometry as GeoJSON.Geometry | null;
+    if (!geom) continue;
+    if (geom.type === "GeometryCollection") {
+      for (const g of geom.geometries) visitCoords((g as { coordinates: unknown }).coordinates);
+    } else {
+      visitCoords((geom as { coordinates: unknown }).coordinates);
+    }
+  }
+
+  return found ? box : null;
+}
+
+function computeInitialViewState(linksGeojson: GeoJSON.FeatureCollection): MapViewState {
+  const bbox = computeBBox(linksGeojson.features);
+  if (!bbox) return FALLBACK_VIEW_STATE;
+
+  try {
+    const viewport = new WebMercatorViewport({ width: 1024, height: 768 });
+    const fitted = viewport.fitBounds(
+      [
+        [bbox.minLng, bbox.minLat],
+        [bbox.maxLng, bbox.maxLat]
+      ],
+      { padding: 40 }
+    );
+    return {
+      longitude: fitted.longitude,
+      latitude: fitted.latitude,
+      zoom: Math.min(fitted.zoom, 15),
+      pitch: 0,
+      bearing: 0
+    };
+  } catch {
+    return {
+      longitude: (bbox.minLng + bbox.maxLng) / 2,
+      latitude: (bbox.minLat + bbox.maxLat) / 2,
+      zoom: 9,
+      pitch: 0,
+      bearing: 0
+    };
+  }
+}
 
 interface MapViewProps {
   linksGeojson: GeoJSON.FeatureCollection;
@@ -32,8 +110,12 @@ interface MapViewProps {
   odLabelSize: number;
   pathOpacityPercent: number;
   showOdLabels: boolean;
+  odDemandMode: "off" | OdDemandRole;
+  demandByNode: Record<string, NodeDemand>;
+  viewKey: string;
   onSelectLink: (linkId: string) => void;
   onSelectPath: (pathId: string) => void;
+  onSelectOd: (key: string) => void;
 }
 
 export function MapView({
@@ -51,10 +133,16 @@ export function MapView({
   odLabelSize,
   pathOpacityPercent,
   showOdLabels,
+  odDemandMode,
+  demandByNode,
   odPointsGeojson,
+  viewKey,
   onSelectLink,
-  onSelectPath
+  onSelectPath,
+  onSelectOd
 }: MapViewProps) {
+  const initialViewState = useMemo(() => computeInitialViewState(linksGeojson), [linksGeojson]);
+
   const layers = useMemo<Layer[]>(() => {
     const result: Layer[] = [
       ...createLinkLayer({
@@ -82,17 +170,37 @@ export function MapView({
     }
 
     if (odPointsGeojson) {
-      result.push(...createOdPointLayers(odPointsGeojson, odPointSize, odLabelSize, showOdLabels));
+      const demandOptions =
+        odDemandMode !== "off"
+          ? {
+              demandByNode,
+              role: odDemandMode,
+              minRadiusPx: Math.max(2, odPointSize * 0.6),
+              maxRadiusPx: Math.max(odPointSize * 6, 20)
+            }
+          : undefined;
+      result.push(
+        ...createOdPointLayers(
+          odPointsGeojson,
+          odPointSize,
+          odLabelSize,
+          showOdLabels,
+          demandOptions,
+          onSelectOd
+        )
+      );
     }
 
     return result;
   }, [
     colorBy,
+    demandByNode,
     highlightedPaths,
     lineOffsetPixels,
     lineWidthScale,
     linksGeojson,
     maskField,
+    odDemandMode,
     odPointSize,
     odLabelSize,
     odPointsGeojson,
@@ -100,6 +208,7 @@ export function MapView({
     showOdLabels,
     onSelectLink,
     onSelectPath,
+    onSelectOd,
     scaleType,
     selectedLinkFeature,
     selectedPathId,
@@ -108,7 +217,7 @@ export function MapView({
 
   return (
     <div className="map-shell">
-      <DeckGL initialViewState={INITIAL_VIEW_STATE} controller layers={layers}>
+      <DeckGL key={viewKey} initialViewState={initialViewState} controller layers={layers}>
         <Map
           mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
           attributionControl={true}

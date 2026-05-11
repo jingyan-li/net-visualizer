@@ -10,6 +10,7 @@ interface AppState {
   linkPathContrib: Record<LinkId, PathContribution[]>;
   selectedLinkId: LinkId | null;
   selectedPathId: PathId | null;
+  selectedOdKey: string | null;
   highlightedPathIds: PathId[];
   colorBy: string;
   numericFields: string[];
@@ -25,11 +26,13 @@ interface AppState {
   hideUnobservedLinks: boolean;
   showOdPoints: boolean;
   showOdLabels: boolean;
+  odDemandMode: "off" | "origin" | "destination";
   loading: boolean;
   error: string | null;
   setInitialData: (data: InitialData, numericFields: string[], categoricalFields: string[]) => void;
   setSelectedLinkId: (id: LinkId | null) => void;
   setSelectedPathId: (id: PathId | null) => void;
+  setSelectedOdKey: (key: string | null) => void;
   setColorBy: (field: string) => void;
   setMaxHighlightedPaths: (value: number) => void;
   setLinkWidthScale: (value: number) => void;
@@ -42,6 +45,7 @@ interface AppState {
   setHideUnobservedLinks: (value: boolean) => void;
   setShowOdPoints: (value: boolean) => void;
   setShowOdLabels: (value: boolean) => void;
+  setOdDemandMode: (value: "off" | "origin" | "destination") => void;
   setLinkContributions: (linkId: LinkId, records: PathContribution[]) => void;
   setHighlightedPathIds: (ids: PathId[]) => void;
   setLoading: (value: boolean) => void;
@@ -58,13 +62,14 @@ export const useAppStore = create<AppState>((set) => ({
   linkPathContrib: {},
   selectedLinkId: null,
   selectedPathId: null,
+  selectedOdKey: null,
   highlightedPathIds: [],
   colorBy: "link_id",
   numericFields: [],
   categoricalFields: [],
   maxHighlightedPaths: 3,
-  linkWidthScale: 3,
-  lineOffsetPixels: 2.5,
+  linkWidthScale: 1,
+  lineOffsetPixels: 1.0,
   odPointSize: 3.5,
   odLabelSize: 12,
   pathOpacityPercent: 10,
@@ -72,7 +77,8 @@ export const useAppStore = create<AppState>((set) => ({
   showCoveredLinksOnly: false,
   hideUnobservedLinks: false,
   showOdPoints: false,
-  showOdLabels: true,
+  showOdLabels: false,
+  odDemandMode: "off",
   loading: true,
   error: null,
   setInitialData: (data, numericFields, categoricalFields) =>
@@ -92,9 +98,17 @@ export const useAppStore = create<AppState>((set) => ({
   setSelectedLinkId: (id) =>
     set(() => ({
       selectedLinkId: id,
-      selectedPathId: null
+      selectedPathId: null,
+      selectedOdKey: null
     })),
   setSelectedPathId: (id) => set(() => ({ selectedPathId: id })),
+  setSelectedOdKey: (key) =>
+    set(() => ({
+      selectedOdKey: key,
+      selectedLinkId: null,
+      selectedPathId: null,
+      highlightedPathIds: []
+    })),
   setColorBy: (field) => set(() => ({ colorBy: field })),
   setMaxHighlightedPaths: (value) => set(() => ({ maxHighlightedPaths: value })),
   setLinkWidthScale: (value) => set(() => ({ linkWidthScale: value })),
@@ -107,6 +121,7 @@ export const useAppStore = create<AppState>((set) => ({
   setHideUnobservedLinks: (value) => set(() => ({ hideUnobservedLinks: value })),
   setShowOdPoints: (value) => set(() => ({ showOdPoints: value })),
   setShowOdLabels: (value) => set(() => ({ showOdLabels: value })),
+  setOdDemandMode: (value) => set(() => ({ odDemandMode: value })),
   setLinkContributions: (linkId, records) =>
     set((state) => ({
       linkPathContrib: {
@@ -121,6 +136,7 @@ export const useAppStore = create<AppState>((set) => ({
     set(() => ({
       selectedLinkId: null,
       selectedPathId: null,
+      selectedOdKey: null,
       highlightedPathIds: []
     }))
 }));

@@ -60,8 +60,27 @@ export interface ExperimentManifest {
   linkPathContribBucketDir?: string;
   linkPathContribBucketIndex?: string;
   linkPathContribDir?: string;
+  odDemandFile?: string;
   colorFiles: ColorFileEntry[];
   defaultColorFileId?: string;
+}
+
+export interface OdDemandInterval {
+  key: string;
+  id: string;
+  kind: "hour" | "15min";
+  label: string;
+  index: number;
+}
+
+export interface OdDemandNode {
+  origin: number[];
+  destination: number[];
+}
+
+export interface OdDemandPayload {
+  intervals: OdDemandInterval[];
+  by_node: Record<string, OdDemandNode>;
 }
 
 export interface ColorFileEntry {

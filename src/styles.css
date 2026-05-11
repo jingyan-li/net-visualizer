@@ -69,6 +69,45 @@ input {
   accent-color: #0f766e;
 }
 
+.segmented-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 10rem;
+  font-size: 0.78rem;
+  color: rgba(16, 34, 45, 0.7);
+}
+
+.segmented-control-buttons {
+  display: inline-flex;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(16, 34, 45, 0.16);
+  overflow: hidden;
+  background: white;
+}
+
+.segmented-control-buttons button {
+  flex: 1;
+  min-height: 2.2rem;
+  padding: 0.4rem 0.6rem;
+  border: 0;
+  background: white;
+  color: rgba(16, 34, 45, 0.75);
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0;
+  border-right: 1px solid rgba(16, 34, 45, 0.08);
+}
+
+.segmented-control-buttons button:last-child {
+  border-right: 0;
+}
+
+.segmented-control-buttons button.segmented-active {
+  background: linear-gradient(135deg, #0f766e, #155e75);
+  color: white;
+}
+
 .slider-control input[type="range"] {
   width: 100%;
 }

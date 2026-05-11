@@ -14,6 +14,7 @@ import type {
   ColorMeasureDefinition,
   ExperimentIndexEntry,
   ExperimentManifest,
+  OdDemandPayload,
   PathContribution,
   PathSummary
 } from "./types";
@@ -134,6 +135,7 @@ export default function App() {
     linkPathContrib,
     selectedLinkId,
     selectedPathId,
+    selectedOdKey,
     highlightedPathIds,
     colorBy,
     maxHighlightedPaths,
@@ -147,11 +149,13 @@ export default function App() {
     hideUnobservedLinks,
     showOdPoints,
     showOdLabels,
+    odDemandMode,
     loading,
     error,
     setInitialData,
     setSelectedLinkId,
     setSelectedPathId,
+    setSelectedOdKey,
     setColorBy,
     setMaxHighlightedPaths,
     setLinkWidthScale,
@@ -164,6 +168,7 @@ export default function App() {
     setHideUnobservedLinks,
     setShowOdPoints,
     setShowOdLabels,
+    setOdDemandMode,
     setLinkContributions,
     setHighlightedPathIds,
     setLoading,
@@ -177,6 +182,7 @@ export default function App() {
   const [colorFiles, setColorFiles] = useState<ColorFileEntry[]>([]);
   const [selectedColorFileId, setSelectedColorFileId] = useState("");
   const [colorFileDefinition, setColorFileDefinition] = useState<ColorFileDefinition | null>(null);
+  const [odDemand, setOdDemand] = useState<OdDemandPayload | null>(null);
   const [selectedMeasureId, setSelectedMeasureId] = useState("");
   const [selectedPeriodMode, setSelectedPeriodMode] = useState<"total" | "interval">("total");
   const [selectedIntervalKey, setSelectedIntervalKey] = useState<string | null>(null);
@@ -241,6 +247,10 @@ export default function App() {
         setInitialData(initialData, [], []);
         clearSelection();
         setError(null);
+        const demandPayload = await dataProvider.loadOdDemand(nextManifest);
+        if (!cancelled) {
+          setOdDemand(demandPayload);
+        }
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Failed to load experiment.");
@@ -462,6 +472,59 @@ export default function App() {
     return linksGeojson;
   }, [linksGeojson]);
 
+  const selectedOdFeature = useMemo<
+    GeoJSON.Feature<GeoJSON.Point, Record<string, unknown>> | null
+  >(() => {
+    if (!selectedOdKey || !odPointsGeojson) return null;
+    const [pointId, role] = selectedOdKey.split("__");
+    for (const feature of odPointsGeojson.features) {
+      const props = feature.properties as Record<string, unknown> | null;
+      if (!props || feature.geometry?.type !== "Point") continue;
+      const featurePointId = String(props.point_id ?? props.node_id ?? "");
+      const featureRole = String(props.point_role ?? "");
+      if (featurePointId === pointId && featureRole === role) {
+        return feature as GeoJSON.Feature<GeoJSON.Point, Record<string, unknown>>;
+      }
+    }
+    return null;
+  }, [odPointsGeojson, selectedOdKey]);
+
+  type NodeDemandValue = { origin: number; destination: number };
+
+  // Aggregate OD demand by node: "_total" key = sum across all intervals; per-interval keys
+  // match the keys discovered from ratio_dir CSVs.
+  const demandByNodeByPeriod = useMemo<Record<string, Record<string, NodeDemandValue>>>(() => {
+    if (!odDemand) {
+      return { _total: {} };
+    }
+    const result: Record<string, Record<string, NodeDemandValue>> = { _total: {} };
+    for (const interval of odDemand.intervals) {
+      result[interval.key] = {};
+    }
+    for (const [nodeId, record] of Object.entries(odDemand.by_node)) {
+      let totalOrigin = 0;
+      let totalDestination = 0;
+      for (let k = 0; k < odDemand.intervals.length; k += 1) {
+        const intervalKey = odDemand.intervals[k].key;
+        const origin = Number(record.origin?.[k] ?? 0) || 0;
+        const destination = Number(record.destination?.[k] ?? 0) || 0;
+        if (origin || destination) {
+          result[intervalKey][nodeId] = { origin, destination };
+        }
+        totalOrigin += origin;
+        totalDestination += destination;
+      }
+      if (totalOrigin || totalDestination) {
+        result._total[nodeId] = { origin: totalOrigin, destination: totalDestination };
+      }
+    }
+    return result;
+  }, [odDemand]);
+
+  const activeDemandKey =
+    selectedPeriodMode === "interval" && selectedIntervalKey ? selectedIntervalKey : "_total";
+  const demandByNode = demandByNodeByPeriod[activeDemandKey] ?? demandByNodeByPeriod._total ?? {};
+
   const pathCountThresholdMax = useMemo(() => {
     if (!activeLinksGeojsonBase) {
       return 0;
@@ -621,6 +684,7 @@ export default function App() {
         hideUnobservedLinks={hideUnobservedLinks}
         showOdPoints={showOdPoints}
         showOdLabels={showOdLabels}
+        odDemandMode={odDemandMode}
         onExperimentChange={setSelectedExperimentId}
         onColorFileChange={setSelectedColorFileId}
         onMeasureChange={setSelectedMeasureId}
@@ -637,13 +701,14 @@ export default function App() {
         onHideUnobservedLinksChange={setHideUnobservedLinks}
         onShowOdPointsChange={setShowOdPoints}
         onShowOdLabelsChange={setShowOdLabels}
+        onOdDemandModeChange={setOdDemandMode}
         onClearSelection={clearSelection}
       />
       <div className="content-shell">
         <div className="map-column">
           <MapView
             linksGeojson={activeLinksGeojson}
-            odPointsGeojson={showOdPoints ? odPointsGeojson : null}
+            odPointsGeojson={showOdPoints || odDemandMode !== "off" ? odPointsGeojson : null}
             highlightedPaths={highlightedPaths}
             selectedLinkFeature={selectedLinkFeature}
             selectedPathId={selectedPathId}
@@ -657,14 +722,30 @@ export default function App() {
             odLabelSize={odLabelSize}
             pathOpacityPercent={pathOpacityPercent}
             showOdLabels={showOdLabels}
+            odDemandMode={odDemandMode}
+            demandByNode={demandByNode}
+            viewKey={selectedExperimentId || "default"}
             onSelectLink={setSelectedLinkId}
             onSelectPath={setSelectedPathId}
+            onSelectOd={setSelectedOdKey}
           />
           <Legend field={activeLegendTitle || activeField || colorBy} stats={fieldStats} />
         </div>
         <Sidebar
           selectedLinkId={selectedLinkId}
           selectedPathId={selectedPathId}
+          selectedOdFeature={selectedOdFeature}
+          selectedOdDemand={
+            selectedOdFeature
+              ? demandByNode[
+                  String(
+                    (selectedOdFeature.properties as Record<string, unknown> | null)?.node_id ??
+                      (selectedOdFeature.properties as Record<string, unknown> | null)?.point_id ??
+                      ""
+                  )
+                ] ?? { origin: 0, destination: 0 }
+              : null
+          }
           linkProperties={linkProperties}
           contributions={contributions}
           displayedContributions={displayedContributions}
